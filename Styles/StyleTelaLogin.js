@@ -10,6 +10,9 @@ import { StyleSheet } from 'react-native';
     alignItems:'center',
      backgroundColor: '#113036',
    },
+  //  #map:{
+  //   height:100,
+  //  },
     telaMain:{
 
     justifyContent:'center',

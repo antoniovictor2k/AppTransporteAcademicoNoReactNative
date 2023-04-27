@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 function NavegacaoTelas() {
   return (
 
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Principal">
         <Stack.Screen name="Login" component={TelaDeLogin} />
         <Stack.Screen name="Cadastro" component={TelaDeCadastro} />
         <Stack.Screen name="Principal" component={TelaPrincipal} />
