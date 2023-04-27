@@ -1,5 +1,5 @@
 import {Text, TextInput, View, Image, Pressable }   from 'react-native';
-import styles from './Styles/StyleTelaLogin';
+import styles from '../Styles/StyleTelaLogin';
 
 
 function TelaLogin({ navigation }) {
@@ -8,7 +8,7 @@ function TelaLogin({ navigation }) {
 
   <Image
           style={styles.imgLogo}
-          source={require('./assets/logoMarcaLogin.png')}
+          source={require('../assets/logoMarcaLogin.png')}
         />
 
 <View style={styles.telaMain}>
@@ -48,7 +48,7 @@ function TelaLogin({ navigation }) {
 
      >
      <Text style={styles.linkTexto}>
-     Não tem uma conta?  
+     Não tem uma conta?{' '}
       <Text style={styles.linkTextoInscrevar}>
       Inscrevar-se
      </Text>

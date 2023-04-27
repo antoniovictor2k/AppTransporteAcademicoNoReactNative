@@ -1,17 +1,20 @@
 import {useState} from 'react';
-import {Text, TextInput, View, Image, Pressable, CheckBox }   from 'react-native';
-import styles from './Styles/StyleTelaCadastro';
+import {Text, TextInput, View, Image, Pressable }   from 'react-native';
+import { Checkbox } from 'react-native-paper';
+import { Linking } from 'react-native';
+import styles from '../Styles/StyleTelaCadastro';
+
 
 
 function TelaCadastro({ navigation }) {
-  const [isSelected, setSelection] = useState(false);
+  const [checked, setChecked] = useState(false);
 
   return (
     <View style={styles.container}>
 
   <Image
           style={styles.imgLogo}
-          source={require('./assets/logoMarcaLogin.png')}
+          source={require('../assets/logoMarcaLogin.png')}
         />
 
 <View style={styles.telaMain}>
@@ -19,11 +22,15 @@ function TelaCadastro({ navigation }) {
       <TextInput
       style={styles.inputTextoNome}
       placeholder='Nome'
+      placeholderTextColor='#fff'
+
       
       /> 
       <TextInput
       style={styles.inputTextoSobrenome}
       placeholder='Sobrenome'
+      placeholderTextColor='#fff'
+
       
       />
     </View>
@@ -31,32 +38,40 @@ function TelaCadastro({ navigation }) {
       <TextInput
       style={styles.inputTexto}
       placeholder='Email'
+      placeholderTextColor='#fff'
+
       
       />
       <TextInput 
       style={styles.inputTexto}
       placeholder='Senha'
+      placeholderTextColor='#fff'
+
       
       />
       <TextInput 
       style={styles.inputTexto}
       placeholder='Confirmar senha'
+      placeholderTextColor='#fff'
+
       
       />
-       {/* <View style={styles.checkboxContainer}>   
+       <View style={styles.checkboxContainer}>   
       
-       <CheckBox
-            value={isSelected}
-          onValueChange={setSelection}
-          style={styles.checkbox}
-        />
+       <Checkbox
+      status={checked ? 'checked' : 'unchecked'}
+      onPress={() => {
+        setChecked(!checked);
+      }}
+    />
+
      
      <Text style={styles.label}>
      Li e concordo com os termos de uso e de 
      privacidade.
      </Text>
      
-       </View> */}
+       </View>
 
 
      <Pressable style={styles.button}
@@ -75,9 +90,9 @@ function TelaCadastro({ navigation }) {
      onPress={() => navigation.navigate('Login')}
      >
      <Text style={styles.linkTexto}>
-     Tem uma conta?  
+     Tem uma conta?{' '}
       <Text style={styles.linkTextoInscrevar}>
-      fazer login
+      Fazer login
      </Text>
      </Text>
      </Pressable>

@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import TelaDeLogin from './TelaDeLogin';
-import TelaDeCadastro from './TelaDeCadastro';
+import TelaDeLogin from './src/TelaDeLogin';
+import TelaDeCadastro from './src/TelaDeCadastro';
 
 const Stack = createNativeStackNavigator();
 
