@@ -3,10 +3,10 @@ import { useEffect, useState, useRef } from 'react';
 import MapView from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
-
 import {Text, TextInput, View, Image, Pressable, Linking }   from 'react-native';
-
 import styles from '../Styles/StyleTelaLogin';
+import { IconButton, MD3Colors } from 'react-native-paper';
+
 
 
 function TelaPrincipal({ navigation }) {
@@ -45,7 +45,19 @@ function TelaPrincipal({ navigation }) {
 
   return (
       <View>
-        <Text style={{position:'relative', fontSize:20, color:'#fff', backgroundColor:'#000', }}>Ola antonio</Text>
+          <Text style={{position:'relative', fontSize:20, color:'#fff', backgroundColor:'#000', textAlign:'center', }}>Projetion JEVA System</Text>
+   <IconButton style={{position:'relative', marginLeft:20,}}
+    icon="menu"
+    iconColor={'#fff'}
+    size={35}
+    containerColor={'#000'}
+    
+
+    onPress={() => console.log('Pressed') +
+alert('Full')
+}
+   
+  />
 <MapView style={{height:1000,}}
   initialRegion={location}
   showsUserLocation={true}
