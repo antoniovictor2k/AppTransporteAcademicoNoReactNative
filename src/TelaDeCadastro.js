@@ -1,7 +1,6 @@
 import {useState} from 'react';
-import {Text, TextInput, View, Image, Pressable }   from 'react-native';
+import {Text, TextInput, View, Image, Pressable, Linking }   from 'react-native';
 import { Checkbox } from 'react-native-paper';
-import { Linking } from 'react-native';
 import styles from '../Styles/StyleTelaCadastro';
 
 
@@ -67,8 +66,24 @@ function TelaCadastro({ navigation }) {
 
      
      <Text style={styles.label}>
-     Li e concordo com os termos de uso e de 
-     privacidade.
+     Li e concordo com os{' '} 
+     <Text style={styles.linkExterno}
+     onPress={() => {
+      Linking.openURL('https://geolocalizacateste.netlify.app/paginas/termo_de_uso');}}
+      
+     >
+     Termos de uso{' '}
+     </Text>
+     <Text>
+      e de{' '}
+     </Text>
+     <Text style={styles.linkExterno}
+     onPress={() => {
+      Linking.openURL('https://geolocalizacateste.netlify.app/paginas/politica_de_privacidade');}}
+     >
+     Privacidade.
+     </Text>
+
      </Text>
      
        </View>

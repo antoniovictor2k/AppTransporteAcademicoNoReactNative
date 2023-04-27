@@ -25,7 +25,7 @@ function TelaLogin({ navigation }) {
       
       />
      <Pressable style={styles.button}
-       onPress={() => alert('link indisponível, acessar através do link (Inscrevar-se), na parte inferior da tela.')}
+     onPress={() => navigation.navigate('Principal')}
      >
      <Text style={styles.textoButton}>
      Entrar

@@ -113,6 +113,10 @@ const stylesTelaCadastro = StyleSheet.create({
     margin: 4,
 
   },
+  linkExterno:{
+    fontWeight:700,
+    fontSize:19,
+  },
 })
 
 export default stylesTelaCadastro;
