@@ -1,0 +1,21 @@
+import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+
+const Drawer = createDrawerNavigator();
+
+function TelaMenu() {
+    <NavigationContainer>
+    <Drawer.Navigator initialRouteName="App"
+    drawerStyle={{
+        backgroundColor:"#313131",
+        paddingVertical:20
+    }} >
+
+        <Drawer.Screen  name="App" component={App} />
+        <Drawer.Screen name="MeuApp" component={MeuApp} />
+    </Drawer.Navigator>
+
+    </NavigationContainer>
+}
+
+export default TelaMenu;
