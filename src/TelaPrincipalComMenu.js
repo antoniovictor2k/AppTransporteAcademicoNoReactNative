@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import { StyleSheet, Text, View, TextInput, Image, Pressable, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerContentScrollView } from '@react-navigation/drawer';
 
 // Imports de Telas 
 import TelaPrincipal from './TelaPrincipal';
