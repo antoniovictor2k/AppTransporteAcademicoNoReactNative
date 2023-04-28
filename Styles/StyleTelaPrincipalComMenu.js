@@ -19,13 +19,13 @@ const stylesTelaMenu = StyleSheet.create({
         height: 100,
     },
     optionsTextos: {
-        color: '#000',
+        color: '#fff',
         fontSize: 18,
         fontWeight: 700,
 
     },
     optionsIcones: {
-        color: '#000',
+        color: '#fff',
         fontSize: 28,
 
     },

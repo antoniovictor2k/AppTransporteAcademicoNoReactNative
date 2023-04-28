@@ -7,6 +7,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 // Imports de Telas 
 import TelaPrincipal from './TelaPrincipal';
 import TelaSobre from './TelaSobre'
+// import TelaMenuPersonalizada from './TelaMenuPersonalizada';
 import styles from '../Styles/StyleTelaPrincipalComMenu';
 
 function AppTwo() {
@@ -29,7 +30,17 @@ const Drawer = createDrawerNavigator();
 function Menu({ navigation }) {
     return (
 
-        <Drawer.Navigator initialRouteName="TelaPrincipal">
+        <Drawer.Navigator 
+        initialRouteName="TelaPrincipal"
+        // drawerContent={TelaMenuPersonalizada}
+        screenOptions={{
+            drawerStyle: {
+              backgroundColor: '#113036',
+             
+            },
+          }}
+        
+        >
 
             <Drawer.Screen
                 name="TelaPrincipal"
