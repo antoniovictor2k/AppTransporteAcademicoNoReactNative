@@ -24,6 +24,13 @@ function AppTwo2() {
         </View>
     );
 }
+function TestePerfil() {
+    return (
+        <View style={styles.container}>
+            <Text>teste Perfil</Text>
+        </View>
+    );
+}
 
 const Drawer = createDrawerNavigator();
 
@@ -42,6 +49,19 @@ function Menu({ navigation }) {
         
         >
 
+            <Drawer.Screen
+                name="TestePerfil"
+                component={TestePerfil}
+                options={
+                    {   
+                        drawerContentStyle:{backgroundColor:'#ffffff'},
+                        headerShown: false,
+                        drawerLabel: (({ focused }) => <Text style={styles.optionsTextosNome}>Antonio <Text style={styles.optionsTextosEmail} >     avps2@aluno.ifal.edu.br</Text></Text>),
+                      
+                        drawerIcon: (({ focused }) => <Icon style={styles.optionsIconesPerfil} name="account-circle" />)
+                    }
+                }
+            />
             <Drawer.Screen
                 name="TelaPrincipal"
                 component={TelaPrincipal}

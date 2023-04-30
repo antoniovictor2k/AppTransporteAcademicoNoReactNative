@@ -24,9 +24,26 @@ const stylesTelaMenu = StyleSheet.create({
         fontWeight: 700,
 
     },
+    optionsTextosNome: {
+        color: '#fff',
+        fontSize: 18,
+        fontWeight: 700,
+
+    },
+    optionsTextosEmail: {
+        color: '#fff',
+        fontSize: 10,
+        fontWeight: 400,
+
+    },
     optionsIcones: {
         color: '#fff',
         fontSize: 28,
+
+    },
+    optionsIconesPerfil: {
+        color: '#fff',
+        fontSize: 52,
 
     },
     buttonCompartilharLocalizacao: {
