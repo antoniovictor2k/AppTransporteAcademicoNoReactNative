@@ -9,7 +9,7 @@ function TelaContato() {
         <View style={styles.telamain}>
             <Text style={styles.titulo}>Contatos</Text>
             <View style={styles.container}>
-            <Text style={styles.subTitulo}>Instituição</Text>
+            <Text style={styles.subTitulo1}>Instituição</Text>
             <View style={styles.instituicao}>
                     <Text style={styles.contatoNome}>IFAL - CAMPUS RIO LARGO</Text>
                     <Text style={styles.contatoCidade}>RIO LARGO / AL</Text>
