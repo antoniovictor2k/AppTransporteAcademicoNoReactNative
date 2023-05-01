@@ -7,6 +7,7 @@ const stylesTelaLogin = StyleSheet.create({
 
         flex: 1,
         alignItems: 'center',
+        flexWrap:'nowrap',
     },
 
 
@@ -18,6 +19,7 @@ const stylesTelaLogin = StyleSheet.create({
         alignItems: 'center',
 
         backgroundColor: '#113036',
+        height:100,
 
     },
 
@@ -39,6 +41,12 @@ const stylesTelaLogin = StyleSheet.create({
 
         color: '#fff',
 
+    },
+    instituicao:{
+        alignItems: 'center',
+        marginTop: 200,
+        // marginBottom: 80,
+        gap: 16,
     },
     dev: {
         marginTop: 80,

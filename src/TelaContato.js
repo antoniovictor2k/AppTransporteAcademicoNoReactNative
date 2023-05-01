@@ -9,6 +9,45 @@ function TelaContato() {
         <View style={styles.telamain}>
             <Text style={styles.titulo}>Contatos</Text>
             <View style={styles.container}>
+            <Text style={styles.subTitulo}>Instituição</Text>
+            <View style={styles.instituicao}>
+                    <Text style={styles.contatoNome}>IFAL - CAMPUS RIO LARGO</Text>
+                    <Text style={styles.contatoCidade}>RIO LARGO / AL</Text>
+                    <Text style={styles.contatoEmail}><Icon name="email" style={styles.contatoIcon} /> ifal@aluno.ifal.edu.br</Text>
+                    <Text style={styles.contatoFone}><Icon name="phone" style={styles.contatoIcon} /> Tel: (82) 0000-0000</Text>
+                    <View style={styles.icons}>
+
+                        <IconButton
+                            icon="whatsapp"
+                            iconColor={'#fff'}
+                            size={26}
+                            onPress={() => {
+                                Linking.openURL('https://api.whatsapp.com/message/O4I654ATQMPYE1?autoload=1&app_absent=0');
+                            }}
+                        />
+                        <IconButton
+                            icon="email"
+                            iconColor={'#fff'}
+                            size={26}
+                            onPress={() => {
+                                Linking.openURL('https://chat.google.com/room/AAAAC1GfjrU?cls=1');
+                            }}
+                        />
+                       
+                        <IconButton
+                            icon="instagram"
+                            iconColor={'#fff'}
+                            size={26}
+                            onPress={() => {
+                                Linking.openURL('https://www.instagram.com/antoniovictor2k');
+                            }}
+                        />
+                      
+                    </View>
+                </View>
+
+
+
                 <Text style={styles.subTitulo}>Desenvolvedores</Text>
 
                 <View style={styles.dev}>
