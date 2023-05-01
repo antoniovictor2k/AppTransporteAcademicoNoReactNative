@@ -7,23 +7,13 @@ import { createDrawerNavigator, DrawerContentScrollView } from '@react-navigatio
 // Imports de Telas 
 import TelaPrincipal from './TelaPrincipal';
 import TelaSobre from './TelaSobre'
+import TelaContato from './TelaContato';
+import TelaConfiguracao from './TelaConfiguracao';
 // import TelaMenuPersonalizada from './TelaMenuPersonalizada';
 import styles from '../Styles/StyleTelaPrincipalComMenu';
 
-function AppTwo() {
-    return (
-        <View style={styles.container}>
-            <Text >App 2</Text>
-        </View>
-    );
-}
-function AppTwo2() {
-    return (
-        <View style={styles.container}>
-            <Text>App 3</Text>
-        </View>
-    );
-}
+// Em TEste
+
 function TestePerfil() {
     return (
         <View style={styles.container}>
@@ -32,13 +22,14 @@ function TestePerfil() {
     );
 }
 
+// Fim (Em TEste)
 const Drawer = createDrawerNavigator();
 
 function Menu({ navigation }) {
     return (
 
         <Drawer.Navigator 
-        initialRouteName="TelaPrincipal"
+        initialRouteName="TelaContato"
         // drawerContent={TelaMenuPersonalizada}
         screenOptions={{
             drawerStyle: {
@@ -87,10 +78,11 @@ function Menu({ navigation }) {
                 }
             />
             <Drawer.Screen
-                name="MeuApp"
-                component={AppTwo}
+                name="TelaContato"
+                component={TelaContato}
                 options={
                     {
+                        headerShown: false,
                         drawerLabel: (({ focused }) => <Text style={styles.optionsTextos}>Contatos</Text>),
                         drawerIcon: (({ focused }) => <Icon style={styles.optionsIcones} name="contacts" />)
                     }
@@ -98,12 +90,12 @@ function Menu({ navigation }) {
 
             />
             <Drawer.Screen
-                name="AppTwo2"
-                component={AppTwo2}
+                name="TelaConfiguracao"
+                component={TelaConfiguracao}
 
                 options={
                     {
-
+                        headerShown: false,
                         drawerLabel: (({ focused }) => <Text style={styles.optionsTextos}>Configuração</Text>),
                         drawerIcon: (({ focused }) => <Icon style={styles.optionsIcones} name="settings" />)
                     }
