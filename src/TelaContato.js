@@ -14,7 +14,7 @@ function TelaContato() {
             <View style={styles.dev}>
             <Text style={styles.contatoNome}>Antonio Victor Pereira Severiano</Text>
             <Text style={styles.contatoCidade}>Maceió / AL</Text>
-            <Text style={styles.contatoFone}><Icon name="phone" style={styles.contatoIcon} /> Tel: (82)99198-1626</Text>
+            <Text style={styles.contatoFone}><Icon name="phone" style={styles.contatoIcon} /> Tel: (82) 99198-1626</Text>
             <View style={styles.icons}>
            
             <IconButton 
@@ -59,7 +59,7 @@ function TelaContato() {
 
         <Text style={styles.contatoNome}>Jeallyson Ferreira da Silva</Text>
         <Text style={styles.contatoCidade}>Rio Largo / AL</Text>
-        <Text style={styles.contatoFone}><Icon name="phone" style={styles.contatoIcon} /> Tel: (82)99198-1626</Text>
+        <Text style={styles.contatoFone}><Icon name="phone" style={styles.contatoIcon} /> Tel: (82) 99999-9999</Text>
         <View style={styles.icons}>
       
         <IconButton 
