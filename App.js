@@ -5,16 +5,18 @@ import TelaDeLogin from './src/TelaDeLogin';
 import TelaDeCadastro from './src/TelaDeCadastro';
 // import TelaPrincipal from './src/TelaPrincipal';
 import TelaPrincipalComMenu from './src/TelaPrincipalComMenu';
+import TelaEsqueciSenha from './src/TelaEsqueciSenha';
 
 const Stack = createNativeStackNavigator();
 
 function NavegacaoTelas() {
   return (
 
-      <Stack.Navigator initialRouteName="TelaPrincipal">
+      <Stack.Navigator initialRouteName="RecuperarSenha">
         <Stack.Screen name="Login"  options={{headerShown:false}} component={TelaDeLogin} />
         <Stack.Screen name="Cadastro" options={{headerShown:false}} component={TelaDeCadastro} />
         <Stack.Screen name="TelaPrincipal" options={{headerShown:false}} component={TelaPrincipalComMenu} />
+        <Stack.Screen name="RecuperarSenha" options={{headerShown:false}} component={TelaEsqueciSenha} />
         {/* <Stack.Screen name="Principal" options={{headerShown:false}} component={TelaPrincipal} /> */}
       </Stack.Navigator>
 

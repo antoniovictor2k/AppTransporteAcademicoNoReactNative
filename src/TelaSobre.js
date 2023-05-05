@@ -4,12 +4,15 @@ import { IconButton, MD3Colors } from 'react-native-paper';
 
 function TelaSobre() {
     return (
+
         <View style={styles.container}>
             <View>
+
             <Text style={{ color: '#fff', }}>Antonio A Primeira Tela Esta Funcionando</Text>
 
             </View>
         </View>
+        
     );
 }
 
