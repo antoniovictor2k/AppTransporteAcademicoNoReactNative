@@ -1,8 +1,12 @@
-import {Text, TextInput, View, Image, Pressable }   from 'react-native';
+import {Text, TextInput, View, Image, Pressable, }   from 'react-native';
+import {useState} from 'react'
 import styles from '../Styles/StyleTelaLogin';
 
 
 function TelaLogin({ navigation }) {
+  const [email, setEmail] = useState(0);
+  const [senha, setSenha] = useState(0);
+
   return (
     <View style={styles.container}>
 
@@ -15,11 +19,13 @@ function TelaLogin({ navigation }) {
     
       <TextInput
       style={styles.inputTexto}
+      keyboardType='email-address'
       placeholder='Email'
       placeholderTextColor='#fff'
       />
       <TextInput 
       style={styles.inputTexto}
+      secureTextEntry={true}
       placeholder='Senha'
       placeholderTextColor='#fff'
       

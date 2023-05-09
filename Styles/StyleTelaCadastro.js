@@ -6,23 +6,18 @@ const stylesTelaCadastro = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     justifyItems: 'center',
-
-
     alignItems: 'center',
     backgroundColor: '#113036',
   },
   telaMain: {
-    justifyContent: 'center',
-    textAlign: 'center',
-    justifyItems: 'center',
 
     alignItems: 'center',
     flex: 1,
     color: '#fff',
   },
   imgLogo: {
-    marginTop: 20,
-
+    marginTop: 75,
+    marginBottom: 75,
     width: 115,
     height: 70,
   },
@@ -67,30 +62,29 @@ const stylesTelaCadastro = StyleSheet.create({
     color: '#fff',
     backgroundColor: '#000',
     borderRadius: 10,
-    marginBottom: 0,
-    marginTop: 5,
+    marginTop: 50,
+
   },
   textoButton: {
     color: '#fff',
     fontSize: 23,
-    textAlign:'center',
+    textAlign: 'center',
     fontWeight: 700,
     padding: 6,
   },
-  linkSenha: {
-    marginTop: 5,
-  },
-  linkInscricao: {
+
+  linkLogin: {
     color: '#fff',
-    bottom: 0,
+    marginTop: 10,
+
   },
   linkTexto: {
     fontWeight: 600,
     textAlign: 'center',
     color: '#aaa',
-    
+
   },
-  linkTextoInscrevar: {
+  linkTextoLogin: {
     color: '#fff',
     fontWeight: 700,
     marginLeft: 5,
@@ -99,7 +93,7 @@ const stylesTelaCadastro = StyleSheet.create({
     // marginLeft:55,
     width: 300,
     flexDirection: 'row',
-    marginBottom: 10,
+    marginBottom: 0,
     // border:'solid #fff',
 
   },
@@ -113,9 +107,9 @@ const stylesTelaCadastro = StyleSheet.create({
     margin: 4,
 
   },
-  linkExterno:{
-    fontWeight:700,
-    fontSize:19,
+  linkExterno: {
+    fontWeight: 700,
+    fontSize: 16,
   },
 })
 

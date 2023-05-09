@@ -4,10 +4,9 @@ const stylesTelaLogin = StyleSheet.create({
 
     telamain: {
         backgroundColor: '#113036',
-
         flex: 1,
         alignItems: 'center',
-        flexWrap:'nowrap',
+        flexWrap: 'nowrap',
     },
 
 
@@ -17,14 +16,11 @@ const stylesTelaLogin = StyleSheet.create({
         textAlign: 'center',
         justifyItems: 'center',
         alignItems: 'center',
-
         backgroundColor: '#113036',
-        height:100,
-
     },
 
     titulo: {
-        marginTop: 70,
+        marginTop: 30,
 
         fontSize: 32,
         fontWeight: 700,
@@ -34,60 +30,59 @@ const stylesTelaLogin = StyleSheet.create({
     },
 
     subTitulo: {
-        marginTop: 20,
+        marginTop: 10,
 
-        fontSize: 24,
-        fontWeight: 700,
+        fontSize: 28,
+        fontWeight: 600,
 
         color: '#fff',
 
     },
     subTitulo1: {
-        marginTop: 350,
+        marginTop: 20,
+        marginBottom: 20,
 
-        fontSize: 24,
-        fontWeight: 700,
+        fontSize: 28,
+        fontWeight: 600,
 
         color: '#fff',
 
     },
-    instituicao:{
+    instituicao: {
         alignItems: 'center',
-        marginTop: 60,
-        // marginBottom: 80,
+        marginBottom: 20,
         gap: 16,
     },
     dev: {
-        marginTop: 80,
-
+        marginTop: 20,
         alignItems: 'center',
 
         gap: 16,
     },
 
     contatoNome: {
-        fontSize: 20,
-        fontWeight: 700,
-        color: '#fff',
+        fontSize: 18,
+        fontWeight: 500,
+        color: '#CCCCCC',
     },
     contatoCidade: {
         fontSize: 18,
-        fontWeight: 700,
-        color: '#fff',
+        fontWeight: 500,
+        color: '#CCCCCC',
     },
     contatoFone: {
         fontSize: 18,
-        fontWeight: 700,
-        color: '#fff',
+        fontWeight: 500,
+        color: '#CCCCCC',
     },
     contatoEmail: {
-        fontSize: 16,
-        fontWeight: 700,
-        color: '#fff',
+        fontSize: 18,
+        fontWeight: 500,
+        color: '#CCCCCC',
     },
     contatoIcon: {
         fontSize: 20,
-        color: '#fff',
+        color: '#CCCCCC',
     },
 
     icons: {
@@ -99,31 +94,9 @@ const stylesTelaLogin = StyleSheet.create({
     icones: {
         fontSize: 28,
 
-        color: '#fff',
+        color: '#CCCCCC',
     },
-    linkInscricao: {
-        color: '#fff',
-        bottom: 0,
-    },
-    linkTexto: {
-        fontWeight: 600,
-        textAlign: 'center',
-        color: '#aaa',
 
-    },
-    linkTextoSenha: {
-        color: '#605C5d',
-        textAlign: 'center',
-        fontWeight: 700,
-
-    },
-    linkTextoInscrevar: {
-        color: '#fff',
-        fontWeight: 700,
-        marginLeft: 10,
-        paddingLeft: 10,
-
-    },
 })
 
 export default stylesTelaLogin;
