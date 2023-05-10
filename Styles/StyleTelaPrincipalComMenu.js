@@ -14,12 +14,12 @@ const stylesTelaMenu = StyleSheet.create({
         marginLeft: 20,
     },
     iconLocalizacaoMenu: {
-        top: -390, alignSelf: 'center',
+        top: 390, alignSelf: 'center',
 
     },
     myLocationButton:{
         // position: 'absolute',
-        marginTop: 100,
+        marginBottom: 100,
         right: 10,
         zIndex: 9999,
 backgroundColor:'#ff0000',
@@ -58,7 +58,7 @@ backgroundColor:'#ff0000',
 
     },
     buttonCompartilharLocalizacao: {
-        top: -300,
+        marginBottom: 50,
         alignSelf: 'center',
     },
    
