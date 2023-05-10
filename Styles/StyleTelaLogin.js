@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
 
 const stylesTelaLogin = StyleSheet.create({
-  
-  
+
+
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -11,7 +11,7 @@ const stylesTelaLogin = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#113036',
   },
-  
+
   telaMain: {
 
     justifyContent: 'center',

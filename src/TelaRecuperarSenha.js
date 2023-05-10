@@ -1,8 +1,11 @@
 import {Text, TextInput, View, Image, Pressable }   from 'react-native';
-import styles from '../Styles/StyleTelaLogin';
+import { useState } from 'react'
+import styles from '../Styles/StyleTelaRecuperarSenha';
 
 
-function TelaEsqueciSenha({ navigation }) {
+function TelaRecuperarSenha({ navigation }) {
+  const [emailRecuperar, setEmailRecuperar] = useState(0);
+  
   return (
     <View style={styles.container}>
 
@@ -17,6 +20,7 @@ function TelaEsqueciSenha({ navigation }) {
       style={styles.inputTexto}
       placeholder='Email'
       placeholderTextColor='#fff'
+      keyboardType='email-address'
       />
       
      <Pressable style={styles.button}
@@ -32,13 +36,13 @@ function TelaEsqueciSenha({ navigation }) {
      
     
 </View>
-     <Pressable style={styles.linkInscricao}
+     <Pressable style={styles.linkLogin}
      onPress={() => navigation.navigate('Login')}
 
      >
      <Text style={styles.linkTexto}>
      Lembra da senha?{' '}
-      <Text style={styles.linkTextoInscrevar}>
+      <Text style={styles.linkTextoLogin}>
       Fazer Login
      </Text>
      </Text>
@@ -48,4 +52,4 @@ function TelaEsqueciSenha({ navigation }) {
   );
 }
 
-export default TelaEsqueciSenha;
+export default TelaRecuperarSenha;
