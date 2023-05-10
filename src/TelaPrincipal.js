@@ -6,6 +6,8 @@ import { StyleSheet, Text, View, TextInput, Image, Pressable, Linking, Touchable
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import styles from '../Styles/StyleTelaPrincipalComMenu';
 import { IconButton, MD3Colors } from 'react-native-paper';
+import { MaterialCommunityIcons } from 'react-native-vector-icons';
+
 
 
 
@@ -63,12 +65,32 @@ function TelaPrincipal() {
 
 
             >
-                <Marker 
-                coordinate=
-                    {{ 
-                    latitude: -9.511487, 
-                    longitude: -35.803943 
-                    }} />
+                <Marker
+                    coordinate=
+                    {{
+                        latitude: -9.511487,
+                        longitude: -35.803943
+                    }}
+                    anchor={{ x: 0.5, y: 0.5 }}
+
+                >
+                    <View style={styles.marker}>
+                        <IconButton
+                            icon="map-marker"
+                            size={65}
+                            iconColor={'#ff0000'}
+
+                            style={styles.icon}
+                        />
+                        <IconButton
+                            icon="school"
+                            size={22}
+                            iconColor={'#fff'}
+                            containerColor={'#000000'}
+                            style={styles.checkIcon}
+                        />
+                    </View>
+                </Marker>
             </MapView>
             <View style={styles.myLocationButton} onTouchEnd={handlePressMyLocation}>
                 <IconButton
@@ -81,11 +103,19 @@ function TelaPrincipal() {
             </View>
 
             <IconButton
+                style={styles.mostrarMarkerSchool}
+                icon={'school'}
+                iconColor={'#fff'}
+                containerColor={'#000'}
+                size={34}
+                onPress={() => console.log('Funcionando') + alert('Funcionando')}
+            />
+            <IconButton
                 style={styles.mostrarRotaIFAL}
                 icon={'map-marker-path'}
                 iconColor={'#fff'}
-                size={34}
                 containerColor={'#000'}
+                size={34}
                 onPress={() => console.log('Funcionando') + alert('Funcionando')}
             />
             <IconButton style={styles.buttonCompartilharLocalizacao}

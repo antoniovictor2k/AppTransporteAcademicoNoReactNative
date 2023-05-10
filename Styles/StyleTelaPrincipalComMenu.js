@@ -17,6 +17,19 @@ const stylesTelaMenu = StyleSheet.create({
         top: 390, alignSelf: 'center',
 
     },
+    marker: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    checkIcon: {
+        position: 'absolute',
+        bottom: 30,
+        // right: 18,
+
+
+    },
 
     myLocationButton: {
         position: 'absolute',
@@ -33,6 +46,12 @@ const stylesTelaMenu = StyleSheet.create({
     mostrarRotaIFAL: {
         position: 'absolute',
         bottom: 180,
+        right: 12,
+
+    },
+    mostrarMarkerSchool: {
+        position: 'absolute',
+        bottom: 240,
         right: 12,
 
     },
