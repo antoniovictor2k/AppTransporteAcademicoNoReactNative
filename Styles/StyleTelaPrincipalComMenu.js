@@ -17,13 +17,21 @@ const stylesTelaMenu = StyleSheet.create({
         top: 390, alignSelf: 'center',
 
     },
-    myLocationButton:{
-        // position: 'absolute',
-        marginBottom: 100,
+   
+    myLocationButton: {
+        position: 'absolute',
+        bottom: 100,
+        right: 50,
+       
+      },
+      myLocationButton: {
+        position: 'absolute',
+        bottom: 10,
         right: 10,
-        zIndex: 9999,
-backgroundColor:'#ff0000',
-    },
+        backgroundColor: 'white',
+        borderRadius: 5,
+        padding: 5,
+      },
     imgLogo: {
         marginTop: 45,
         width: 165,
@@ -61,7 +69,11 @@ backgroundColor:'#ff0000',
         marginBottom: 50,
         alignSelf: 'center',
     },
+
+    
    
 })
+
+
 
 export default stylesTelaMenu;

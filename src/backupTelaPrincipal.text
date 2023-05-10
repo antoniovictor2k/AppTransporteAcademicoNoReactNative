@@ -1,10 +1,10 @@
 import 'react-native-gesture-handler';
 import { useEffect, useState, useRef } from 'react';
 // import MapView from 'react-native-maps';
-import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 import * as Location from 'expo-location';
-import { StyleSheet, Text, View, TextInput, Image, Pressable, Linking, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Image, Pressable, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import styles from '../Styles/StyleTelaPrincipalComMenu';
 import { IconButton, MD3Colors } from 'react-native-paper';
@@ -14,7 +14,6 @@ import { IconButton, MD3Colors } from 'react-native-paper';
 function TelaPrincipal() {
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
-    const [initialRegion, setInitialRegion] = useState(null);
 
     useEffect(() => {
         (async () => {
@@ -45,36 +44,20 @@ function TelaPrincipal() {
         text = JSON.stringify(location);
     }
 
-    const mapRef = useRef(null);
-
-    const handlePressMyLocation = () => {
-     
-        mapRef.current.animateToRegion(location);
-    };
 
     return (
         <View style={styles.paginaMenu}>
 
 
             <MapView style={styles.mapView}
-              ref={mapRef}
+              provider={PROVIDER_GOOGLE}
                 initialRegion={location}
-                showsUserLocation={true}
-                showsMyLocationButton={false}
-                
-                
-             
-                >
-            
-            <Marker coordinate={{latitude: -23.5489, longitude: -46.6388}} />
-            </MapView>
-            <View style={styles.myLocationButton} onTouchEnd={handlePressMyLocation}>
-        <IconButton 
-        icon={'home'}
-        >
+                // showsUserLocation={true}
+            //    showsMyLocationButton={true}
+            //    myLocationButtonStyle={styles.myLocationButton}
+      
+            />
 
-        </IconButton>
-      </View>
             <IconButton style={styles.buttonCompartilharLocalizacao}
                 icon="bus-marker"
                 iconColor={'#fff'}
@@ -87,7 +70,4 @@ function TelaPrincipal() {
 
     );
 }
-
-
-
 export default TelaPrincipal;
