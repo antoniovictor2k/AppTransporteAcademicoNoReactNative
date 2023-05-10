@@ -1,7 +1,5 @@
 import { StyleSheet } from 'react-native';
 
-
-
 const stylesTelaLogin = StyleSheet.create({
 
     main: {

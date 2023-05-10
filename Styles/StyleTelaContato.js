@@ -97,6 +97,11 @@ const stylesTelaLogin = StyleSheet.create({
         color: '#CCCCCC',
     },
 
+    developer:{
+        marginTop:70,
+        marginBottom:20,
+    },
+
 })
 
 export default stylesTelaLogin;
