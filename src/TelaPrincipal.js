@@ -63,20 +63,31 @@ function TelaPrincipal() {
 
 
             >
-
-                <Marker coordinate={{ latitude: -23.5489, longitude: -46.6388 }} />
+                <Marker 
+                coordinate=
+                    {{ 
+                    latitude: -9.511487, 
+                    longitude: -35.803943 
+                    }} />
             </MapView>
             <View style={styles.myLocationButton} onTouchEnd={handlePressMyLocation}>
                 <IconButton
                     icon={'crosshairs-gps'}
                     iconColor={'#fff'}
-                    size={30}
+                    size={34}
                     containerColor={'#000'}
 
                 />
-
-
             </View>
+
+            <IconButton
+                style={styles.mostrarRotaIFAL}
+                icon={'map-marker-path'}
+                iconColor={'#fff'}
+                size={34}
+                containerColor={'#000'}
+                onPress={() => console.log('Funcionando') + alert('Funcionando')}
+            />
             <IconButton style={styles.buttonCompartilharLocalizacao}
                 icon="bus-marker"
                 iconColor={'#fff'}

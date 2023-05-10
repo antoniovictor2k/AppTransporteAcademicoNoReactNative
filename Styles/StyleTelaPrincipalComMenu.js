@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native';
 const stylesTelaMenu = StyleSheet.create({
     paginaMenu: {
         ...StyleSheet.absoluteFillObject,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
     },
 
     mapView: {
@@ -17,19 +17,25 @@ const stylesTelaMenu = StyleSheet.create({
         top: 390, alignSelf: 'center',
 
     },
-   
+
     myLocationButton: {
         position: 'absolute',
         bottom: 100,
         right: 50,
-       
-      },
-      myLocationButton: {
+
+    },
+    myLocationButton: {
         position: 'absolute',
-        bottom: 80,
-        right: 20,
-       
-      },
+        bottom: 120,
+        right: 12,
+
+    },
+    mostrarRotaIFAL: {
+        position: 'absolute',
+        bottom: 180,
+        right: 12,
+
+    },
     imgLogo: {
         marginTop: 45,
         width: 165,
@@ -68,8 +74,8 @@ const stylesTelaMenu = StyleSheet.create({
         alignSelf: 'center',
     },
 
-    
-   
+
+
 })
 
 
