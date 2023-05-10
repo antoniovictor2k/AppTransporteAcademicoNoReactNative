@@ -1,8 +1,6 @@
 import 'react-native-gesture-handler';
 import { useEffect, useState, useRef } from 'react';
-// import MapView from 'react-native-maps';
-import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
-
+import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import { StyleSheet, Text, View, TextInput, Image, Pressable, Linking, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -48,7 +46,7 @@ function TelaPrincipal() {
     const mapRef = useRef(null);
 
     const handlePressMyLocation = () => {
-     
+
         mapRef.current.animateToRegion(location);
     };
 
@@ -57,24 +55,28 @@ function TelaPrincipal() {
 
 
             <MapView style={styles.mapView}
-              ref={mapRef}
+                ref={mapRef}
                 initialRegion={location}
                 showsUserLocation={true}
                 showsMyLocationButton={false}
-                
-                
-             
-                >
-            
-            <Marker coordinate={{latitude: -23.5489, longitude: -46.6388}} />
+
+
+
+            >
+
+                <Marker coordinate={{ latitude: -23.5489, longitude: -46.6388 }} />
             </MapView>
             <View style={styles.myLocationButton} onTouchEnd={handlePressMyLocation}>
-        <IconButton 
-        icon={'home'}
-        >
+                <IconButton
+                    icon={'crosshairs-gps'}
+                    iconColor={'#fff'}
+                    size={30}
+                    containerColor={'#000'}
 
-        </IconButton>
-      </View>
+                />
+
+
+            </View>
             <IconButton style={styles.buttonCompartilharLocalizacao}
                 icon="bus-marker"
                 iconColor={'#fff'}
