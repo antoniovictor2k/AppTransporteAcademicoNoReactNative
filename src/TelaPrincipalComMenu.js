@@ -29,7 +29,7 @@ function Menu({ navigation }) {
     return (
 
         <Drawer.Navigator 
-        initialRouteName="TelaContato"
+        initialRouteName="TelaPrincipal"
         // drawerContent={TelaMenuPersonalizada}
         screenOptions={{
             drawerStyle: {

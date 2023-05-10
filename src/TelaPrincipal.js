@@ -1,6 +1,8 @@
 import 'react-native-gesture-handler';
 import { useEffect, useState, useRef } from 'react';
-import MapView from 'react-native-maps';
+// import MapView from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+
 import * as Location from 'expo-location';
 import { StyleSheet, Text, View, TextInput, Image, Pressable, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -48,9 +50,12 @@ function TelaPrincipal() {
 
 
             <MapView style={styles.mapView}
+              provider={PROVIDER_GOOGLE}
                 initialRegion={location}
                 showsUserLocation={true}
-            // loadingEnabled={true}
+               showsMyLocationButton={true}
+               myLocationButtonStyle={styles.myLocationButton}
+      
             />
 
             <IconButton style={styles.buttonCompartilharLocalizacao}

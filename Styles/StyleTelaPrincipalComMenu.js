@@ -2,16 +2,27 @@ import { StyleSheet } from 'react-native';
 
 const stylesTelaMenu = StyleSheet.create({
     paginaMenu: {
-        backgroundColor: '#113036',
+        ...StyleSheet.absoluteFillObject,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
     },
 
     mapView: {
-        height: 999,
+        ...StyleSheet.absoluteFillObject,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
         marginLeft: 20,
     },
     iconLocalizacaoMenu: {
         top: -390, alignSelf: 'center',
 
+    },
+    myLocationButton:{
+        // position: 'absolute',
+        marginTop: 100,
+        right: 10,
+        zIndex: 9999,
+backgroundColor:'#ff0000',
     },
     imgLogo: {
         marginTop: 45,
