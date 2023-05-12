@@ -9,8 +9,11 @@ import TelaPrincipal from './TelaPrincipal';
 import TelaSobre from './TelaSobre'
 import TelaContato from './TelaContato';
 import TelaConfiguracao from './TelaConfiguracao';
+import TelaTesteCamera  from './TelaTesteCamera'
 // import TelaMenuPersonalizada from './TelaMenuPersonalizada';
 import styles from '../Styles/StyleTelaPrincipalComMenu';
+
+
 
 // Em TEste
 
@@ -29,7 +32,7 @@ function Menu({ navigation }) {
     return (
 
         <Drawer.Navigator 
-        initialRouteName="TelaSobre"
+        initialRouteName="TelaPrincipal"
         // drawerContent={TelaMenuPersonalizada}
         screenOptions={{
             drawerStyle: {
@@ -102,6 +105,7 @@ function Menu({ navigation }) {
                 }
 
             />
+         
         </Drawer.Navigator>
 
     )

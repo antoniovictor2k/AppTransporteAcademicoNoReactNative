@@ -90,22 +90,17 @@ const stylesTelaCadastro = StyleSheet.create({
     marginLeft: 5,
   },
   checkboxContainer: {
-    // marginLeft:55,
     width: 300,
     flexDirection: 'row',
     marginBottom: 0,
-    // border:'solid #fff',
-
   },
   checkbox: {
     alignSelf: 'center',
   },
   label: {
     color: '#eee',
-    // textAlign:'center',
     fontWeight: 500,
     margin: 4,
-
   },
   linkExterno: {
     fontWeight: 700,
