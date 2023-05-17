@@ -3,14 +3,14 @@ import { StyleSheet, Text, View, TextInput, Image, Pressable, Linking } from 're
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator, DrawerContentScrollView } from '@react-navigation/drawer';
+import MapViewDirections from 'react-native-maps-directions';
+
 
 // Imports de Telas 
 import TelaPrincipal from './TelaPrincipal';
 import TelaSobre from './TelaSobre'
 import TelaContato from './TelaContato';
 import TelaConfiguracao from './TelaConfiguracao';
-import TelaTesteCamera  from './TelaTesteCamera'
-// import TelaMenuPersonalizada from './TelaMenuPersonalizada';
 import styles from '../Styles/StyleTelaPrincipalComMenu';
 
 

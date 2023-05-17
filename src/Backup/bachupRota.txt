@@ -9,7 +9,6 @@ import { IconButton, MD3Colors } from 'react-native-paper';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
 import MapViewDirections from 'react-native-maps-directions';
 
-const GOOGLE_MAPS_APIKEY = 'AIzaSyBRMU4LkxXu-mcV8mtB-p0R5jBR0V1iWI8';
 
 
 
@@ -18,23 +17,19 @@ function TelaPrincipal() {
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
     const [initialRegion, setInitialRegion] = useState(null);
-    const [showRoute, setShowRoute] = useState(false);
     const [destination, setDestination] = useState({
         latitude: -9.511487,
         longitude: -35.803943
       });
 
       const [region, setRegion] = useState({
-        latitude: -9.511487,
-        longitude: -35.803943,
-        latitudeDelta: 0.0622,
-        longitudeDelta: 0.01921,
+        latitude:  -9.571835,
+        longitude:   -35.773584,
+        latitudeDelta: 0.05,
+        longitudeDelta: 0.05,
       });
 
-      const handleShowRoute = () => {
-        setShowRoute(true);
-      };
-
+      const GOOGLE_MAPS_APIKEY = 'AIzaSyBRMU4LkxXu-mcV8mtB-p0R5jBR0V1iWI8';
 
 
 
@@ -73,10 +68,6 @@ function TelaPrincipal() {
 
         mapRef.current.animateToRegion(location);
     };
-    const localicacaoIFALRioLargo = () => {
-
-        mapRef.current.animateToRegion(region);
-    };
 
     return (
         <View style={styles.paginaMenu}>
@@ -92,8 +83,13 @@ function TelaPrincipal() {
 
             >
                 <Marker
-                    coordinate={region}
+                    coordinate=
+                    {{
+                        latitude: -9.511487,
+                        longitude: -35.803943
+                    }}
                     anchor={{ x: 0.5, y: 0.5 }}
+
                 >
                     <View style={styles.marker}>
                         <IconButton
@@ -112,16 +108,13 @@ function TelaPrincipal() {
                         />
                     </View>
                 </Marker>
-         
-                {showRoute && (
             <MapViewDirections
-            origin={location}
+            origin={region}
             destination={destination}
             apikey={GOOGLE_MAPS_APIKEY}
-            strokeWidth={6}
-            strokeColor="green"
-            />
-            )}
+            strokeWidth={3}
+            strokeColor="hotpink"
+          />
             </MapView>
             <View style={styles.myLocationButton} onTouchEnd={handlePressMyLocation}>
                 <IconButton
@@ -139,7 +132,7 @@ function TelaPrincipal() {
                 iconColor={'#fff'}
                 containerColor={'#000'}
                 size={34}
-                onTouchEnd={localicacaoIFALRioLargo}
+                onPress={() => console.log('Funcionando') + alert('Funcionando')}
             />
             <IconButton
                 style={styles.mostrarRotaIFAL}
@@ -154,8 +147,7 @@ function TelaPrincipal() {
                 iconColor={'#fff'}
                 size={55}
                 containerColor={'#000'}
-                onPress={handleShowRoute}
-               
+                onPress={() => console.log('Funcionando') + alert('Funcionando')}
             />
 
         </View>
