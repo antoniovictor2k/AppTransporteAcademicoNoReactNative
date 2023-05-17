@@ -22,18 +22,18 @@ function TelaPrincipal() {
     const [destination, setDestination] = useState({
         latitude: -9.511487,
         longitude: -35.803943
-      });
+    });
 
-      const [region, setRegion] = useState({
+    const [region, setRegion] = useState({
         latitude: -9.511487,
         longitude: -35.803943,
         latitudeDelta: 0.0622,
         longitudeDelta: 0.01921,
-      });
+    });
 
-      const handleShowRoute = () => {
+    const handleShowRoute = () => {
         setShowRoute(true);
-      };
+    };
 
 
 
@@ -112,16 +112,16 @@ function TelaPrincipal() {
                         />
                     </View>
                 </Marker>
-         
+
                 {showRoute && (
-            <MapViewDirections
-            origin={location}
-            destination={destination}
-            apikey={GOOGLE_MAPS_APIKEY}
-            strokeWidth={6}
-            strokeColor="green"
-            />
-            )}
+                    <MapViewDirections
+                        origin={location}
+                        destination={destination}
+                        apikey={GOOGLE_MAPS_APIKEY}
+                        strokeWidth={6}
+                        strokeColor="green"
+                    />
+                )}
             </MapView>
             <View style={styles.myLocationButton} onTouchEnd={handlePressMyLocation}>
                 <IconButton
@@ -155,7 +155,7 @@ function TelaPrincipal() {
                 size={55}
                 containerColor={'#000'}
                 onPress={handleShowRoute}
-               
+
             />
 
         </View>
