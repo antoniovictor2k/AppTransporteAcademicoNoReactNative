@@ -2,30 +2,50 @@ import 'react-native-gesture-handler';
 import { useEffect, useState, useRef } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
-// import * as Location from 'expo-location';
-import { View } from 'react-native';
-import { IconButton } from 'react-native-paper';
+import {View} from 'react-native';
+import { IconButton} from 'react-native-paper';
 import MapViewDirections from 'react-native-maps-directions';
 import styles from '../Styles/StyleTelaPrincipalComMenu';
 
 const GOOGLE_MAPS_APIKEY = 'AIzaSyBRMU4LkxXu-mcV8mtB-p0R5jBR0V1iWI8';
 
 
+
+
 function TelaPrincipal() {
-    const [localizacao, setLocalizacao] = useState(null);
+    const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
-    const [mostrarRota, setMostrarRota] = useState(false);
+    const [initialRegion, setInitialRegion] = useState(null);
+    const [showRoute, setShowRoute] = useState(false);
     const [compartilharBus, setCompartilharBus] = useState(false);
-    const [destinoIFALRioLargo, setDestinoIFALRioLargo] = useState({
-        latitude: -9.511487, longitude: -35.803943, latitudeDelta: 0.0622, longitudeDelta: 0.01921,
+    const [destination, setDestination] = useState({
+        latitude: -9.511487,
+        longitude: -35.803943
     });
 
-    const ativarMostrarRota = () => {
-        { localizacao && mostrarRota === false ? setMostrarRota(true) : setMostrarRota(false) }
+    const [region, setRegion] = useState({
+        latitude: -9.511487,
+        longitude: -35.803943,
+        latitudeDelta: 0.0622,
+        longitudeDelta: 0.01921,
+    });
+
+    const handleShowRoute = () => {
+        if (showRoute === false)
+        {
+            setShowRoute(true);
+        }
+        else {
+            setShowRoute(false);
+        }
+
     };
     const ativarCompartilharBus = () => {
-        compartilharBus === false ? setCompartilharBus(true) : setCompartilharBus(false)
+         compartilharBus === false ? setCompartilharBus(true) : setCompartilharBus(false)
     };
+
+
+
 
     useEffect(() => {
         (async () => {
@@ -36,11 +56,11 @@ function TelaPrincipal() {
                 return;
             }
 
-            let localizacao = await Location.getCurrentPositionAsync({});
-            setLocalizacao(localizacao);
-            setLocalizacao({
-                latitude: localizacao.coords.latitude,
-                longitude: localizacao.coords.longitude,
+            let location = await Location.getCurrentPositionAsync({});
+            setLocation(location);
+            setLocation({
+                latitude: location.coords.latitude,
+                longitude: location.coords.longitude,
                 latitudeDelta: 0.0622,
                 longitudeDelta: 0.01921,
             })
@@ -52,30 +72,36 @@ function TelaPrincipal() {
     let text = 'Esperando...';
     if (errorMsg) {
         text = errorMsg;
-    } else if (localizacao) {
-        text = JSON.stringify(localizacao);
+    } else if (location) {
+        text = JSON.stringify(location);
     }
 
     const mapRef = useRef(null);
 
-    const localicacaoAtual = () => {
-        mapRef.current.animateToRegion(localizacao)
+    const handlePressMyLocation = () => {
+
+        mapRef.current.animateToRegion(location);
     };
     const localicacaoIFALRioLargo = () => {
-        mapRef.current.animateToRegion(destinoIFALRioLargo)
+
+        mapRef.current.animateToRegion(region);
     };
 
     return (
         <View style={styles.paginaMenu}>
 
+
             <MapView style={styles.mapView}
                 ref={mapRef}
-                initialRegion={localizacao}
+                initialRegion={location}
                 showsUserLocation={true}
                 showsMyLocationButton={false}
+
+
+
             >
                 <Marker
-                    coordinate={destinoIFALRioLargo}
+                    coordinate={region}
                     anchor={{ x: 0.5, y: 0.5 }}
                 >
                     <View style={styles.marker}>
@@ -97,37 +123,38 @@ function TelaPrincipal() {
                 </Marker>
 
                 {compartilharBus &&
-                    <Marker coordinate={localizacao}
+                    <Marker coordinate={location}
                         anchor={{ x: 0.5, y: 0.5 }}
                     >
                         <IconButton
                             icon="bus"
-                            size={38}
-                            iconColor={'#FCEA0D'}
-                            containerColor={'#303030'}
+                            size={50}
+                            iconColor={'#000'}
+                            // containerColor={'#000000'}
 
                         />
                     </Marker>
                 }
 
-                {mostrarRota &&
-                    <MapViewDirections
-                        origin={localizacao}
-                        destination={destinoIFALRioLargo}
+                {showRoute && (
+                 
+                 
+                 <MapViewDirections
+                        origin={location}
+                        destination={destination}
                         apikey={GOOGLE_MAPS_APIKEY}
                         strokeWidth={6}
                         strokeColor="green"
                     />
-                }
-
+                )}
             </MapView>
-
-            <View style={styles.myLocationButton} onTouchEnd={localicacaoAtual}>
+            <View style={styles.myLocationButton} onTouchEnd={handlePressMyLocation}>
                 <IconButton
                     icon={'crosshairs-gps'}
                     iconColor={'#fff'}
                     size={34}
                     containerColor={'#000'}
+
                 />
             </View>
 
@@ -138,14 +165,14 @@ function TelaPrincipal() {
                 containerColor={'#000'}
                 size={34}
                 onTouchEnd={localicacaoIFALRioLargo}
-            />
+                />
             <IconButton
                 style={styles.mostrarRotaIFAL}
                 icon={'map-marker-path'}
                 iconColor={'#fff'}
                 containerColor={'#000'}
                 size={34}
-                onTouchEnd={ativarMostrarRota}
+                onTouchEnd={handleShowRoute}
             />
             <IconButton style={styles.buttonCompartilharLocalizacao}
                 icon="bus-marker"
@@ -153,10 +180,14 @@ function TelaPrincipal() {
                 size={55}
                 containerColor={'#000'}
                 onPress={ativarCompartilharBus}
+
             />
 
         </View>
+
     );
 }
+
+
 
 export default TelaPrincipal;
