@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import { useEffect, useState, useRef } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
 import { View, Alert } from 'react-native';
 import { IconButton } from 'react-native-paper';
 import MapViewDirections from 'react-native-maps-directions';
@@ -23,36 +24,16 @@ function TelaPrincipal() {
         { localizacao && mostrarRota === false ? setMostrarRota(true) : setMostrarRota(false) }
     };
     const ativarCompartilharBus = () => {
-        if(localizacao ===null) {
-         
-            Alert.alert(
-                'Verifique se o GPS esta ligado',
-                'Impossivel compartilha sua localização.',
-                [
-                  {
-                    text: 'Cancelar',
-                    style: 'cancel',
-                  },
-                  {
-                    text: 'Ativar GPS',
-                  
-                  },
-                ],
-                
-              );
-            return;
-        }
         compartilharBus === false ? setCompartilharBus(true) : setCompartilharBus(false)
     };
 
     useEffect(() => {
         (async () => {
 
-            let { granted  } = await Location.requestForegroundPermissionsAsync();
-            if (!granted) {
+            let { status } = await Location.requestForegroundPermissionsAsync();
+            if (status !== 'granted') {
                 setErrorMsg('A permissão para acessar o local foi negada');
-
-                alert("A permissão para acessar o local foi negada")
+                
                 return;
             }
             let localizacao = await Location.getCurrentPositionAsync({});
@@ -69,6 +50,8 @@ function TelaPrincipal() {
 
         })();
     }, []);
+
+   
 
     const mapRef = useRef(null);
 
