@@ -102,7 +102,7 @@ const StyleTelaConfiguracao = StyleSheet.create({
         color: '#fff',
         backgroundColor: '#000',
         borderRadius: 10,
-        marginBottom: 0,
+        marginBottom: 60,
         marginTop: 5,
     },
     buttonDelete: {
