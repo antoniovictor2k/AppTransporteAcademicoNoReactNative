@@ -31,7 +31,7 @@ function TelaLogin({ navigation }) {
 
         />
         <Pressable style={styles.button}
-          onPress={() => navigation.navigate('TelaPrincipal')}
+          onPress={() => navigation.navigate('TelaPrincipalComMenu')}
         >
           <Text style={styles.textoButton}>
             Entrar

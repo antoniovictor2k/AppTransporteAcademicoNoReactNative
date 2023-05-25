@@ -15,7 +15,7 @@ function NavegacaoTelas() {
     <Stack.Navigator initialRouteName="Login">
       <Stack.Screen name="Login" options={{ headerShown: false }} component={TelaDeLogin} />
       <Stack.Screen name="Cadastro" options={{ headerShown: false }} component={TelaDeCadastro} />
-      <Stack.Screen name="TelaPrincipal" options={{ headerShown: false }} component={TelaPrincipalComMenu} />
+      <Stack.Screen name="TelaPrincipalComMenu" options={{ headerShown: false }} component={TelaPrincipalComMenu} />
       <Stack.Screen name="RecuperarSenha" options={{ headerShown: false }} component={TelaRecuperarSenha} />
       {/* <Stack.Screen name="Principal" options={{headerShown:false}} component={TelaPrincipal} /> */}
     </Stack.Navigator>

@@ -162,6 +162,7 @@ const StyleTelaConfiguracao = StyleSheet.create({
     developer: {
         marginTop: 70,
         marginBottom: 20,
+        color:'#cccccc',
     },
 
 
