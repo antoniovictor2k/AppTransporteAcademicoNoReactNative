@@ -5,6 +5,7 @@ const stylesTelaMenu = StyleSheet.create({
         ...StyleSheet.absoluteFillObject,
         justifyContent: 'flex-end',
         alignItems: 'center',
+        backgroundColor:'#113036',
     },
 
     mapView: {
