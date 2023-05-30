@@ -5,15 +5,18 @@ const stylesTelaCadastro = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     textAlign: 'center',
-    justifyItems: 'center',
-    alignItems: 'center',
+    // justifyItems: 'center',
+    // alignItems: 'center',
     backgroundColor: '#113036',
+ 
   },
   telaMain: {
 
     alignItems: 'center',
     flex: 1,
     color: '#fff',
+    zIndex:999,
+   
   },
   imgLogo: {
     marginTop: 75,
@@ -28,6 +31,7 @@ const stylesTelaCadastro = StyleSheet.create({
   },
   campoinputNomes: {
     flexDirection: 'row',
+    zIndex:999,
   },
   inputTextoNome: {
     height: 50,
@@ -63,6 +67,7 @@ const stylesTelaCadastro = StyleSheet.create({
     backgroundColor: '#000',
     borderRadius: 10,
     marginTop: 50,
+  
 
   },
   textoButton: {

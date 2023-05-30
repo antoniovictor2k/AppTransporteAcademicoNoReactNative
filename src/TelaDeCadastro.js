@@ -1,33 +1,40 @@
-import { useState } from 'react';
-import { Text, TextInput, View, Image, Pressable, Linking } from 'react-native';
+import react, { useState, useContext } from 'react';
+import { Text, TextInput, View, Image, Pressable, Linking, ScrollView, } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { Checkbox } from 'react-native-paper';
+import { Checkbox, Dialog, Portal, Provider, Button } from 'react-native-paper';
 import styles from '../Styles/StyleTelaCadastro';
+import TelaTermosDeUso from './TelaTermosDeUso'
 
 
 
 function TelaCadastro({ navigation }) {
+
   const [checked, setChecked] = useState(false);
   const [nome, setNome] = useState('');
   const [sobrenome, setSobrenome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [confirmarSenha, setConfirmarSenha] = useState('');
+  const [visivel, setVisivel] = useState(false);
+
+  const ativaVisibilidade = () =>
+    visivel === true ? setVisivel(false) : setVisivel(true);
+
+
 
   return (
-
     <View style={styles.container}>
-
-      <Image
-        style={styles.imgLogo}
-        source={require('../assets/logoMarcaLogin.png')}
-      />
 
 
       <View style={styles.telaMain}>
+        <Image
+          style={styles.imgLogo}
+          source={require('../assets/logoMarcaLogin.png')}
+        />
 
-        {/* inicio KeyboardAwareScrollView */}
-        <KeyboardAwareScrollView
+
+
+        <View
           enableOnAndroid={true}>
           <View style={styles.campoinputNomes}>
             <TextInput
@@ -81,10 +88,7 @@ function TelaCadastro({ navigation }) {
             <Text style={styles.label}>
               Li e concordo com os{' '}
               <Text style={styles.linkExterno}
-                onPress={() => {
-                  Linking.openURL('https://geolocalizacateste.netlify.app/paginas/termo_de_uso');
-                }}
-
+                onPress={() => navigation.navigate('TermosDeUso')}
               >
                 Termos de uso{' '}
               </Text>
@@ -92,14 +96,13 @@ function TelaCadastro({ navigation }) {
                 e de{' '}
               </Text>
               <Text style={styles.linkExterno}
-                onPress={() => {
-                  Linking.openURL('https://geolocalizacateste.netlify.app/paginas/politica_de_privacidade');
-                }}
+                onPress={() => navigation.navigate('TermosDePrivacidade')}
               >
                 Privacidade.
               </Text>
 
             </Text>
+
 
           </View>
 
@@ -124,8 +127,11 @@ function TelaCadastro({ navigation }) {
               </Text>
             </Text>
           </Pressable>
-        </ KeyboardAwareScrollView>
-        {/* fim teste */}
+        </ View>
+
+
+
+
       </View>
 
 
