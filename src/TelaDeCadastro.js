@@ -1,11 +1,7 @@
-import react, { useState, useContext } from 'react';
-import { Text, TextInput, View, Image, Pressable, Linking, ScrollView, } from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { Checkbox, Dialog, Portal, Provider, Button } from 'react-native-paper';
+import react, { useState, } from 'react';
+import { View, Image, Pressable, Text, Alert } from 'react-native';
+import { Checkbox, Button, TextInput, } from 'react-native-paper';
 import styles from '../Styles/StyleTelaCadastro';
-import TelaTermosDeUso from './TelaTermosDeUso'
-
-
 
 function TelaCadastro({ navigation }) {
 
@@ -20,11 +16,8 @@ function TelaCadastro({ navigation }) {
   const ativaVisibilidade = () =>
     visivel === true ? setVisivel(false) : setVisivel(true);
 
-
-
   return (
     <View style={styles.container}>
-
 
       <View style={styles.telaMain}>
         <Image
@@ -32,49 +25,57 @@ function TelaCadastro({ navigation }) {
           source={require('../assets/logoMarcaLogin.png')}
         />
 
-
-
         <View
           enableOnAndroid={true}>
           <View style={styles.campoinputNomes}>
             <TextInput
-              style={styles.inputTextoNome}
-              placeholder='Nome'
+              mode='outlined'
+              label='Nome'
               placeholderTextColor='#fff'
-
-
+              activeOutlineColor='#fff'
+              right={<TextInput.Icon icon="text" />}
+              style={styles.inputTextoNome}
             />
             <TextInput
-              style={styles.inputTextoSobrenome}
-              placeholder='Sobrenome'
+              mode='outlined'
+              label='Sobrenome'
               placeholderTextColor='#fff'
-
-
+              activeOutlineColor='#fff'
+              right={<TextInput.Icon icon="text" />}
+              style={styles.inputTextoSobrenome}
             />
           </View>
 
           <TextInput
-            style={styles.inputTexto}
+            mode='outlined'
             keyboardType='email-address'
-            placeholder='Email'
+            label='Email'
             placeholderTextColor='#fff'
-
-
-          />
-          <TextInput
+            activeOutlineColor='#fff'
+            right={<TextInput.Icon icon="email" />}
             style={styles.inputTexto}
-            placeholder='Senha'
-            placeholderTextColor='#fff'
-
-
           />
+          
           <TextInput
-            style={styles.inputTexto}
-            placeholder='Confirmar senha'
+            mode='outlined'
+            label='Senha'
             placeholderTextColor='#fff'
-
-
+            activeOutlineColor='#fff'
+            secureTextEntry
+            right={<TextInput.Icon icon="lock" />}
+            style={styles.inputTexto}
           />
+
+          <TextInput
+            mode='outlined'
+            label='Confirmar senha'
+            placeholderTextColor='#fff'
+            activeOutlineColor='#fff'
+            secureTextEntry
+            right={<TextInput.Icon icon="lock" />}
+            style={styles.inputTexto}
+          />
+
           <View style={styles.checkboxContainer}>
 
             <Checkbox
@@ -83,7 +84,6 @@ function TelaCadastro({ navigation }) {
                 setChecked(!checked);
               }}
             />
-
 
             <Text style={styles.label}>
               Li e concordo com os{' '}
@@ -100,22 +100,30 @@ function TelaCadastro({ navigation }) {
               >
                 Privacidade.
               </Text>
-
             </Text>
-
 
           </View>
 
-          <Pressable style={styles.button}
-            onPress={() => alert('link indisponível, acessar através do link (Fazer Login), na parte inferior da tela.')}
+          <Button style={styles.button}
+            onPress={() =>
+              Alert.alert(
+                'Aviso',
+                'link indisponível, acessar através do link (Fazer Login), na parte inferior da tela.',
+                [
+                  {
+                    text: 'Ok',
+                    style: 'cancel'
+                  }
+                ]
+              )}
+            icon={'account-plus'}
+            buttonColor='#fff'
+            textColor='#fff'
           >
             <Text style={styles.textoButton}>
               Cadastrar-se
             </Text>
-          </Pressable>
-
-
-
+          </Button>
 
           <Pressable style={styles.linkLogin}
             onPress={() => navigation.navigate('Login')}

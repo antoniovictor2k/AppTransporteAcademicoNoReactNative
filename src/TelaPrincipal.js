@@ -3,15 +3,18 @@ import { useEffect, useState, useRef } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import { View, Alert } from 'react-native';
-import { IconButton } from 'react-native-paper';
+import { IconButton, Text, ActivityIndicator } from 'react-native-paper';
 import MapViewDirections from 'react-native-maps-directions';
 import styles from '../Styles/StyleTelaPrincipalComMenu';
+import TelaCarregando from './TelaCarregando';
+import { set } from 'react-native-reanimated';
 
 const GOOGLE_MAPS_APIKEY = 'AIzaSyBRMU4LkxXu-mcV8mtB-p0R5jBR0V1iWI8';
 
 
 function TelaPrincipal() {
     const [localizacao, setLocalizacao] = useState(null);
+    const [carregando, setCarregando] = useState(false);
     const [errorMsg, setErrorMsg] = useState(null);
     const [mostrarRota, setMostrarRota] = useState(false);
     const [compartilharBus, setCompartilharBus] = useState(false);
@@ -21,34 +24,36 @@ function TelaPrincipal() {
 
     const ativarMostrarRota = () => {
         { localizacao && mostrarRota === false ? setMostrarRota(true) : setMostrarRota(false) }
+
     };
     const ativarCompartilharBus = () => {
-        if(localizacao ===null) {
-         
+        if (localizacao === null) {
+
             Alert.alert(
                 'Verifique se o GPS esta ligado',
                 'Impossivel compartilha sua localização.',
                 [
-                  {
-                    text: 'Cancelar',
-                    style: 'cancel',
-                  },
-                  {
-                    text: 'Ativar GPS',
-                  
-                  },
+                    {
+                        text: 'Cancelar',
+                        style: 'cancel',
+                    },
+                    {
+                        text: 'Ativar GPS',
+
+                    },
                 ],
-                
-              );
+
+            );
             return;
         }
-        compartilharBus === false ? setCompartilharBus(true) : setCompartilharBus(false)
+        compartilharBus === false ? setCompartilharBus(true) : setCompartilharBus(false);
+
     };
 
     useEffect(() => {
         (async () => {
 
-            let { granted  } = await Location.requestForegroundPermissionsAsync();
+            let { granted } = await Location.requestForegroundPermissionsAsync();
             if (!granted) {
                 setErrorMsg('A permissão para acessar o local foi negada');
 
@@ -57,31 +62,82 @@ function TelaPrincipal() {
             }
             let localizacao = await Location.getCurrentPositionAsync({});
 
-            {MapView &&
-    setLocalizacao(localizacao);
-    setLocalizacao({
-        latitude: localizacao.coords.latitude,
-        longitude: localizacao.coords.longitude,
-        latitudeDelta: 0.0622,
-        longitudeDelta: 0.01921,
-    })
-}
+            {
+                MapView &&
+                    setLocalizacao(localizacao);
+                setLocalizacao({
+                    latitude: localizacao.coords.latitude,
+                    longitude: localizacao.coords.longitude,
+                    latitudeDelta: 0.0622,
+                    longitudeDelta: 0.01921,
+                })
+            }
 
-        })();
+        }
+
+        )
+
+            ();
+
     }, []);
 
     const mapRef = useRef(null);
 
     const localicacaoAtual = () => {
-        mapRef.current.animateToRegion(localizacao)
+        mapRef.current.animateToRegion(localizacao);
+
     };
     const localicacaoIFALRioLargo = () => {
-        mapRef.current.animateToRegion(destinoIFALRioLargo)
+        mapRef.current.animateToRegion(destinoIFALRioLargo);
+
     };
 
+
+
+    // const ativarCarregado = ()=>{
+    //     localizacao === null ? setCarregando(true) : setCarregando(false);
+    // }
+
+    // if(localizacao === null){
+    //     useEffect(() => {
+    //         // Exibir o Alert quando o componente for montado
+    //         Alert.alert(
+    //           'GPS desligado',
+    //           'Para continuar, o GPS deve estar ativado!',
+    //           [
+    //             {
+    //               text: 'OK',
+    //               onPress: () => console.log('OK Pressionado')
+    //             }
+    //           ],
+    //           { cancelable: false }
+    //         );
+    //       }, []);
+
+    //     return (
+
+    //         <View style={styles.paginaMenu} >
+    //     <Text>
+
+    //     Para Continuar
+    //     </Text>
+
+    // <TelaCarregando />
+
+    //         </View>
+    //     );
+    // }
+    if (carregando === true) {
+
+        return (
+            <View style={styles.paginaMenu}>
+                <TelaCarregando />
+                <Text>Por favor liga o GPS para continuar</Text>
+            </View>
+        );
+    }
     return (
         <View style={styles.paginaMenu}>
-
             <MapView style={styles.mapView}
                 ref={mapRef}
                 initialRegion={localizacao}
@@ -123,7 +179,7 @@ function TelaPrincipal() {
                         />
                     </Marker>
                 }
-
+                {/* validade do google vencinda por isso não estou conseguindo a rota */}
                 {mostrarRota &&
                     <MapViewDirections
                         origin={localizacao}
@@ -144,14 +200,14 @@ function TelaPrincipal() {
                 size={34}
                 onTouchEnd={localicacaoIFALRioLargo}
             />
-                <IconButton
+            <IconButton
                 style={styles.myLocationButton}
-                    icon={'crosshairs-gps'}
-                    iconColor={'#fff'}
-                    size={34}
-                    containerColor={'#000'}
-                    onTouchEnd={localicacaoAtual}
-                />
+                icon={'crosshairs-gps'}
+                iconColor={'#fff'}
+                size={34}
+                containerColor={'#000'}
+                onTouchEnd={localicacaoAtual}
+            />
             <IconButton
                 style={styles.mostrarRotaIFAL}
                 icon={'map-marker-path'}
@@ -166,9 +222,11 @@ function TelaPrincipal() {
                 size={55}
                 containerColor={'#000'}
                 onPress={ativarCompartilharBus}
+
             />
 
         </View>
+
     );
 }
 

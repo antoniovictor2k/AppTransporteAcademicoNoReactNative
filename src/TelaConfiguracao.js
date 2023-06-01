@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TextInput, Image, Pressable, Linking, ScrollView, Button } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import React, { useState, } from 'react';
+import { Text, View, Pressable, Linking, ScrollView, } from 'react-native';
 import styles from '../Styles/StyleTelaConfiguracao';
-import { IconButton, MD3Colors, Checkbox } from 'react-native-paper';
-import * as ImagePicker from 'expo-image-picker';
-
+import { Checkbox, Button, TextInput, } from 'react-native-paper';
 
 
 function TelaConfiguracao() {
@@ -28,79 +25,101 @@ function TelaConfiguracao() {
                 <Text style={styles.sobTitulo} >Alterar email</Text>
 
                 <TextInput
-                    style={styles.inputTexto}
                     keyboardType='email-address'
-                    placeholder='Email'
-                    placeholderTextColor='#fff'
+                    label={'Email'}
+                    mode='outlined'
+                    right={<TextInput.Icon icon="email" />}
+                    textColor='#fff'
+                    activeOutlineColor='#fff'
+                    style={styles.inputTexto}
                 />
-                <Pressable style={styles.button}
+                <Button style={styles.button}
                     onPress={() => alert('link indisponível, acessar através do link (Fazer Login), na parte inferior da tela.')}
-                >
+               icon={'update'}
+               textColor='#fff'
+               >
                     <Text style={styles.textoButton}>
                         Confirmar alteração
                     </Text>
-                </Pressable>
+                </Button>
                 <Text style={styles.sobTitulo}  >Alterar senha</Text>
 
                 <TextInput
+                    label={'Senha'}
+                    secureTextEntry
+                    mode='outlined'
+                    right={<TextInput.Icon icon="lock" />}
+                    textColor='#fff'
+                    activeOutlineColor='#fff'
                     style={styles.inputTexto}
-
-                    placeholder='Senha'
-                    placeholderTextColor='#fff'
                 />
-                <Pressable style={styles.button}
+                <Button style={styles.button}
                     onPress={() => alert('link indisponível, acessar através do link (Fazer Login), na parte inferior da tela.')}
-                >
+                    icon={'update'}
+                    textColor='#fff'
+               >
                     <Text style={styles.textoButton}>
                         Confirmar alteração
                     </Text>
-                </Pressable>
+                </Button>
                 <Text style={styles.sobTitulo}  >Alterar nome e sobrenome</Text>
                 <View style={styles.campoinputNomes}>
                     <TextInput
+                        label={'Nome'}
+                        mode='outlined'
+                        right={<TextInput.Icon icon="text" />}
+                        textColor='#fff'
+                        activeOutlineColor='#fff'
                         style={styles.inputTextoNome}
-                        placeholder='Nome'
-                        placeholderTextColor='#fff'
                     />
 
                     <TextInput
+                        label={'Sobrenome'}
+                        mode='outlined'
+                        right={<TextInput.Icon icon="text" />}
+                        textColor='#fff'
+                        activeOutlineColor='#fff'
                         style={styles.inputTextoSobrenome}
-                        placeholder='Sobrenome'
-                        placeholderTextColor='#fff'
-
-
                     />
                 </View>
-                <Pressable style={styles.button}
+                <Button style={styles.button}
                     onPress={() => alert('link indisponível, acessar através do link (Fazer Login), na parte inferior da tela.')}
+                    icon={'update'}
+                    textColor='#fff'
                 >
                     <Text style={styles.textoButton}>
                         Confirmar alteração
                     </Text>
-                </Pressable>
+                </Button>
                 <Text style={styles.sobTitulo}  >Reportar erro</Text>
 
                 <TextInput
+                    label={'Descreva o ocorrido...'}
+                    mode='outlined'
+                    right={<TextInput.Icon icon="file" />}
+                    textColor='#fff'
+                    activeOutlineColor='#fff'
                     style={styles.inputTextoDescricao}
-                    placeholder='Descreva o ocorrido...'
-                    placeholderTextColor='#fff'
                 />
 
-
-                <Pressable style={styles.button}
+                <Button style={styles.button}
                     onPress={() => alert('link indisponível, acessar através do link (Fazer Login), na parte inferior da tela.')}
+                    icon={'alert-circle'}
+                    textColor='#fff'
                 >
                     <Text style={styles.textoButton}>
                         Enviar
                     </Text>
-                </Pressable>
+                </Button>
                 <Text style={styles.sobTitulo}  >Deletar conta</Text>
 
                 <TextInput
+                    label={'Por qual motivo deseja excluir sua conta?'}
+                    mode='outlined'
+                    right={<TextInput.Icon icon="file" />}
+                    textColor='#fff'
+                    activeOutlineColor='#fff'
                     style={styles.inputTextoDescricao}
-
-                    placeholder='Por qual motivo deseja excluir sua conta?'
-                    placeholderTextColor='#fff'
                 />
                 <View style={styles.checkboxContainer}>
 
@@ -117,13 +136,15 @@ function TelaConfiguracao() {
                     </Text>
 
                 </View>
-                <Pressable style={styles.buttonDelete}
+                <Button style={styles.buttonDelete}
                     onPress={() => alert('link indisponível, acessar através do link (Fazer Login), na parte inferior da tela.')}
+                    icon={'delete-circle'}
+                    textColor='#000'
                 >
                     <Text style={styles.textoButtonDelete}>
                         Excluir conta
                     </Text>
-                </Pressable>
+                </Button>
 
 
 

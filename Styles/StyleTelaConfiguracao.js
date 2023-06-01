@@ -23,19 +23,15 @@ const StyleTelaConfiguracao = StyleSheet.create({
         color: '#fff',
         alignItems: 'center',
         textAlign: 'center',
-
-
     },
     sobTitulo: {
         marginTop: 30,
-        marginBottom: 8,
+        marginBottom: 1,
         fontSize: 24,
         fontWeight: 700,
         color: '#fff',
         alignItems: 'center',
         textAlign: 'center',
-
-
     },
     textoPadrao: {
         marginTop: 16,
@@ -45,23 +41,20 @@ const StyleTelaConfiguracao = StyleSheet.create({
         width: 330,
         alignItems: 'center',
         textAlign: 'justify',
-
-
     },
     campoinputNomes: {
         flexDirection: 'row',
     },
     inputTexto: {
-        height: 50,
+        height: 45,
         width: 350,
-        padding: 10,
-        margin: 5,
+        padding: 0,
+        margin: 1,
         color: '#fff',
-        backgroundColor: 'rgba(204, 204, 204, 0.3)',
-        borderRadius: 10,
+        backgroundColor: '#416169',
+        borderRadius: 6,
     },
     inputTextoDescricao: {
-
         height: 120,
         width: 350,
         paddingLeft: 10,
@@ -72,61 +65,61 @@ const StyleTelaConfiguracao = StyleSheet.create({
         borderRadius: 10,
     },
     inputTextoNome: {
-        height: 50,
+        height: 45,
         width: 170,
-        padding: 10,
-        margin: 5,
+        padding: 0,
+        marginRight: 3,
+        margin: 1,
         color: '#fff',
-        backgroundColor: 'rgba(204, 204, 204, 0.3)',
-        borderRadius: 10,
+        backgroundColor: '#416169',
+        borderRadius: 6,
     },
     inputTextoSobrenome: {
-        height: 50,
+        height: 45,
         width: 170,
-        padding: 10,
-        margin: 5,
+        padding: 0,
+        marginLeft: 3,
+        margin: 1,
         color: '#fff',
-        backgroundColor: 'rgba(204, 204, 204, 0.3)',
-        borderRadius: 10,
+        backgroundColor: '#416169',
+        borderRadius: 6,
     },
-
     imgLogo: {
         marginTop: 45,
         width: 165,
         height: 100,
     },
-
     button: {
         width: 350,
-        height: 50,
+        height: 45,
         color: '#fff',
         backgroundColor: '#000',
-        borderRadius: 10,
-        marginBottom: 60,
+        borderRadius: 6,
+        marginBottom: 0,
         marginTop: 5,
+        paddingTop: 5,
+        marginBottom: 60,
     },
     buttonDelete: {
         width: 350,
-        height: 50,
+        height: 45,
         color: '#fff',
-        backgroundColor: '#F7280C',
-        borderRadius: 10,
+        backgroundColor: '#fff',
+        borderRadius: 6,
         marginBottom: 0,
         marginTop: 5,
+        paddingTop: 5,
+
     },
     textoButton: {
         color: '#fff',
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: 700,
-        paddingTop: 6,
-        textAlign: 'center',
     },
     textoButtonDelete: {
-        color: '#cccccc',
-        fontSize: 28,
-        fontWeight: 800,
-        paddingTop: 4,
-        textAlign: 'center',
+        color: '#000',
+        fontSize: 18,
+        fontWeight: 700,
     },
     checkboxContainer: {
         width: 300,
@@ -141,34 +134,27 @@ const StyleTelaConfiguracao = StyleSheet.create({
         fontWeight: 500,
         margin: 4,
     },
-    anexo:{
+    anexo: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#F5FCFF',
     },
-
     title: {
         fontSize: 20,
         fontWeight: 'bold',
         marginBottom: 20,
-      },
-      image: {
+    },
+    image: {
         width: '80%',
         height: 30,
         marginTop: 20,
-      },
-
+    },
     developer: {
         marginTop: 70,
         marginBottom: 20,
-        color:'#cccccc',
+        color: '#93B8C2',
     },
-
-
-
-
-
 })
 
 export default StyleTelaConfiguracao;

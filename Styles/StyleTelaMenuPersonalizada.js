@@ -14,24 +14,24 @@ const stylesTelaMenu = StyleSheet.create({
 },
 nomeDoAluno:{
     marginTop:22,
-    marginLeft:-5,
+    marginLeft:5,
     color:'#fff',
     fontSize:22,
     fontWeight:700,
 },
 emailDoAluno:{
     marginTop:50,
-    marginLeft:-80,
-    color:'#cccccc',
+    marginLeft:-75,
+    color:'#93B8C2',
     fontSize:14,
     fontWeight:600,
 },
 linhaHorizotal:{
-    backgroundColor:'#fff',
+    backgroundColor:'#93B8C2',
     marginBottom:30,
 },
 linhaHorizotal2:{
-    backgroundColor:'#fff',
+    backgroundColor:'#93B8C2',
     marginTop:60,
     marginBottom:35,
 },
@@ -39,7 +39,7 @@ links:{
     margin:20,
 },
 link:{
-    color:'#cccccc',
+    color:'#93B8C2',
     fontSize:14,
     fontWeight:600,
 },
@@ -79,8 +79,9 @@ link:{
     },
     developer: {
         marginTop:110,
+        marginBottom:10,
         textAlign:'center',
-        color:'#cccccc',
+        color:'#93B8C2',
 
     },
    

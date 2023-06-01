@@ -30,29 +30,28 @@ const stylesTelaLogin = StyleSheet.create({
         height: 100,
     },
     inputTexto: {
-        height: 50,
+        height: 45,
         width: 350,
-        padding: 10,
-        margin: 5,
+        padding: 0,
+        margin: 1,
         color: '#fff',
-        backgroundColor: 'rgba(204, 204, 204, 0.3)',
-        borderRadius: 10,
+        backgroundColor: '#416169',
+        borderRadius: 6,
     },
     button: {
         width: 350,
-        height: 50,
+        height: 45,
         color: '#fff',
         backgroundColor: '#000',
-        borderRadius: 10,
+        borderRadius: 6,
         marginBottom: 0,
         marginTop: 5,
+        paddingTop: 5,
     },
     textoButton: {
         color: '#fff',
-        fontSize: 25,
+        fontSize: 18,
         fontWeight: 700,
-        paddingTop: 6,
-        textAlign: 'center',
     },
     linkLogin: {
         color: '#fff',
@@ -61,7 +60,7 @@ const stylesTelaLogin = StyleSheet.create({
     linkTexto: {
         fontWeight: 600,
         textAlign: 'center',
-        color: '#aaa',
+        color: '#93B8C2',
 
     },
 

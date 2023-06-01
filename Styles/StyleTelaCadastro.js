@@ -5,18 +5,12 @@ const stylesTelaCadastro = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     textAlign: 'center',
-    // justifyItems: 'center',
-    // alignItems: 'center',
     backgroundColor: '#113036',
- 
   },
   telaMain: {
-
     alignItems: 'center',
     flex: 1,
     color: '#fff',
-    zIndex:999,
-   
   },
   imgLogo: {
     marginTop: 75,
@@ -34,48 +28,49 @@ const stylesTelaCadastro = StyleSheet.create({
     zIndex:999,
   },
   inputTextoNome: {
-    height: 50,
+    height: 45,
     width: 170,
-    padding: 10,
-    margin: 5,
+    padding: 0,
+    marginRight:5,
+    marginBottom: 1,
     color: '#fff',
-    backgroundColor: 'rgba(204, 204, 204, 0.3)',
-    borderRadius: 10,
+    backgroundColor: '#416169',
+    borderRadius: 6,
   },
   inputTextoSobrenome: {
-    height: 50,
+    height: 45,
     width: 170,
-    padding: 10,
-    margin: 5,
+    padding:0,
+    marginLeft:5,
+    marginBottom: 1,
     color: '#fff',
-    backgroundColor: 'rgba(204, 204, 204, 0.3)',
-    borderRadius: 10,
+    backgroundColor: '#416169',
+    borderRadius: 6,
   },
   inputTexto: {
-    height: 50,
+    height: 45,
     width: 350,
-    padding: 10,
-    margin: 5,
+    padding: 0,
+    margin: 1,
     color: '#fff',
-    backgroundColor: 'rgba(204, 204, 204, 0.3)',
-    borderRadius: 10,
+    backgroundColor: '#416169',
+    borderRadius: 6,
   },
   button: {
     width: 350,
-    height: 50,
+    height: 45,
     color: '#fff',
     backgroundColor: '#000',
-    borderRadius: 10,
+    borderRadius: 6,
+    paddingTop:3,
     marginTop: 50,
   
 
   },
   textoButton: {
     color: '#fff',
-    fontSize: 23,
-    textAlign: 'center',
+    fontSize: 18,
     fontWeight: 700,
-    padding: 6,
   },
 
   linkLogin: {
@@ -86,7 +81,7 @@ const stylesTelaCadastro = StyleSheet.create({
   linkTexto: {
     fontWeight: 600,
     textAlign: 'center',
-    color: '#aaa',
+    color: '#93B8C2',
 
   },
   linkTextoLogin: {
@@ -98,12 +93,13 @@ const stylesTelaCadastro = StyleSheet.create({
     width: 300,
     flexDirection: 'row',
     marginBottom: 0,
+    color:'#fff',
   },
   checkbox: {
     alignSelf: 'center',
   },
   label: {
-    color: '#eee',
+    color: '#fff',
     fontWeight: 500,
     margin: 4,
   },

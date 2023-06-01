@@ -12,9 +12,8 @@ import TelaPrincipal from './TelaPrincipal';
 import TelaSobre from './TelaSobre'
 import TelaContato from './TelaContato';
 import TelaConfiguracao from './TelaConfiguracao';
+import TelaCampus from './TelaCampus';
 import styles from '../Styles/StyleTelaMenuPersonalizada';
-
-
 
 
 function CustomDrawerContent(props) {
@@ -25,8 +24,8 @@ function CustomDrawerContent(props) {
 
                 <View style={styles.cabecalho}>
                     <Avatar.Icon theme={'outline'} size={100} icon="account-circle" style={{ backgroundColor: 'transparent' }} />
-                    <Text style={styles.nomeDoAluno}>Antonio</Text>
-                    <Text style={styles.emailDoAluno}>avps2@aluno.ifal.edu.br</Text>
+                    <Text style={styles.nomeDoAluno}>Aluno</Text>
+                    <Text style={styles.emailDoAluno}>aluno.ifal@aluno.ifal.edu.br</Text>
                 </View>
                 <Divider style={styles.linhaHorizotal} />
 
@@ -91,6 +90,13 @@ function TelaMenu() {
                     drawerIcon: (({ focused }) => <Icon style={styles.optionsIcones} name="contacts" />)
                 }
             } name="TelaContato" component={TelaContato} />
+            <Drawer.Screen options={
+                {
+                    headerShown: false,
+                    drawerLabel: (({ focused }) => <Text style={styles.optionsTextos}>Campus</Text>),
+                    drawerIcon: (({ focused }) => <Icon style={styles.optionsIcones} name="school" />)
+                }
+            } name="TelaCampus" component={TelaCampus} />
             <Drawer.Screen options={
                 {
                     headerShown: false,

@@ -1,7 +1,7 @@
-import { Text, TextInput, View, Image, Pressable, } from 'react-native';
+import { View, Image, Pressable, } from 'react-native';
 import { useState } from 'react'
+import {  Text, TextInput, ActivityIndicator, Button,} from 'react-native-paper';
 import styles from '../Styles/StyleTelaLogin';
-
 
 function TelaLogin({ navigation }) {
   const [email, setEmail] = useState(0);
@@ -18,25 +18,33 @@ function TelaLogin({ navigation }) {
       <View style={styles.telaMain}>
 
         <TextInput
-          style={styles.inputTexto}
           keyboardType='email-address'
-          placeholder='Email'
-          placeholderTextColor='#fff'
+          label={'Email'}
+          mode='outlined'
+          right={<TextInput.Icon icon="email" />}
+          textColor='#fff'
+          activeOutlineColor='#fff'
+          style={styles.inputTexto}
         />
         <TextInput
+          label="Senha"
+          secureTextEntry
+          textColor='#fff'
+          right={<TextInput.Icon icon="lock" />}
+          mode='outlined'
           style={styles.inputTexto}
-          secureTextEntry={true}
-          placeholder='Senha'
-          placeholderTextColor='#fff'
-
+          activeOutlineColor='#fff'
         />
-        <Pressable style={styles.button}
+        <Button style={styles.button}
           onPress={() => navigation.navigate('TelaPrincipalComMenu')}
+          icon={'login'}
+          buttonColor='#fff'
+          textColor='#FFF'
         >
           <Text style={styles.textoButton}>
             Entrar
           </Text>
-        </Pressable>
+        </Button>
         <Pressable style={styles.linkSenha}
 
         >
