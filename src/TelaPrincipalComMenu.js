@@ -68,7 +68,7 @@ const Drawer = createDrawerNavigator();
 
 function TelaMenu() {
     return (
-        <Drawer.Navigator initialRouteName="TelaPrincipal" drawerContent={CustomDrawerContent}>
+        <Drawer.Navigator initialRouteName="TelaCampus" drawerContent={CustomDrawerContent}>
             <Drawer.Screen options={
                 {
                     headerShown: false,
