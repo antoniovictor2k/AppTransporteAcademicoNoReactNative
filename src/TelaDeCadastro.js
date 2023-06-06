@@ -11,10 +11,13 @@ function TelaCadastro({ navigation }) {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [confirmarSenha, setConfirmarSenha] = useState('');
-  const [visivel, setVisivel] = useState(false);
+  const [mostrarSenha, SetmostrarSenha] = useState(true)
+  const [iconeSenha, SetIconeSenha] = useState('lock')
 
-  const ativaVisibilidade = () =>
-    visivel === true ? setVisivel(false) : setVisivel(true);
+  const senhaVisivel = () => {
+    mostrarSenha == true ? SetmostrarSenha(false) : SetmostrarSenha(true);
+    iconeSenha == 'lock' ? SetIconeSenha('lock-open-variant') : SetIconeSenha('lock');
+  }
 
   return (
     <View style={styles.container}>
@@ -33,7 +36,8 @@ function TelaCadastro({ navigation }) {
               label='Nome'
               placeholderTextColor='#fff'
               activeOutlineColor='#fff'
-              right={<TextInput.Icon icon="text" />}
+              textColor='#fff'
+              right={<TextInput.Icon icon="text" iconColor='#fff' />}
               style={styles.inputTextoNome}
             />
             <TextInput
@@ -41,7 +45,8 @@ function TelaCadastro({ navigation }) {
               label='Sobrenome'
               placeholderTextColor='#fff'
               activeOutlineColor='#fff'
-              right={<TextInput.Icon icon="text" />}
+              textColor='#fff'
+              right={<TextInput.Icon icon="text" iconColor='#fff' />}
               style={styles.inputTextoSobrenome}
             />
           </View>
@@ -52,17 +57,19 @@ function TelaCadastro({ navigation }) {
             label='Email'
             placeholderTextColor='#fff'
             activeOutlineColor='#fff'
-            right={<TextInput.Icon icon="email" />}
+            textColor='#fff'
+            right={<TextInput.Icon icon="email" iconColor='#fff' />}
             style={styles.inputTexto}
           />
-          
+
           <TextInput
             mode='outlined'
             label='Senha'
             placeholderTextColor='#fff'
             activeOutlineColor='#fff'
-            secureTextEntry
-            right={<TextInput.Icon icon="lock" />}
+            textColor='#fff'
+            secureTextEntry={mostrarSenha}
+            right={<TextInput.Icon icon={iconeSenha} onPress={senhaVisivel} iconColor='#fff' />}
             style={styles.inputTexto}
           />
 
@@ -71,8 +78,9 @@ function TelaCadastro({ navigation }) {
             label='Confirmar senha'
             placeholderTextColor='#fff'
             activeOutlineColor='#fff'
-            secureTextEntry
-            right={<TextInput.Icon icon="lock" />}
+            textColor='#fff'
+            secureTextEntry={mostrarSenha}
+            right={<TextInput.Icon icon={iconeSenha} onPress={senhaVisivel} iconColor='#fff' />}
             style={styles.inputTexto}
           />
 
@@ -136,13 +144,7 @@ function TelaCadastro({ navigation }) {
             </Text>
           </Pressable>
         </ View>
-
-
-
-
       </View>
-
-
     </View>
   );
 }

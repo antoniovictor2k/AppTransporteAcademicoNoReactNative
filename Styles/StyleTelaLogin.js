@@ -30,7 +30,7 @@ const stylesTelaLogin = StyleSheet.create({
     width: 350,
     padding: 0,
     margin: 1,
-    color: '#fff',
+    color:'#fff',
     backgroundColor: '#416169',
     borderRadius: 6,
   },

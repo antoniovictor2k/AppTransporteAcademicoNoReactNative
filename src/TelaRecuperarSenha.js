@@ -1,6 +1,6 @@
-import { View, Image, Pressable }   from 'react-native';
+import { useState } from 'react';
+import { View, Image, Pressable, Alert }   from 'react-native';
 import { IconButton, Text, TextInput, ActivityIndicator, Button,} from 'react-native-paper';
-import { useState } from 'react'
 import styles from '../Styles/StyleTelaRecuperarSenha';
 
 
@@ -23,12 +23,22 @@ function TelaRecuperarSenha({ navigation }) {
       activeOutlineColor='#fff'
       textColor='#fff'
       keyboardType='email-address'
-      right={<TextInput.Icon icon="email"/>}
+      right={<TextInput.Icon icon="email" iconColor='#fff' />}
       style={styles.inputTexto}
       />
       
      <Button style={styles.button}
-     onPress={() => alert("Senha cadastrada foi enviada para seu email")}
+      onPress={() =>
+        Alert.alert(
+          'Email enviado com sucesso.',
+          'Senha cadastrada foi enviada para seu email.',
+          [
+            {
+              text: 'Ok',
+              style: 'cancel'
+            }
+          ]
+        )}
     icon={'lock-reset'}
     textColor='#fff'
     >

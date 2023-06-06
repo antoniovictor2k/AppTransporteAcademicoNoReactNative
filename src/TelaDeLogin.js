@@ -1,11 +1,21 @@
 import { View, Image, Pressable, } from 'react-native';
 import { useState } from 'react'
-import {  Text, TextInput, ActivityIndicator, Button,} from 'react-native-paper';
+import { Text, TextInput, ActivityIndicator, Button, } from 'react-native-paper';
 import styles from '../Styles/StyleTelaLogin';
+import { color } from 'react-native-reanimated';
 
 function TelaLogin({ navigation }) {
   const [email, setEmail] = useState(0);
   const [senha, setSenha] = useState(0);
+  const [mostrarSenha, SetmostrarSenha] = useState(true)
+  const [iconeSenha, SetIconeSenha] = useState('lock')
+
+
+  const senhaVisivel = () => {
+    mostrarSenha == true ? SetmostrarSenha(false) : SetmostrarSenha(true);
+    iconeSenha == 'lock' ? SetIconeSenha('lock-open-variant') : SetIconeSenha('lock');
+  }
+
 
   return (
     <View style={styles.container}>
@@ -21,16 +31,19 @@ function TelaLogin({ navigation }) {
           keyboardType='email-address'
           label={'Email'}
           mode='outlined'
-          right={<TextInput.Icon icon="email" />}
+          right={<TextInput.Icon icon="email" iconColor='#fff' />}
           textColor='#fff'
           activeOutlineColor='#fff'
+          activeUnderlineColor='#fff'
           style={styles.inputTexto}
         />
         <TextInput
           label="Senha"
-          secureTextEntry
+          secureTextEntry={mostrarSenha}
           textColor='#fff'
-          right={<TextInput.Icon icon="lock" />}
+          right={<TextInput.Icon icon={iconeSenha} iconColor='#fff' onPress={senhaVisivel} />}
+
+          // selectionColor=''
           mode='outlined'
           style={styles.inputTexto}
           activeOutlineColor='#fff'
