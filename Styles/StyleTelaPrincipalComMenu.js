@@ -12,7 +12,7 @@ const stylesTelaMenu = StyleSheet.create({
         ...StyleSheet.absoluteFillObject,
         justifyContent: 'flex-end',
         alignItems: 'center',
-        marginLeft: 20,
+        // marginLeft: 20,
     },
     iconLocalizacaoMenu: {
         top: 390, alignSelf: 'center',

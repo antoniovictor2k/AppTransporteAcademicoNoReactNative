@@ -18,9 +18,10 @@ function TelaPrincipal() {
     const [errorMsg, setErrorMsg] = useState(null);
     const [mostrarRota, setMostrarRota] = useState(false);
     const [compartilharBus, setCompartilharBus] = useState(false);
-    const [destinoIFALRioLargo, setDestinoIFALRioLargo] = useState({
-        latitude: -9.511487, longitude: -35.803943, latitudeDelta: 0.0622, longitudeDelta: 0.01921,
+    const [destinoIFALMaceio, setdestinoIFALMaceio] = useState({
+        latitude: -9.6650989, longitude: -35.7300404, latitudeDelta: 0.0622, longitudeDelta: 0.01921,
     });
+    // -9.6650989,-35.7300404
 
     const ativarMostrarRota = () => {
         { localizacao && mostrarRota === false ? setMostrarRota(true) : setMostrarRota(false) }
@@ -68,8 +69,10 @@ function TelaPrincipal() {
                 setLocalizacao({
                     latitude: localizacao.coords.latitude,
                     longitude: localizacao.coords.longitude,
-                    latitudeDelta: 0.0622,
-                    longitudeDelta: 0.01921,
+                    latitudeDelta: 0.0222,
+                    longitudeDelta: 0.1699,
+                    // latitudeDelta: 0.0622,
+                    // longitudeDelta: 0.01921,
                 })
             }
 
@@ -88,7 +91,7 @@ function TelaPrincipal() {
 
     };
     const localicacaoIFALRioLargo = () => {
-        mapRef.current.animateToRegion(destinoIFALRioLargo);
+        mapRef.current.animateToRegion(destinoIFALMaceio);
 
     };
 
@@ -145,7 +148,7 @@ function TelaPrincipal() {
                 showsMyLocationButton={false}
             >
                 <Marker
-                    coordinate={destinoIFALRioLargo}
+                    coordinate={destinoIFALMaceio}
                     anchor={{ x: 0.5, y: 0.5 }}
                 >
                     <View style={styles.marker}>
@@ -183,7 +186,7 @@ function TelaPrincipal() {
                 {mostrarRota &&
                     <MapViewDirections
                         origin={localizacao}
-                        destination={destinoIFALRioLargo}
+                        destination={destinoIFALMaceio}
                         apikey={GOOGLE_MAPS_APIKEY}
                         strokeWidth={6}
                         strokeColor="green"
