@@ -164,14 +164,6 @@ function RenderizarCampus() {
             <Avatar.Image size={100} source={item.img} />
             <View style={styles.itemContent}>
               <Text style={styles.instituto}>{item.instituto}</Text>
-              <Text style={styles.localizacao}>
-                Longitude:{' '}
-                <Text style={styles.resLocalizacao}>{item.longitude}</Text>
-              </Text>
-              <Text style={styles.localizacao}>
-                Latitude:{' '}
-                <Text style={styles.resLocalizacao}>{item.latitude}</Text>
-              </Text>
               <View style={styles.icones}>
                 <IconButton
                   icon="instagram"

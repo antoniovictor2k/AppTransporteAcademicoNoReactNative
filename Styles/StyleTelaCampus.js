@@ -17,7 +17,6 @@ const stylesTelaCampus = StyleSheet.create({
     },
     titulo: {
         marginTop: 30,
-        // marginBottom: 40,
         fontSize: 32,
         fontWeight: 700,
         color: '#fff',
@@ -44,22 +43,20 @@ const stylesTelaCampus = StyleSheet.create({
         color: '#ccc',
         textAlign: 'center',
     },
-   
     itemContainer: {
         backgroundColor: '#051C21',
         borderRadius: 8,
-
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 10,
         marginLeft: 5,
         marginRight: 5,
-        // gap:5,
         width: 180, 
         height: 250,
+        borderColor:'#fff',
+        borderWidth:1,
     },
-   
     icones: {
         flexDirection:'row'
     },
