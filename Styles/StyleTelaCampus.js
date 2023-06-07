@@ -29,6 +29,8 @@ const stylesTelaCampus = StyleSheet.create({
         fontWeight: 700,
         color: '#fff',
         textAlign: 'center',
+        width:170,
+        flexWrap:'wrap',
     },
     localizacao: {
         fontSize: 16,
