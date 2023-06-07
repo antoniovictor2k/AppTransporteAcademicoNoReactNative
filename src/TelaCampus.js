@@ -60,7 +60,7 @@ function RenderizarCampus() {
       linkGoogleMaps: '',
     },
     {
-      instituto: 'Maragogi',
+      instituto: 'Marechal Deodoro',
       longitude: 4534534,
       latitude: 44784345,
       img: require('../assets/CampusIFAL/marechalDeodoro.png'),
