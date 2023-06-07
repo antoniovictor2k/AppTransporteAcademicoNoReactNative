@@ -8,8 +8,6 @@ const stylesTelaLogin = StyleSheet.create({
         alignItems: 'center',
         flexWrap: 'nowrap',
     },
-
-
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -18,20 +16,23 @@ const stylesTelaLogin = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#113036',
     },
-
     titulo: {
         marginTop: 30,
-
         fontSize: 32,
         fontWeight: 700,
-
         color: '#fff',
-
     },
-
+    card:{
+        padding:10,
+        borderRadius:8,
+        backgroundColor: '#051C21',
+        borderColor:'#fff',
+        borderWidth:1,
+        marginBottom:10,
+    },
     subTitulo: {
-        marginTop: 10,
-
+        marginTop: 0,
+marginBottom:20,
         fontSize: 28,
         fontWeight: 600,
 
@@ -41,12 +42,10 @@ const stylesTelaLogin = StyleSheet.create({
     subTitulo1: {
         marginTop: 20,
         marginBottom: 20,
-
+        textAlign:'center',
         fontSize: 28,
         fontWeight: 600,
-
         color: '#fff',
-
     },
     instituicao: {
         alignItems: 'center',

@@ -3,15 +3,14 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import styles from '../Styles/StyleTelaContato';
 import { IconButton, MD3Colors } from 'react-native-paper';
 
-
 function TelaContato() {
     return (
         <ScrollView>
-
             <View style={styles.telamain}>
                 <Text style={styles.titulo}>Contatos</Text>
                 <View style={styles.container}>
                     <Text style={styles.subTitulo1}>Instituição</Text>
+                    <View style={styles.card}>
                     <View style={styles.instituicao}>
                         <Text style={styles.contatoNome}>IFAL - Campus Rio Largo</Text>
                         <Text style={styles.contatoCidade}>Rio Largo / AL</Text>
@@ -55,11 +54,11 @@ function TelaContato() {
 
                         </View>
                     </View>
-
+                    </View>
 
 
                     <Text style={styles.subTitulo}>Desenvolvedores</Text>
-
+                    <View style={styles.card}>
                     <View style={styles.dev}>
                         <Text style={styles.contatoNome}>Antonio Victor Pereira Severiano</Text>
                         <Text style={styles.contatoCidade}>Maceió / AL</Text>
@@ -109,7 +108,8 @@ function TelaContato() {
                             />
                         </View>
                     </View>
-
+</View>
+<View style={styles.card}>
                     <View style={styles.dev}>
 
                         <Text style={styles.contatoNome}>Jeallyson Ferreira da Silva</Text>
@@ -163,7 +163,7 @@ function TelaContato() {
 
 
                     </View>
-
+</View>
                 </View>
                 <Text style={styles.developer}>Developer by JEVA System - 2023</Text>
             </View>
