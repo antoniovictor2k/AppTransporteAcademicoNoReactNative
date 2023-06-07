@@ -27,7 +27,7 @@ const stylesTelaLogin = StyleSheet.create({
     imgLogo: {
         marginTop: 100,
         width: 165,
-        height: 100,
+        height: 105,
     },
     inputTexto: {
         height: 45,

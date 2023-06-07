@@ -6,6 +6,11 @@ import styles from '../Styles/StyleTelaRecuperarSenha';
 
 function TelaRecuperarSenha({ navigation }) {
   const [emailRecuperar, setEmailRecuperar] = useState(0);
+  const tema = {
+    colors: {
+        onSurfaceVariant: 'white'
+    }
+  }
   
   return (
     <View style={styles.container}>
@@ -23,6 +28,7 @@ function TelaRecuperarSenha({ navigation }) {
       activeOutlineColor='#fff'
       textColor='#fff'
       keyboardType='email-address'
+      theme={tema}
       right={<TextInput.Icon icon="email" iconColor='#fff' />}
       style={styles.inputTexto}
       />

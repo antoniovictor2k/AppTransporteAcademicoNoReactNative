@@ -18,19 +18,18 @@ const stylesTelaLogin = StyleSheet.create({
     alignContent: 'center',
     flex: 1,
     color: '#fff',
-
   },
   imgLogo: {
     marginTop: 75,
     width: 165,
-    height: 100,
+    height: 105,
   },
   inputTexto: {
     height: 45,
     width: 350,
     padding: 0,
     margin: 1,
-    color:'#fff',
+    color: '#fff',
     backgroundColor: '#416169',
     borderRadius: 6,
   },
@@ -60,7 +59,6 @@ const stylesTelaLogin = StyleSheet.create({
     fontWeight: 600,
     textAlign: 'center',
     color: '#93B8C2',
-
   },
   linkTextoSenha: {
     color: '#93B8C2',
@@ -73,7 +71,6 @@ const stylesTelaLogin = StyleSheet.create({
     fontWeight: 700,
     marginLeft: 10,
     paddingLeft: 10,
-
   },
 })
 

@@ -15,8 +15,8 @@ const stylesTelaCadastro = StyleSheet.create({
   imgLogo: {
     marginTop: 75,
     marginBottom: 75,
-    width: 115,
-    height: 70,
+    width: 125,
+    height: 80,
   },
 
   textoTitulo: {

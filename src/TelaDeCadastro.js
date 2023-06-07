@@ -18,6 +18,11 @@ function TelaCadastro({ navigation }) {
     mostrarSenha == true ? SetmostrarSenha(false) : SetmostrarSenha(true);
     iconeSenha == 'lock' ? SetIconeSenha('lock-open-variant') : SetIconeSenha('lock');
   }
+  const tema = {
+    colors: {
+        onSurfaceVariant: 'white'
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -37,6 +42,7 @@ function TelaCadastro({ navigation }) {
               placeholderTextColor='#fff'
               activeOutlineColor='#fff'
               textColor='#fff'
+              theme={tema}
               right={<TextInput.Icon icon="text" iconColor='#fff' />}
               style={styles.inputTextoNome}
             />
@@ -46,6 +52,7 @@ function TelaCadastro({ navigation }) {
               placeholderTextColor='#fff'
               activeOutlineColor='#fff'
               textColor='#fff'
+              theme={tema}
               right={<TextInput.Icon icon="text" iconColor='#fff' />}
               style={styles.inputTextoSobrenome}
             />
@@ -58,6 +65,7 @@ function TelaCadastro({ navigation }) {
             placeholderTextColor='#fff'
             activeOutlineColor='#fff'
             textColor='#fff'
+            theme={tema}
             right={<TextInput.Icon icon="email" iconColor='#fff' />}
             style={styles.inputTexto}
           />
@@ -68,17 +76,19 @@ function TelaCadastro({ navigation }) {
             placeholderTextColor='#fff'
             activeOutlineColor='#fff'
             textColor='#fff'
+            theme={tema}
             secureTextEntry={mostrarSenha}
             right={<TextInput.Icon icon={iconeSenha} onPress={senhaVisivel} iconColor='#fff' />}
             style={styles.inputTexto}
           />
-
+          {/* <Text style={{display:'none'}}>senha não conferent</Text> */}
           <TextInput
             mode='outlined'
             label='Confirmar senha'
             placeholderTextColor='#fff'
             activeOutlineColor='#fff'
             textColor='#fff'
+            theme={tema}
             secureTextEntry={mostrarSenha}
             right={<TextInput.Icon icon={iconeSenha} onPress={senhaVisivel} iconColor='#fff' />}
             style={styles.inputTexto}

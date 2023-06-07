@@ -113,6 +113,7 @@ function RenderizarCampus() {
       linkSiteOficial: '',
       linkGoogleMaps: '',
     },
+    
     {
       instituto: 'Santana do Ipanema',
       longitude: 4534534,

@@ -6,7 +6,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { Avatar, Divider, Button } from 'react-native-paper';
 
-
 // Imports de Telas 
 import TelaPrincipal from './TelaPrincipal';
 import TelaSobre from './TelaSobre'

@@ -15,6 +15,12 @@ function TelaLogin({ navigation }) {
     mostrarSenha == true ? SetmostrarSenha(false) : SetmostrarSenha(true);
     iconeSenha == 'lock' ? SetIconeSenha('lock-open-variant') : SetIconeSenha('lock');
   }
+  const tema = {
+    colors: {
+
+      onSurfaceVariant: 'white'
+    }
+  }
 
 
   return (
@@ -33,17 +39,19 @@ function TelaLogin({ navigation }) {
           mode='outlined'
           right={<TextInput.Icon icon="email" iconColor='#fff' />}
           textColor='#fff'
+          placeholderTextColor={"#fff"}
+          labelTextColor={"#fff"}
           activeOutlineColor='#fff'
           activeUnderlineColor='#fff'
           style={styles.inputTexto}
+          theme={tema}
         />
         <TextInput
           label="Senha"
           secureTextEntry={mostrarSenha}
           textColor='#fff'
           right={<TextInput.Icon icon={iconeSenha} iconColor='#fff' onPress={senhaVisivel} />}
-
-          // selectionColor=''
+          theme={tema}
           mode='outlined'
           style={styles.inputTexto}
           activeOutlineColor='#fff'
