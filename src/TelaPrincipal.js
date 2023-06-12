@@ -96,40 +96,6 @@ function TelaPrincipal() {
     };
 
 
-
-    // const ativarCarregado = ()=>{
-    //     localizacao === null ? setCarregando(true) : setCarregando(false);
-    // }
-
-    // if(localizacao === null){
-    //     useEffect(() => {
-    //         // Exibir o Alert quando o componente for montado
-    //         Alert.alert(
-    //           'GPS desligado',
-    //           'Para continuar, o GPS deve estar ativado!',
-    //           [
-    //             {
-    //               text: 'OK',
-    //               onPress: () => console.log('OK Pressionado')
-    //             }
-    //           ],
-    //           { cancelable: false }
-    //         );
-    //       }, []);
-
-    //     return (
-
-    //         <View style={styles.paginaMenu} >
-    //     <Text>
-
-    //     Para Continuar
-    //     </Text>
-
-    // <TelaCarregando />
-
-    //         </View>
-    //     );
-    // }
     if (carregando === true) {
 
         return (

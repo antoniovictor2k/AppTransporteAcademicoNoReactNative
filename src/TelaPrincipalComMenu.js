@@ -19,7 +19,7 @@ function CustomDrawerContent(props) {
     return (
         <DrawerContentScrollView {...props} style={styles.paginaMenu}>
             <View>
-             <View style={styles.cabecalho}>
+                <View style={styles.cabecalho}>
                     <Avatar.Icon theme={'outline'} size={100} icon="account-circle" style={{ backgroundColor: 'transparent' }} />
                     <Text style={styles.nomeDoAluno}>Aluno</Text>
                     <Text style={styles.emailDoAluno}>aluno.ifal@aluno.ifal.edu.br</Text>
@@ -63,7 +63,7 @@ const CustomHeader = () => {
     return (
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <TouchableOpacity onPress={toggleDrawer}>
-                <Icon name="menu" size={32} color="#fff" backgroundColor='#000' style={{ marginLeft: 10, borderRadius: 18 }} />
+                <Icon name="menu" size={40} color="#fff" backgroundColor='#000' style={{ marginLeft: 15, borderRadius: 28 }} />
             </TouchableOpacity>
         </View>
     );
@@ -86,9 +86,9 @@ function TelaMenu() {
             <Drawer.Screen options={
                 {
                     headerShown: true,
-                    headerTransparent:true,
+                    headerTransparent: true,
                     headerTintColor: '#fff',
-                    headerTitle:'',
+                    headerTitle: '',
                     drawerLabel: (({ focused }) => <Text style={styles.optionsTextos}>Sobre</Text>),
                     drawerIcon: (({ focused }) => <Icon style={styles.optionsIcones} name="home" />)
                 }
@@ -96,9 +96,9 @@ function TelaMenu() {
             <Drawer.Screen options={
                 {
                     headerShown: true,
-                    headerTransparent:true,
+                    headerTransparent: true,
                     headerTintColor: '#fff',
-                    headerTitle:'',
+                    headerTitle: '',
                     drawerLabel: (({ focused }) => <Text style={styles.optionsTextos}>Contatos</Text>),
                     drawerIcon: (({ focused }) => <Icon style={styles.optionsIcones} name="contacts" />)
                 }
@@ -106,9 +106,9 @@ function TelaMenu() {
             <Drawer.Screen options={
                 {
                     headerShown: true,
-                    headerTransparent:true,
+                    headerTransparent: true,
                     headerTintColor: '#fff',
-                    headerTitle:'',
+                    headerTitle: '',
                     drawerLabel: (({ focused }) => <Text style={styles.optionsTextos}>Campus</Text>),
                     drawerIcon: (({ focused }) => <Icon style={styles.optionsIcones} name="school" />)
                 }
@@ -116,9 +116,9 @@ function TelaMenu() {
             <Drawer.Screen options={
                 {
                     headerShown: true,
-                    headerTransparent:true,
+                    headerTransparent: true,
                     headerTintColor: '#fff',
-                    headerTitle:'',
+                    headerTitle: '',
                     drawerLabel: (({ focused }) => <Text style={styles.optionsTextos}>Configuração</Text>),
                     drawerIcon: (({ focused }) => <Icon style={styles.optionsIcones} name="settings" />)
                 }

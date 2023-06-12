@@ -13,7 +13,19 @@ function TelaConfiguracao() {
     const [novoSobrenome, setNovoSobrenome] = useState(false);
     const [relatarErro, setRelatarErro] = useState(false);
     const [motivoDelete, setmotivoDelete] = useState(false);
+    const [mostrarSenha, SetmostrarSenha] = useState(true)
+    const [iconeSenha, SetIconeSenha] = useState('lock')
 
+    const senhaVisivel = () => {
+        mostrarSenha == true ? SetmostrarSenha(false) : SetmostrarSenha(true);
+        iconeSenha == 'lock' ? SetIconeSenha('lock-open-variant') : SetIconeSenha('lock');
+    }
+    const tema = {
+        colors: {
+
+            onSurfaceVariant: 'white'
+        }
+    }
 
 
 
@@ -28,16 +40,17 @@ function TelaConfiguracao() {
                     keyboardType='email-address'
                     label={'Email'}
                     mode='outlined'
-                    right={<TextInput.Icon icon="email" />}
+                    right={<TextInput.Icon icon="email" iconColor='#fff' />}
                     textColor='#fff'
                     activeOutlineColor='#fff'
                     style={styles.inputTexto}
+                    theme={tema}
                 />
                 <Button style={styles.button}
                     onPress={() => alert('link indisponível, acessar através do link (Fazer Login), na parte inferior da tela.')}
-               icon={'update'}
-               textColor='#fff'
-               >
+                    icon={'update'}
+                    textColor='#fff'
+                >
                     <Text style={styles.textoButton}>
                         Confirmar alteração
                     </Text>
@@ -46,18 +59,19 @@ function TelaConfiguracao() {
 
                 <TextInput
                     label={'Senha'}
-                    secureTextEntry
+                    secureTextEntry={mostrarSenha}
                     mode='outlined'
-                    right={<TextInput.Icon icon="lock" />}
+                    right={<TextInput.Icon icon={iconeSenha} iconColor='#fff' onPress={senhaVisivel} />}
                     textColor='#fff'
                     activeOutlineColor='#fff'
                     style={styles.inputTexto}
+                    theme={tema}
                 />
                 <Button style={styles.button}
                     onPress={() => alert('link indisponível, acessar através do link (Fazer Login), na parte inferior da tela.')}
                     icon={'update'}
                     textColor='#fff'
-               >
+                >
                     <Text style={styles.textoButton}>
                         Confirmar alteração
                     </Text>
@@ -67,19 +81,21 @@ function TelaConfiguracao() {
                     <TextInput
                         label={'Nome'}
                         mode='outlined'
-                        right={<TextInput.Icon icon="text" />}
+                        right={<TextInput.Icon icon="text" iconColor='#fff'/>}
                         textColor='#fff'
                         activeOutlineColor='#fff'
                         style={styles.inputTextoNome}
+                        theme={tema}
                     />
 
                     <TextInput
                         label={'Sobrenome'}
                         mode='outlined'
-                        right={<TextInput.Icon icon="text" />}
+                        right={<TextInput.Icon icon="text" iconColor='#fff' />}
                         textColor='#fff'
                         activeOutlineColor='#fff'
                         style={styles.inputTextoSobrenome}
+                        theme={tema}
                     />
                 </View>
                 <Button style={styles.button}
@@ -96,10 +112,10 @@ function TelaConfiguracao() {
                 <TextInput
                     label={'Descreva o ocorrido...'}
                     mode='outlined'
-                    right={<TextInput.Icon icon="file" />}
                     textColor='#fff'
                     activeOutlineColor='#fff'
                     style={styles.inputTextoDescricao}
+                    theme={tema}
                 />
 
                 <Button style={styles.button}
@@ -116,10 +132,10 @@ function TelaConfiguracao() {
                 <TextInput
                     label={'Por qual motivo deseja excluir sua conta?'}
                     mode='outlined'
-                    right={<TextInput.Icon icon="file" />}
                     textColor='#fff'
                     activeOutlineColor='#fff'
                     style={styles.inputTextoDescricao}
+                    theme={tema}
                 />
                 <View style={styles.checkboxContainer}>
 
