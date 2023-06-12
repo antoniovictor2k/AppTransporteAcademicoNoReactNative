@@ -2,7 +2,6 @@ import { View, Image, Pressable, } from 'react-native';
 import { useState } from 'react'
 import { Text, TextInput, ActivityIndicator, Button, } from 'react-native-paper';
 import styles from '../Styles/StyleTelaLogin';
-import { color } from 'react-native-reanimated';
 
 function TelaLogin({ navigation }) {
   const [email, setEmail] = useState(0);
@@ -32,7 +31,6 @@ function TelaLogin({ navigation }) {
       />
 
       <View style={styles.telaMain}>
-
         <TextInput
           keyboardType='email-address'
           label={'Email'}
@@ -67,20 +65,14 @@ function TelaLogin({ navigation }) {
           </Text>
         </Button>
         <Pressable style={styles.linkSenha}
-
         >
           <Text style={styles.linkTextoSenha} onPress={() => navigation.navigate('RecuperarSenha')}>
             Esqueceu sua Senha?
           </Text>
         </Pressable>
-
-
-
-
       </View>
       <Pressable style={styles.linkInscricao}
         onPress={() => navigation.navigate('Cadastro')}
-
       >
         <Text style={styles.linkTexto}>
           Não tem uma conta?{' '}
@@ -89,7 +81,6 @@ function TelaLogin({ navigation }) {
           </Text>
         </Text>
       </Pressable>
-
     </View>
   );
 }

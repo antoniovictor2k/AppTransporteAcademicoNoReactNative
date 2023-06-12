@@ -5,31 +5,24 @@ const stylesTelaMenu = StyleSheet.create({
         ...StyleSheet.absoluteFillObject,
         justifyContent: 'flex-end',
         alignItems: 'center',
-        backgroundColor:'#113036',
+        backgroundColor: '#113036',
     },
-
     mapView: {
         ...StyleSheet.absoluteFillObject,
         justifyContent: 'flex-end',
         alignItems: 'center',
-        // marginLeft: 20,
     },
     iconLocalizacaoMenu: {
         top: 390, alignSelf: 'center',
-
     },
     marker: {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
     },
-
     checkIcon: {
         position: 'absolute',
         bottom: 30,
-        // right: 18,
-
-
     },
 
     myLocationButton: {
@@ -48,13 +41,11 @@ const stylesTelaMenu = StyleSheet.create({
         position: 'absolute',
         bottom: 180,
         right: 12,
-
     },
     mostrarMarkerSchool: {
         position: 'absolute',
         bottom: 240,
         right: 12,
-
     },
     imgLogo: {
         marginTop: 45,
@@ -65,39 +56,30 @@ const stylesTelaMenu = StyleSheet.create({
         color: '#fff',
         fontSize: 18,
         fontWeight: 700,
-
     },
     optionsTextosNome: {
         color: '#fff',
         fontSize: 18,
         fontWeight: 700,
-
     },
     optionsTextosEmail: {
         color: '#fff',
         fontSize: 10,
         fontWeight: 400,
-
     },
     optionsIcones: {
         color: '#fff',
         fontSize: 28,
-
     },
     optionsIconesPerfil: {
         color: '#fff',
         fontSize: 52,
-
     },
     buttonCompartilharLocalizacao: {
         marginBottom: 50,
         alignSelf: 'center',
     },
 
-
-
 })
-
-
 
 export default stylesTelaMenu;

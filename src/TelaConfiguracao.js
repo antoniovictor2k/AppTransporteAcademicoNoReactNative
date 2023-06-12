@@ -1,5 +1,5 @@
 import React, { useState, } from 'react';
-import { Text, View, Pressable, Linking, ScrollView, } from 'react-native';
+import { Text, View, ScrollView, } from 'react-native';
 import styles from '../Styles/StyleTelaConfiguracao';
 import { Checkbox, Button, TextInput, } from 'react-native-paper';
 
@@ -28,14 +28,11 @@ function TelaConfiguracao() {
     }
 
 
-
     return (
         <ScrollView style={styles.main}>
             <Text style={styles.titulo}>Configuração</Text>
-
             <View style={styles.container}>
                 <Text style={styles.sobTitulo} >Alterar email</Text>
-
                 <TextInput
                     keyboardType='email-address'
                     label={'Email'}
@@ -56,7 +53,6 @@ function TelaConfiguracao() {
                     </Text>
                 </Button>
                 <Text style={styles.sobTitulo}  >Alterar senha</Text>
-
                 <TextInput
                     label={'Senha'}
                     secureTextEntry={mostrarSenha}
@@ -81,13 +77,12 @@ function TelaConfiguracao() {
                     <TextInput
                         label={'Nome'}
                         mode='outlined'
-                        right={<TextInput.Icon icon="text" iconColor='#fff'/>}
+                        right={<TextInput.Icon icon="text" iconColor='#fff' />}
                         textColor='#fff'
                         activeOutlineColor='#fff'
                         style={styles.inputTextoNome}
                         theme={tema}
                     />
-
                     <TextInput
                         label={'Sobrenome'}
                         mode='outlined'
@@ -108,7 +103,6 @@ function TelaConfiguracao() {
                     </Text>
                 </Button>
                 <Text style={styles.sobTitulo}  >Reportar erro</Text>
-
                 <TextInput
                     label={'Descreva o ocorrido...'}
                     mode='outlined'
@@ -117,7 +111,6 @@ function TelaConfiguracao() {
                     style={styles.inputTextoDescricao}
                     theme={tema}
                 />
-
                 <Button style={styles.button}
                     onPress={() => alert('link indisponível, acessar através do link (Fazer Login), na parte inferior da tela.')}
                     icon={'alert-circle'}
@@ -128,7 +121,6 @@ function TelaConfiguracao() {
                     </Text>
                 </Button>
                 <Text style={styles.sobTitulo}  >Deletar conta</Text>
-
                 <TextInput
                     label={'Por qual motivo deseja excluir sua conta?'}
                     mode='outlined'
@@ -138,19 +130,15 @@ function TelaConfiguracao() {
                     theme={tema}
                 />
                 <View style={styles.checkboxContainer}>
-
                     <Checkbox
                         status={checked ? 'checked' : 'unchecked'}
                         onPress={() => {
                             setChecked(!checked);
                         }}
                     />
-
-
                     <Text style={styles.label}>
                         Estou ciente que ao excluir minha conta, todos os meus dados serão apagados do banco de dados do app.
                     </Text>
-
                 </View>
                 <Button style={styles.buttonDelete}
                     onPress={() => alert('link indisponível, acessar através do link (Fazer Login), na parte inferior da tela.')}
@@ -161,13 +149,8 @@ function TelaConfiguracao() {
                         Excluir conta
                     </Text>
                 </Button>
-
-
-
-
                 <Text style={styles.developer}>Developer by JEVA System - 2023</Text>
             </View>
-
         </ScrollView>
     );
 };

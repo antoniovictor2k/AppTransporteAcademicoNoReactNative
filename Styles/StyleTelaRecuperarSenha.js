@@ -2,7 +2,6 @@ import { StyleSheet } from 'react-native';
 
 const stylesTelaLogin = StyleSheet.create({
 
-
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -11,7 +10,6 @@ const stylesTelaLogin = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#113036',
     },
-
     telaMain: {
 
         justifyContent: 'center',
@@ -21,9 +19,7 @@ const stylesTelaLogin = StyleSheet.create({
         alignContent: 'center',
         flex: 1,
         color: '#fff',
-
     },
-
     imgLogo: {
         marginTop: 100,
         width: 165,
@@ -61,15 +57,12 @@ const stylesTelaLogin = StyleSheet.create({
         fontWeight: 600,
         textAlign: 'center',
         color: '#93B8C2',
-
     },
-
     linkTextoLogin: {
         color: '#fff',
         fontWeight: 700,
         marginLeft: 10,
         paddingLeft: 10,
-
     },
 
 })

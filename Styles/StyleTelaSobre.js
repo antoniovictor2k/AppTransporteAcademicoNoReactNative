@@ -6,8 +6,6 @@ const stylesTelaLogin = StyleSheet.create({
         flex: 1,
         backgroundColor: '#113036',
         textAlign: 'center',
-
-
     },
     container: {
         flex: 1,
@@ -24,8 +22,6 @@ const stylesTelaLogin = StyleSheet.create({
         color: '#fff',
         alignItems: 'center',
         textAlign: 'center',
-
-
     },
     sobTitulo: {
         marginTop: 30,
@@ -34,8 +30,6 @@ const stylesTelaLogin = StyleSheet.create({
         color: '#fff',
         alignItems: 'center',
         textAlign: 'center',
-
-
     },
     textoPadrao: {
         marginTop: 16,
@@ -45,15 +39,12 @@ const stylesTelaLogin = StyleSheet.create({
         width: 330,
         alignItems: 'center',
         textAlign: 'justify',
-
-
     },
     imgLogo: {
         marginTop: 45,
         width: 165,
         height: 100,
     },
-
     button: {
         width: 350,
         height: 50,
@@ -73,10 +64,8 @@ const stylesTelaLogin = StyleSheet.create({
     developer: {
         marginTop: 70,
         marginBottom: 20,
-        color:'#93B8C2',
-
+        color: '#93B8C2',
     },
-
 
 })
 

@@ -25,13 +25,13 @@ const stylesTelaCadastro = StyleSheet.create({
   },
   campoinputNomes: {
     flexDirection: 'row',
-    zIndex:999,
+    zIndex: 999,
   },
   inputTextoNome: {
     height: 45,
     width: 170,
     padding: 0,
-    marginRight:5,
+    marginRight: 5,
     marginBottom: 1,
     color: '#fff',
     backgroundColor: '#416169',
@@ -40,8 +40,8 @@ const stylesTelaCadastro = StyleSheet.create({
   inputTextoSobrenome: {
     height: 45,
     width: 170,
-    padding:0,
-    marginLeft:5,
+    padding: 0,
+    marginLeft: 5,
     marginBottom: 1,
     color: '#fff',
     backgroundColor: '#416169',
@@ -62,9 +62,9 @@ const stylesTelaCadastro = StyleSheet.create({
     color: '#fff',
     backgroundColor: '#000',
     borderRadius: 6,
-    paddingTop:3,
+    paddingTop: 3,
     marginTop: 50,
-  
+
 
   },
   textoButton: {
@@ -93,7 +93,7 @@ const stylesTelaCadastro = StyleSheet.create({
     width: 300,
     flexDirection: 'row',
     marginBottom: 0,
-    color:'#fff',
+    color: '#fff',
   },
   checkbox: {
     alignSelf: 'center',

@@ -1,16 +1,11 @@
-import { Text, TextInput, View, Image, Pressable, Linking, ScrollView } from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
 import styles from '../Styles/StyleTelaSobre';
-import { IconButton, MD3Colors } from 'react-native-paper';
 
 function TelaSobre() {
     return (
-
         <ScrollView style={styles.main}>
-
             <View style={styles.container}>
                 <Text style={styles.titulo}>Sobre</Text>
-
-
                 <Text style={styles.sobTitulo}>Introdução</Text>
                 <Text style={styles.textoPadrao}>
                     O aplicativo está sendo desenvolvindo com intuito de ajudar os estudante,
@@ -32,10 +27,7 @@ function TelaSobre() {
                 <Text style={styles.textoPadrao}>
                     JEVA system, vem dos nomes dos desenvolvedores, JE de Jeallyson e VA de Antonio Victor, System de sistemas.
                 </Text>
-
                 <Text style={styles.developer}>Developer by JEVA System - 2023</Text>
-
-
             </View>
         </ScrollView>
 

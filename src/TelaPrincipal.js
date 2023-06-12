@@ -7,8 +7,8 @@ import { IconButton, Text, ActivityIndicator } from 'react-native-paper';
 import MapViewDirections from 'react-native-maps-directions';
 import styles from '../Styles/StyleTelaPrincipalComMenu';
 import TelaCarregando from './TelaCarregando';
-import { set } from 'react-native-reanimated';
 
+// chave api google
 const GOOGLE_MAPS_APIKEY = 'AIzaSyBRMU4LkxXu-mcV8mtB-p0R5jBR0V1iWI8';
 
 

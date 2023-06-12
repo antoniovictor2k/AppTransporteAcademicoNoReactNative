@@ -22,17 +22,17 @@ const stylesTelaLogin = StyleSheet.create({
         fontWeight: 700,
         color: '#fff',
     },
-    card:{
-        padding:10,
-        borderRadius:8,
+    card: {
+        padding: 10,
+        borderRadius: 8,
         backgroundColor: '#051C21',
-        borderColor:'#fff',
-        borderWidth:1,
-        marginBottom:10,
+        borderColor: '#fff',
+        borderWidth: 1,
+        marginBottom: 10,
     },
     subTitulo: {
         marginTop: 0,
-marginBottom:20,
+        marginBottom: 20,
         fontSize: 28,
         fontWeight: 600,
 
@@ -42,7 +42,7 @@ marginBottom:20,
     subTitulo1: {
         marginTop: 20,
         marginBottom: 20,
-        textAlign:'center',
+        textAlign: 'center',
         fontSize: 28,
         fontWeight: 600,
         color: '#fff',
@@ -99,7 +99,7 @@ marginBottom:20,
     developer: {
         marginTop: 70,
         marginBottom: 20,
-        color:'#93B8C2',
+        color: '#93B8C2',
 
     },
 

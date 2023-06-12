@@ -9,11 +9,11 @@ const stylesTelaCampus = StyleSheet.create({
     container: {
         marginTop: StatusBar.currentHeight || 0,
         textAlign: 'center',
-        flex:1,
+        flex: 1,
         textAlign: 'center',
         justifyItems: 'center',
-        justifyContent:'center',
-        alignItems:'center',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     titulo: {
         marginTop: 30,
@@ -28,8 +28,8 @@ const stylesTelaCampus = StyleSheet.create({
         fontWeight: 700,
         color: '#fff',
         textAlign: 'center',
-        width:170,
-        flexWrap:'wrap',
+        width: 170,
+        flexWrap: 'wrap',
     },
     localizacao: {
         fontSize: 16,
@@ -52,13 +52,13 @@ const stylesTelaCampus = StyleSheet.create({
         marginBottom: 10,
         marginLeft: 5,
         marginRight: 5,
-        width: 180, 
+        width: 180,
         height: 220,
-        borderColor:'#fff',
-        borderWidth:1,
+        borderColor: '#fff',
+        borderWidth: 1,
     },
     icones: {
-        flexDirection:'row'
+        flexDirection: 'row'
     },
     developer: {
         marginTop: 50,

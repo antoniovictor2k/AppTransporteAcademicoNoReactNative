@@ -20,7 +20,7 @@ function TelaCadastro({ navigation }) {
   }
   const tema = {
     colors: {
-        onSurfaceVariant: 'white'
+      onSurfaceVariant: 'white'
     }
   }
 
@@ -57,7 +57,6 @@ function TelaCadastro({ navigation }) {
               style={styles.inputTextoSobrenome}
             />
           </View>
-
           <TextInput
             mode='outlined'
             keyboardType='email-address'
@@ -69,7 +68,6 @@ function TelaCadastro({ navigation }) {
             right={<TextInput.Icon icon="email" iconColor='#fff' />}
             style={styles.inputTexto}
           />
-
           <TextInput
             mode='outlined'
             label='Senha'
@@ -93,16 +91,13 @@ function TelaCadastro({ navigation }) {
             right={<TextInput.Icon icon={iconeSenha} onPress={senhaVisivel} iconColor='#fff' />}
             style={styles.inputTexto}
           />
-
           <View style={styles.checkboxContainer}>
-
             <Checkbox
               status={checked ? 'checked' : 'unchecked'}
               onPress={() => {
                 setChecked(!checked);
               }}
             />
-
             <Text style={styles.label}>
               Li e concordo com os{' '}
               <Text style={styles.linkExterno}
@@ -119,9 +114,7 @@ function TelaCadastro({ navigation }) {
                 Privacidade.
               </Text>
             </Text>
-
           </View>
-
           <Button style={styles.button}
             onPress={() =>
               Alert.alert(
@@ -142,7 +135,6 @@ function TelaCadastro({ navigation }) {
               Cadastrar-se
             </Text>
           </Button>
-
           <Pressable style={styles.linkLogin}
             onPress={() => navigation.navigate('Login')}
           >
