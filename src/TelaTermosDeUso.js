@@ -1,32 +1,15 @@
-import React, { useState } from 'react';
-import { ScrollView, View, TouchableOpacity, Text } from 'react-native';
-import { Dialog, Portal, Provider, Button, IconButton, MD3Colors } from 'react-native-paper';
+import { ScrollView, View, Text } from 'react-native';
 import styles from '../Styles/StyleTelaTermosDeUso';
-// aqui
+
 
 function TelaTermosDeUso({ navigation }) {
-    const [visible, setVisible] = useState(true);
 
-        return (
-            <View  style={styles.container}>
-                <View style={styles.buttonFechar} >
-                  
-                    <Button
-                    icon={'arrow-left'}
-                    onPress={() => navigation.navigate('Cadastro')}
-                    buttonColor='#000'
-                    textColor='#fff'
-                    />
-                      
-                </View>
-                <Text style={styles.titulo}>
-
-                    Termos de uso
-
-                </Text>
+    return (
+        <View style={styles.container}>
+            <Text style={styles.titulo}>
+                Termos de uso
+            </Text>
             <ScrollView>
-
-
                 <Text style={styles.heading}>1. Termos</Text>
                 <Text style={styles.paragraph}>
                     Ao acessar o App Transporte Acadêmico, concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis ​​e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis. Se você não concordar com algum desses termos, está proibido de usar ou acessar este app. Os materiais contidos neste app são protegidos pelas leis de direitos autorais e marcas comerciais aplicáveis.
@@ -67,11 +50,11 @@ function TelaTermosDeUso({ navigation }) {
                 <Text style={styles.paragraph}>
                     Estes termos e condições são regidos e interpretados de acordo com as leis do e você se submete irrevogavelmente à jurisdição exclusiva dos tribunais naquele estado ou localidade.
                 </Text>
-            <Text style={styles.developer}>Developer by JEVA System - 2023</Text>
+                <Text style={styles.developer}>Developer by JEVA System - 2023</Text>
             </ScrollView>
 
-            </View>
-        );
+        </View>
+    );
 }
 
 export default TelaTermosDeUso;

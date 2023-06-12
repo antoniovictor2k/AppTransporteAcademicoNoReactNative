@@ -1,9 +1,9 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
-import { StyleSheet, Text, View, TextInput, Image, Pressable, Linking, TouchableOpacity } from 'react-native';
+import { Text, View, Linking, TouchableOpacity } from 'react-native';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { Avatar, Divider, Button } from 'react-native-paper';
 
 // Imports de Telas 
@@ -32,13 +32,14 @@ function CustomDrawerContent(props) {
                         Linking.openURL('https://youtube.com');
                     }}>Tutorial de Uso do App, Click Aqui.</Text>
                     <Text style={styles.link}>
-                        <Text onPress={() => {
-                            Linking.openURL('https://geolocalizacateste.netlify.app/paginas/termo_de_uso');
-                        }}>Termos de uso</Text>
+                        <Text
+                            onPress={() => navigation.navigate('TermosDeUso')}
+                        >Termos de uso</Text>
+
                         {' '}e de{' '}
-                        <Text onPress={() => {
-                            Linking.openURL('https://geolocalizacateste.netlify.app/paginas/politica_de_privacidade');
-                        }}>Privacidade</Text>
+                        <Text
+                            onPress={() => navigation.navigate('TermosDePrivacidade')}
+                        >Privacidade</Text>
                     </Text>
                 </View>
                 <Button icon="logout" buttonColor='#000' mode="contained" style={styles.button}
