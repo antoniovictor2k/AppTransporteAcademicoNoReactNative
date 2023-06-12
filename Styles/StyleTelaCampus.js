@@ -53,7 +53,7 @@ const stylesTelaCampus = StyleSheet.create({
         marginLeft: 5,
         marginRight: 5,
         width: 180, 
-        height: 250,
+        height: 220,
         borderColor:'#fff',
         borderWidth:1,
     },
