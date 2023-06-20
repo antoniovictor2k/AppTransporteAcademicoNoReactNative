@@ -14,18 +14,17 @@ const stylesTelaCadastro = StyleSheet.create({
   },
   imgLogo: {
     marginTop: 75,
-    marginBottom: 75,
+    marginBottom: 60,
     width: 125,
     height: 80,
   },
-
   textoTitulo: {
     color: '#fff',
     fontSize: 30,
   },
   campoinputNomes: {
     flexDirection: 'row',
-    zIndex: 999,
+    zIndex: 99999,
   },
   inputTextoNome: {
     height: 45,
@@ -59,16 +58,14 @@ const stylesTelaCadastro = StyleSheet.create({
   button: {
     width: 350,
     height: 45,
-    color: '#fff',
-    backgroundColor: '#000',
+    color: '#000',
+    backgroundColor: '#B3DCE5',
     borderRadius: 6,
     paddingTop: 3,
     marginTop: 50,
-
-
   },
   textoButton: {
-    color: '#fff',
+    color: '#000',
     fontSize: 18,
     fontWeight: 700,
   },
@@ -76,13 +73,11 @@ const stylesTelaCadastro = StyleSheet.create({
   linkLogin: {
     color: '#fff',
     marginTop: 10,
-
   },
   linkTexto: {
     fontWeight: 600,
     textAlign: 'center',
     color: '#93B8C2',
-
   },
   linkTextoLogin: {
     color: '#fff',
@@ -94,6 +89,8 @@ const stylesTelaCadastro = StyleSheet.create({
     flexDirection: 'row',
     marginBottom: 0,
     color: '#fff',
+    marginLeft:-64,
+    alignItems:'center'
   },
   checkbox: {
     alignSelf: 'center',

@@ -12,26 +12,54 @@ function TelaTermosDeUso({ navigation }) {
             <ScrollView>
                 <Text style={styles.heading}>1. Termos</Text>
                 <Text style={styles.paragraph}>
-                    Ao acessar o App Transporte Acadêmico, concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis ​​e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis. Se você não concordar com algum desses termos, está proibido de usar ou acessar este app. Os materiais contidos neste app são protegidos pelas leis de direitos autorais e marcas comerciais aplicáveis.
+                    Ao acessar o App Transporte Acadêmico, concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis.
+                    {`
+
+`}Se você não concordar com algum desses termos, está proibido de usar ou acessar este app. Os materiais contidos neste app são protegidos pelas leis de direitos autorais e marcas comerciais aplicáveis.
                 </Text>
                 <Text style={styles.heading}>2. Uso de Licença</Text>
                 <Text style={styles.paragraph}>
-                    É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no app, apenas para visualização transitória pessoal e não comercial. Esta é a concessão de uma licença, não uma transferência de título e, sob esta licença, você não pode:
+                    É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no app, apenas para visualização transitória pessoal e não comercial.
+                    {`
+                    
+`}
+                    Esta é a concessão de uma licença, não uma transferência de título e, sob esta licença, você não pode:
+                    {`
+                `}
                 </Text>
-                <Text style={styles.listItem}>- modificar ou copiar os materiais;</Text>
-                <Text style={styles.listItem}>- usar os materiais para qualquer finalidade comercial ou para exibição pública (comercial ou não comercial);</Text>
-                <Text style={styles.listItem}>- tentar descompilar ou fazer engenharia reversa de qualquer software contido no app;</Text>
-                <Text style={styles.listItem}>- remover quaisquer direitos autorais ou outras notações de propriedade dos materiais; ou</Text>
-                <Text style={styles.listItem}>- transferir os materiais para outra pessoa ou 'espelhe' os materiais em qualquer outro servidor.</Text>
+                <Text style={styles.listItem}>- modificar ou copiar os materiais;
+                    {`
+                `}
+                </Text>
+                <Text style={styles.listItem}>- usar os materiais para qualquer finalidade comercial ou para exibição pública (comercial ou não comercial);
+                    {`
+                `}
+                </Text>
+                <Text style={styles.listItem}>- tentar descompilar ou fazer engenharia reversa de qualquer software contido no app;
+                    {`
+                `}
+                </Text>
+                <Text style={styles.listItem}>- remover quaisquer direitos autorais ou outras notações de propriedade dos materiais; ou transferir os materiais para outra pessoa ou 'espelhe' os materiais em qualquer outro servidor.
+                    {`
+                `}
+                </Text>
+
                 <Text style={styles.paragraph}>
-                    Esta licença será automaticamente rescindida se você violar alguma dessas restrições e poderá ser rescindida por a qualquer momento. Ao encerrar a visualização desses materiais ou após o término desta licença, você deve apagar todos os materiais baixados em sua posse, seja em formato eletrônico ou impresso.
+                    Esta licença será automaticamente rescindida se você violar alguma dessas restrições e poderá ser rescindida por a qualquer momento.
+                    {`
+
+`}
+                    Ao encerrar a visualização desses materiais ou após o término desta licença, você deve apagar todos os materiais baixados em sua posse, seja em formato eletrônico ou impresso.
                 </Text>
                 <Text style={styles.heading}>3. Isenção de responsabilidade</Text>
-                <Text style={styles.listItem}>- Os materiais no app da são fornecidos 'como estão'. não oferece garantias, expressas ou implícitas, e, por este meio, isenta e nega todas as outras garantias, incluindo, sem limitação, garantias implícitas ou condições de comercialização, adequação a um fim específico ou não violação de propriedade intelectual ou outra violação de direitos.</Text>
+                <Text style={styles.listItem}>- Os materiais no app da são fornecidos 'como estão'. não oferece garantias, expressas ou implícitas, e, por este meio, isenta e nega todas as outras garantias, incluindo, sem limitação, garantias implícitas ou condições de comercialização, adequação a um fim específico ou não violação de propriedade intelectual ou outra violação de direitos.
+                    {`
+                `}
+                </Text>
                 <Text style={styles.listItem}>- Além disso, o não garante ou faz qualquer representação relativa à precisão, aos resultados prováveis ​​ou à confiabilidade do uso dos materiais em seu app ou de outra forma relacionado a esses materiais ou em apps vinculados a este app.</Text>
                 <Text style={styles.heading}>4. Limitações</Text>
                 <Text style={styles.paragraph}>
-                    Em nenhum caso o ou seus fornecedores serão responsáveis ​​por quaisquer danos (incluindo, sem limitação, danos por perda de dados ou lucro ou devido a interrupção dos negócios) decorrentes do uso ou da incapacidade de usar os materiais em , mesmo que ou um representante autorizado da tenha sido notificado oralmente ou por escrito da possibilidade de tais danos. Como algumas jurisdições não permitem limitações em garantias implícitas, ou limitações de responsabilidade por danos consequentes ou incidentais, essas limitações podem não se aplicar a você.
+                    Em nenhum caso o ou seus fornecedores serão responsáveis por quaisquer danos (incluindo, sem limitação, danos por perda de dados ou lucro ou devido a interrupção dos negócios) decorrentes do uso ou da incapacidade de usar os materiais em , mesmo que ou um representante autorizado da tenha sido notificado oralmente ou por escrito da possibilidade de tais danos. Como algumas jurisdições não permitem limitações em garantias implícitas, ou limitações de responsabilidade por danos consequentes ou incidentais, essas limitações podem não se aplicar a você.
                 </Text>
                 <Text style={styles.heading}>5. Precisão dos materiais</Text>
                 <Text style={styles.paragraph}>

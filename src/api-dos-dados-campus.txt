@@ -1,0 +1,136 @@
+[
+ {
+  "nome": "Arapiraca",
+  "linkInstagram": "https://www.instagram.com/ifalcampusarapiraca/",
+  "linkSiteOficial": "https://www2.ifal.edu.br/campus/arapiraca",
+  "linkGoogleMaps": "https://goo.gl/maps/Xjz6x3n7Vnm8etrN6",
+  "img": "https://www2.ifal.edu.br/noticias/ifal-arapiraca-vai-ofertar-dois-cursos-de-graduacao-presenciais-a-partir-de-2019/ifal-arapiraca-222.jpg/@@images/a9ef4256-052f-4d8e-a479-8d43ac09ee54.jpeg",
+  "localizacao": {
+    "latitude": "-9.6150989",
+    "longitude": "-35.6300404",
+    "latitudeDelta": "0.0622",
+    "longitudeDelta": "0.01921"
+  },
+  "id": "1"
+},
+  {
+    "nome": "Batalha",
+    "linkInstagram": "https://www.instagram.com/ifalbatalha/",
+    "linkSiteOficial": "https://www2.ifal.edu.br/campus/batalha",
+    "linkGoogleMaps": "https://goo.gl/maps/LFCS2fR7k4HomnHH8",
+    "img": "https://www2.ifal.edu.br/noticias/ifal-inicia-novo-curso-tecnico-em-2020-conheca-a-formacao-em-biotecnologia/campus-batalha/@@images/6c78d8a4-17ae-4d73-9c53-c2ed0aee3bc1.jpeg",
+    "id": "2"
+  },
+  {
+    "nome": "Benedito Bentes",
+    "linkInstagram": "https://www.instagram.com/ifal.beneditobentes/",
+    "linkSiteOficial": "https://www2.ifal.edu.br/campus/benedito-bentes",
+    "linkGoogleMaps": "https://goo.gl/maps/wRqdnWCd3vKRXmWE9",
+    "img": "https://www2.ifal.edu.br/imagens/campi/campus-benedito-bentes.jpg/@@images/968c4f31-7250-4935-b043-5b0d8c419681.jpeg",
+    "id": "3"
+  },
+  {
+    "nome": "Coruripe",
+    "linkInstagram": "https://www.instagram.com/ifal.coruripe/",
+    "linkSiteOficial": "https://www2.ifal.edu.br/campus/coruripe",
+    "linkGoogleMaps": "https://goo.gl/maps/d5AgokP5m2nv6vCo7",
+    "img": "https://www.sintietfal.org.br/wp-content/uploads/2023/03/90c8be0d775f4dd5b63e11860501ccae.jpeg",
+    "id": "4"
+  },
+  {
+    "nome": "Maceió",
+    "linkInstagram": "https://www.instagram.com/ifal.maceio/",
+    "linkSiteOficial": "https://www2.ifal.edu.br/campus/maceio",
+    "linkGoogleMaps": "https://goo.gl/maps/uAQGjuF5zcdvsVr17",
+    "img": "https://www2.ifal.edu.br/campus/maceio/o-campus/arquivos/15894567_235982716812759_2520703515294609944_n.jpg",
+    "id": "5"
+  },
+  {
+    "nome": "Maragogi",
+    "linkInstagram": "https://www.instagram.com/ifalmaragogi/",
+    "linkSiteOficial": "https://www2.ifal.edu.br/campus/santana-do-mundau",
+    "linkGoogleMaps": "https://goo.gl/maps/QqjrApmJzZy2zZpp6",
+    "img": "https://www2.ifal.edu.br/campus/maragogi/noticias/ifal-maragogi-abre-90-vagas-em-cursos-gratuitos-de-capacitacao/fachada-campus-maragogi.jpg/@@images/b484b19c-d613-4dd0-9ba7-e70b5182f82e.jpeg",
+    "id": "6"
+  },
+  {
+    "nome": "Marechal Deodoro",
+    "linkInstagram": "https://www.instagram.com/ifalmarechal/",
+    "linkSiteOficial": "https://www2.ifal.edu.br/campus/marechal-deodoro",
+    "linkGoogleMaps": "https://goo.gl/maps/RZXM885bBHPdHDiQ8",
+    "img": "https://www2.ifal.edu.br/noticias/um-legado-de-educacao-de-qualidade-e-impacto-social-confira-os-destaques-da-trajetoria-de-25-anos-do-ifal-marechal/campus-marechal-deodoro/@@images/7a1f1ae4-493e-4ac2-8cae-e77bec60decb.jpeg",
+    "id": "7"
+  },
+  {
+    "nome": "Murici",
+    "linkInstagram": "https://www.instagram.com/ifal_campusmurici/",
+    "linkSiteOficial": "https://www2.ifal.edu.br/campus/murici",
+    "linkGoogleMaps": "https://goo.gl/maps/Qa98TvmLwvAcWZX76",
+    "img": "https://www.correiodosmunicipios-al.com.br/wp-content/uploads/2017/11/9aebcba050df4c8599be4527b520a8bb.jpeg",
+    "id": "8"
+  },
+  {
+    "nome": "Palmeira dos Índios",
+    "linkInstagram": "https://www.instagram.com/ifalcampuspalmeira/",
+    "linkSiteOficial": "https://www2.ifal.edu.br/campus/palmeira-dos-indios",
+    "linkGoogleMaps": "https://goo.gl/maps/6kuSV1o8yvVcuihaA",
+    "img": "https://www.alagoas24horas.com.br/wp-content/uploads/2016/09/ifalpalmeiradosindiso.jpg",
+    "id": "9"
+  },
+  {
+    "nome": "Penedo",
+    "linkInstagram": "https://www.instagram.com/ifalpenedo/",
+    "linkSiteOficial": "https://www2.ifal.edu.br/campus/penedo",
+    "linkGoogleMaps": "https://goo.gl/maps/ytD8t7pcdqYJGHhk7",
+    "img": "https://www2.ifal.edu.br/campus/penedo/noticias/direcao-geral-do-ifal-penedo-comunica-suspensao-dos-pagamentos-de-despesas/capa-site-78.jpg/@@images/397bbcff-72f1-4b3e-bed4-1b0adc1ecafa.jpeg",
+    "id": "10"
+  },
+  {
+    "nome": "Piranhas",
+    "linkInstagram": "https://www.instagram.com/ifal.piranhas/",
+    "linkSiteOficial": "https://www2.ifal.edu.br/campus/piranhas",
+    "linkGoogleMaps": "https://goo.gl/maps/ocPnHuegHiVBkWq79",
+    "img": "https://img.tribunahoje.com/jX7qmvKHb9aW4CdD1M5-UXm7OnQ=/840x520/smart/s3.tribunahoje.com/uploads/imagens/campuspiranhas.jpg",
+    "id": "11"
+  },
+  {
+    "nome": "Rio Largo",
+    "linkInstagram": "https://www.instagram.com/ifalriolargo/",
+    "linkSiteOficial": "https://www2.ifal.edu.br/campus/rio-largo",
+    "linkGoogleMaps": "https://goo.gl/maps/QzfHJvCeeGJ9FKMMA",
+    "img": "https://s2-g1.glbimg.com/JIRvX8WeqWLuLUYFY4F4AejZW6A=/0x0:730x548/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/m/T/UmmK6NRg22eNtmYByDtw/csm-ifal-campus-rio-largo-c4c8211caf.jpeg",
+    "id": "12"
+  },
+  {
+    "nome": "Santana do Ipanema",
+    "linkInstagram": "https://www.instagram.com/ifalsantana/",
+    "linkSiteOficial": "https://www2.ifal.edu.br/campus/santana-do-ipanema",
+    "linkGoogleMaps": "https://goo.gl/maps/GnJkJR44QEa7pKH99",
+    "img": "https://www.alagoasnanet.com.br/v3/wp-content/uploads/2018/08/3b2cda3a-4412-4220-80b9-2b884d459117.jpeg",
+    "id": "13"
+  },
+  {
+    "nome": "São Miguel dos Campos",
+    "linkInstagram": "https://www.instagram.com/ifalcampussaomiguel/",
+    "linkSiteOficial": "https://www2.ifal.edu.br/campus/sao-miguel-dos-campos",
+    "linkGoogleMaps": "https://goo.gl/maps/xGL3RgBmVUj23Ex57",
+    "img": "https://www2.ifal.edu.br/imagens/campi/novo-campus-sao-miguel-dos-campos.jpg/@@images/dcaea5f9-6e0b-4a5f-ac2c-ccec80da5969.jpeg",
+    "id": "14"
+  },
+  {
+    "nome": "Satuba",
+    "linkInstagram": "https://www.instagram.com/ifalsatuba/",
+    "linkSiteOficial": "https://www2.ifal.edu.br/campus/satuba",
+    "linkGoogleMaps": "https://goo.gl/maps/s7jSTEmfNbfP1zp36",
+    "img": "https://www.correiodosmunicipios-al.com.br/wp-content/uploads/2019/01/e0ba0bcb73204f23a29edd3a6db948f7.jpg",
+    "id": "15"
+  },
+  {
+    "nome": "Viçosa",
+    "linkInstagram": "https://www.instagram.com/ifalvicosa/",
+    "linkSiteOficial": "https://www2.ifal.edu.br/campus/vicosa",
+    "linkGoogleMaps": "https://goo.gl/maps/n9UFGhcqEwnfr6oX9",
+    "img": "https://www2.ifal.edu.br/campus/vicosa/o-campus/arquivos/2.jpg/@@images/cf64de92-805a-4373-89ea-24ea71a12ea2.jpeg",
+    "id": "16"
+  }
+]

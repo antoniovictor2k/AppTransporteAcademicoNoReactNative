@@ -37,8 +37,8 @@ const stylesTelaLogin = StyleSheet.create({
         fontWeight: 500,
         fontSize: 18,
         width: 330,
-        alignItems: 'center',
-        textAlign: 'justify',
+        // alignItems: '',
+        textAlign: 'left',
     },
     imgLogo: {
         marginTop: 45,

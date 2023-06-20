@@ -8,23 +8,28 @@ const stylesTelaMenu = StyleSheet.create({
 
     },
     cabecalho: {
-        margin: 0,
+        marginLeft: 15,
+        marginBottom:10,
         color: '#fff',
         flexDirection: 'row',
     },
     nomeDoAluno: {
-        marginTop: 22,
-        marginLeft: 5,
+        // marginTop: 22,
+        // marginLeft: 5,
         color: '#fff',
-        fontSize: 22,
+        fontSize: 20,
         fontWeight: 700,
     },
     emailDoAluno: {
-        marginTop: 50,
-        marginLeft: -75,
+        // marginTop: 50,
+        // marginLeft: -75,
         color: '#93B8C2',
-        fontSize: 14,
+        fontSize: 13,
         fontWeight: 600,
+    },
+    cabecalhoText:{
+        marginTop:10,
+        marginLeft:0,
     },
     linhaHorizotal: {
         backgroundColor: '#93B8C2',

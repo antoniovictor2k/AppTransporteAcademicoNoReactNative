@@ -1,4 +1,5 @@
 import { Text, View, ScrollView } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import styles from '../Styles/StyleTelaSobre';
 
 function TelaSobre() {
@@ -18,8 +19,8 @@ function TelaSobre() {
                     Linguagens e programas utilizados
                 </Text>
                 <Text style={styles.textoPadrao}>
-                    HTML linguagem de marcação, javaScript, Css, Sql, Sequelize, Node.js,
-                    Express, Figma, GitHub, Visual Studio, Reach native, Myqsl, Postman.
+                    JavaScript, Css, Sql, Sequelize, Node.js,
+                    Express, Figma, GitHub, Visual Studio, React native, MongoDB, Postman.
                 </Text>
                 <Text style={styles.sobTitulo}>
                     Deseveloper by JEVA system

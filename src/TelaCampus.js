@@ -1,11 +1,16 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { IconButton, Avatar, } from 'react-native-paper';
+import { IconButton, Avatar, ActivityIndicator } from 'react-native-paper';
 import { View, Text, FlatList, Linking } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+// Dentro de um componente funcional
+
 import styles from '../Styles/StyleTelaCampus';
 
 function RenderizarCampus() {
   const [campi, setCampi] = useState([]);
+  const navigation = useNavigation();
 
   useEffect(() => {
     fetchData();
@@ -20,7 +25,19 @@ function RenderizarCampus() {
       console.error(error);
     }
   }
+  if(campi.length === 0){
+    return(
+      <View style={styles.container}>
 
+      <ActivityIndicator
+      animating={true}
+      color={'#fff'}
+      size={'large'}
+      />
+      <Text style={{fontWeight:600, color:"#fff", marginTop:30,}}>Carregando...</Text>
+      </View>
+    );
+  };
   return (
     <View style={styles.container}>
       <FlatList
@@ -31,6 +48,7 @@ function RenderizarCampus() {
             <Avatar.Image size={100} source={{ uri: item.img }} />
             <View style={styles.itemContent}>
               <Text style={styles.instituto}>{item.nome}</Text>
+              {/* <Text style={{color:"#fff",}}>{item.localizacao}</Text> */}
               <View style={styles.icones}>
                 <IconButton
                   icon="instagram"
@@ -53,7 +71,7 @@ function RenderizarCampus() {
                   size={26}
                   iconColor={'#fff'}
                   onPress={() => {
-                    Linking.openURL(item.linkGoogleMaps);
+                    navigation.navigate('Mapa', { itemId: item, otherParam: 'para chamar o useEffect do marker' });
                   }}
                 />
               </View>

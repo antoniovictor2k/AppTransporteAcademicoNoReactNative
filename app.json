@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Apptransporteacademico",
+    "name": "Transporte Acadêmico",
     "slug": "Apptransporteacademico",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#113036"
     },
     "assetBundlePatterns": [
       "**/*"

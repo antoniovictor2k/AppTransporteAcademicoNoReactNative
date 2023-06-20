@@ -37,15 +37,15 @@ const stylesTelaLogin = StyleSheet.create({
     button: {
         width: 350,
         height: 45,
-        color: '#fff',
-        backgroundColor: '#000',
+        color: '#000',
+        backgroundColor: '#B3DCE5',
         borderRadius: 6,
         marginBottom: 0,
         marginTop: 5,
         paddingTop: 5,
     },
     textoButton: {
-        color: '#fff',
+        color: '#000',
         fontSize: 18,
         fontWeight: 700,
     },

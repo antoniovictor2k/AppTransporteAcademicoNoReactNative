@@ -1,9 +1,9 @@
 import 'react-native-gesture-handler';
-import * as React from 'react';
+import { React, useEffect, useState } from 'react';
 import { Text, View, Linking, TouchableOpacity } from 'react-native';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { Avatar, Divider, Button } from 'react-native-paper';
 
 // Imports de Telas 
@@ -14,15 +14,60 @@ import TelaConfiguracao from './TelaConfiguracao';
 import TelaCampus from './TelaCampus';
 import styles from '../Styles/StyleTelaMenuPersonalizada';
 
+// alterar aqui o endereço
+
 function CustomDrawerContent(props) {
+    const route = useRoute();
     const navigation = useNavigation();
+
+    // guarda os dados do json nome, email e img aqui.
+    const [nomeUsuario, setNomeUsuario] = useState(null);
+    const [emailUsuario, setEmailUsuario] = useState(null);
+    const [imageUrl, setImagemUrl] = useState(null);
+    
+    // pega o id do usuario na tela do login e através do navegation enviar aqui essa tela;
+    const { itemId } = route.params ?? {};
+   
+    async function sendFormulario(id) {
+        try {
+            // passa o id para receber somente dados desse usuário;
+            const response = await fetch(`https://back-end-transporte-academico-ifjfoi6st-antoniovictor2k.vercel.app/dados/${id}`, {
+                method: 'GET',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+            });
+            const json = await response.json();
+            // envia os nomes para o use useState e depois exibir na tela menu;
+            setEmailUsuario(json.email);
+            setNomeUsuario(json.nome);
+
+            if (json.imgUrl) {
+                setImagemUrl(json.imgUrl);
+              } else {
+                setImagemUrl("https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcQKp5ZsMFTZZrNFb_p2mduiKPipCDh7meawj_zla0mhOHNi_07O3TcMv-q-H-HBvH2G"); // ou defina uma URL padrão ou uma imagem de fallback
+              }
+              
+
+            // setImagemUrl(json.imageUrl);
+        } catch (error) {
+            console.log(error);
+            console.log("BackEnd não está retornando!");
+        }
+    };
+    sendFormulario(itemId);
+
     return (
         <DrawerContentScrollView {...props} style={styles.paginaMenu}>
             <View>
-                <View style={styles.cabecalho}>
-                    <Avatar.Icon theme={'outline'} size={100} icon="account-circle" style={{ backgroundColor: 'transparent' }} />
-                    <Text style={styles.nomeDoAluno}>Aluno</Text>
-                    <Text style={styles.emailDoAluno}>aluno.ifal@aluno.ifal.edu.br</Text>
+                <View style={styles.cabecalho} >
+                    {/* <Avatar.Icon theme={'outline'} size={100} icon="account-circle" style={{ backgroundColor: 'transparent' }} /> */}
+                    <Avatar.Image size={68} source={{ uri: imageUrl }} />
+                    <View style={styles.cabecalhoText}>
+                        <Text style={styles.nomeDoAluno}> {nomeUsuario} </Text>
+                        <Text style={styles.emailDoAluno}> {emailUsuario} </Text>
+                    </View>
                 </View>
                 <Divider style={styles.linhaHorizotal} />
                 <DrawerItemList {...props} />
@@ -42,7 +87,7 @@ function CustomDrawerContent(props) {
                         >Privacidade</Text>
                     </Text>
                 </View>
-                <Button icon="logout" buttonColor='#000' mode="contained" style={styles.button}
+                <Button icon="logout" buttonColor='#B3DCE5' textColor='#000' mode="contained" style={styles.button}
                     onPress={() => navigation.navigate('Login')}>
                     Sair
                 </Button>
@@ -53,7 +98,7 @@ function CustomDrawerContent(props) {
 }
 
 const Drawer = createDrawerNavigator();
-
+// para criar o icone do Menu
 const CustomHeader = () => {
     const navigation = useNavigation();
 
@@ -71,6 +116,9 @@ const CustomHeader = () => {
 };
 
 function TelaMenu() {
+    const route = useRoute();
+    const { itemId } = route.params ?? {};
+
     return (
         <Drawer.Navigator initialRouteName="Mapa" drawerContent={CustomDrawerContent}>
 
@@ -123,7 +171,7 @@ function TelaMenu() {
                     drawerLabel: (({ focused }) => <Text style={styles.optionsTextos}>Configuração</Text>),
                     drawerIcon: (({ focused }) => <Icon style={styles.optionsIcones} name="settings" />)
                 }
-            } name="TelaConfiguracao" component={TelaConfiguracao} />
+            } name="TelaConfiguracao" component={TelaConfiguracao} initialParams={{ itemId: itemId }} />
         </Drawer.Navigator>
     );
 }

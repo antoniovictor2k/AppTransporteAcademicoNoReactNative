@@ -7,6 +7,28 @@ const stylesTelaMenu = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#113036',
     },
+    containerFlex:{
+        backgroundColor: '#113036',
+        flex:1,
+        alignItems:'center',
+        justifyContent:'center',
+    },
+    carregando:{
+        fontWeight:600, 
+        color:"#fff", 
+        marginTop:30,
+    },
+    buttonAtivarGPS:{
+        width: 350,
+        height: 45,
+        color: '#000',
+        backgroundColor: '#B3DCE5',
+        borderRadius: 6,
+        marginBottom: 0,
+        marginTop: 20,
+        paddingTop: 5,
+        marginBottom: 60,
+    },
     mapView: {
         ...StyleSheet.absoluteFillObject,
         justifyContent: 'flex-end',

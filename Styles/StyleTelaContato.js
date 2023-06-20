@@ -23,7 +23,7 @@ const stylesTelaLogin = StyleSheet.create({
         color: '#fff',
     },
     card: {
-        padding: 10,
+        padding: 20,
         borderRadius: 8,
         backgroundColor: '#051C21',
         borderColor: '#fff',
@@ -35,9 +35,7 @@ const stylesTelaLogin = StyleSheet.create({
         marginBottom: 20,
         fontSize: 28,
         fontWeight: 600,
-
         color: '#fff',
-
     },
     subTitulo1: {
         marginTop: 20,
@@ -49,34 +47,30 @@ const stylesTelaLogin = StyleSheet.create({
     },
     instituicao: {
         alignItems: 'center',
-        marginBottom: 20,
         gap: 16,
     },
     dev: {
-        marginTop: 20,
         alignItems: 'center',
-
         gap: 16,
     },
-
     contatoNome: {
         fontSize: 18,
-        fontWeight: 500,
-        color: '#CCCCCC',
+        fontWeight: 700,
+        color: '#FCFDFF',
     },
     contatoCidade: {
         fontSize: 18,
-        fontWeight: 500,
+        fontWeight: 400,
         color: '#CCCCCC',
     },
     contatoFone: {
         fontSize: 18,
-        fontWeight: 500,
+        fontWeight: 400,
         color: '#CCCCCC',
     },
     contatoEmail: {
         fontSize: 18,
-        fontWeight: 500,
+        fontWeight: 400,
         color: '#CCCCCC',
     },
     contatoIcon: {
@@ -88,21 +82,16 @@ const stylesTelaLogin = StyleSheet.create({
         flexDirection: 'row',
         gap: 15,
         justifyContent: 'space-between',
-
     },
     icones: {
         fontSize: 28,
-
         color: '#CCCCCC',
     },
-
     developer: {
         marginTop: 70,
         marginBottom: 20,
         color: '#93B8C2',
-
     },
-
 })
 
 export default stylesTelaLogin;
