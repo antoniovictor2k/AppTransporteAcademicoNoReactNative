@@ -6,7 +6,6 @@ import { View, Alert, Linking } from 'react-native';
 import { IconButton, Text, ActivityIndicator, Button } from 'react-native-paper';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import MapViewDirections from 'react-native-maps-directions';
-import OpenSettings from 'react-native-open-settings';
 import styles from '../Styles/StyleTelaPrincipalComMenu';
 
 const GOOGLE_MAPS_APIKEY = 'AIzaSyBRMU4LkxXu-mcV8mtB-p0R5jBR0V1iWI8';
@@ -123,7 +122,7 @@ useEffect(() => {
 
 
   const handleOpenSettings = () => {
-     Linking.openSettings();
+     alert('em teste.');
   };
 
   // No Expo, 
