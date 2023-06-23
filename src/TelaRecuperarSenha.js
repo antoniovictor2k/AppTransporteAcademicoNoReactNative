@@ -90,7 +90,7 @@ function TelaRecuperarSenha({ navigation }) {
           <Text style={{ color: "#fff", fontSize: 16, }}>Por favor, digite um email válido</Text>
         }
         {display &&
-          <Text style={{ color: "#fff", fontSize: 16, }}>Usuário e/ou senha inválidos</Text>
+          <Text style={{ color: "#fff", fontSize: 16, }}>Usuário não existe</Text>
         }
         {display2 &&
           <Text style={{ color: "#fff", fontSize: 16, textAlign: 'center', }}>Desculpe, o servidor não está respondendo no momento.</Text>

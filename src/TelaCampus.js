@@ -25,16 +25,16 @@ function RenderizarCampus() {
       console.error(error);
     }
   }
-  if(campi.length === 0){
-    return(
+  if (campi.length === 0) {
+    return (
       <View style={styles.container}>
 
-      <ActivityIndicator
-      animating={true}
-      color={'#fff'}
-      size={'large'}
-      />
-      <Text style={{fontWeight:600, color:"#fff", marginTop:30,}}>Carregando...</Text>
+        <ActivityIndicator
+          animating={true}
+          color={'#fff'}
+          size={'large'}
+        />
+        <Text style={{ fontWeight: 600, color: "#fff", marginTop: 30, }}>Carregando...</Text>
       </View>
     );
   };
@@ -48,7 +48,6 @@ function RenderizarCampus() {
             <Avatar.Image size={100} source={{ uri: item.img }} />
             <View style={styles.itemContent}>
               <Text style={styles.instituto}>{item.nome}</Text>
-              {/* <Text style={{color:"#fff",}}>{item.localizacao}</Text> */}
               <View style={styles.icones}>
                 <IconButton
                   icon="instagram"
@@ -71,7 +70,7 @@ function RenderizarCampus() {
                   size={26}
                   iconColor={'#fff'}
                   onPress={() => {
-                    navigation.navigate('Mapa', { itemId: item, otherParam: 'para chamar o useEffect do marker' });
+                    navigation.navigate('Mapa', { itemId: item});
                   }}
                 />
               </View>

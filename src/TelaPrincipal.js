@@ -18,30 +18,17 @@ const GOOGLE_MAPS_APIKEY = 'AIzaSyCmObYS2GipCgK-Ev4UvwKw_P9zbxq_yrI';
 function TelaPrincipal() {
 
   const route = useRoute();
-  const { itemId, otherParam } = route.params ?? {};
+  const { itemId } = route.params ?? {};
   const mapRef = useRef(null);
-
   const [localizacao, setLocalizacao] = useState(null);
   const [carregando, setCarregando] = useState(false);
-  const [coordsAccuracy, setCoordsAccuracy] = useState(null)
-  const [coordsLatitude, setCoordsLatitude] = useState(null)
-  const [coordsLongitude,setCoordsLongitude] = useState(null)
-  const [ coordsTimestamp, setCoordsTimestamp] = useState(null)
-
   const [errorMsg, setErrorMsg] = useState(null);
   const [mostrarRota, setMostrarRota] = useState(false);
   const [compartilharBus, setCompartilharBus] = useState(false);
   const [destinoIFALMaceio, setDestinoIFALMaceio] = useState({
     latitude: -9.6650989, longitude: -35.7300404, latitudeDelta: 0.0622, longitudeDelta: 0.01921,
   });
-  
- 
 
-// Chame a função criarCompartilhamento para enviar a solicitação POST
-// criarCompartilhamento();
-
-
-// console.log(coordsLatitude)
 
   const ativarMostrarRota = () => {
     localizacao && setMostrarRota(!mostrarRota);
@@ -131,7 +118,7 @@ function TelaPrincipal() {
   };
 
   const centralizarLocalizacaoDeMarker = () => {
-    mapRef.current.animateToRegion(destinoIFALMaceio);
+    mapRef.current?.animateToRegion(destinoIFALMaceio);
   };
 
 
@@ -145,14 +132,14 @@ function TelaPrincipal() {
         longitudeDelta: parseFloat(itemId.localizacao.longitudeDelta),
       });
       // chamando useeffect localização
-      mapRef.current.animateToRegion({
+      mapRef.current?.animateToRegion({
         latitude: parseFloat(itemId.localizacao.latitude),
         longitude: parseFloat(itemId.localizacao.longitude),
         latitudeDelta: parseFloat(itemId.localizacao.latitudeDelta),
         longitudeDelta: parseFloat(itemId.localizacao.longitudeDelta),
       });
     }
-  }, [itemId, otherParam]);
+  }, [itemId]);
 
   // abrir configuração do depositivo;
   const handleOpenSettings = () => {
