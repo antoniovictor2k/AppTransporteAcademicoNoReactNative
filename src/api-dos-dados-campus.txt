@@ -6,13 +6,15 @@
   "linkGoogleMaps": "https://goo.gl/maps/Xjz6x3n7Vnm8etrN6",
   "img": "https://www2.ifal.edu.br/noticias/ifal-arapiraca-vai-ofertar-dois-cursos-de-graduacao-presenciais-a-partir-de-2019/ifal-arapiraca-222.jpg/@@images/a9ef4256-052f-4d8e-a479-8d43ac09ee54.jpeg",
   "localizacao": {
-    "latitude": "-9.6150989",
+    "latitude": "-9.7454125",
     "longitude": "-35.6300404",
     "latitudeDelta": "0.0622",
     "longitudeDelta": "0.01921"
   },
   "id": "1"
 },
+https://www.google.com/maps/place/Instituto+Federal+de+Alagoas,+Campus+Arapiraca/
+@-9.7454125,-36.6335464,17z/data=!3m1!4b1!4m6!3m5!1s0x705d5a26696e665:0x8c850bed9f271d22!8m2!3d-9.7454125!4d-36.6313577!16s%2Fg%2F11ckxwpg04?entry=ttu
   {
     "nome": "Batalha",
     "linkInstagram": "https://www.instagram.com/ifalbatalha/",
@@ -21,6 +23,8 @@
     "img": "https://www2.ifal.edu.br/noticias/ifal-inicia-novo-curso-tecnico-em-2020-conheca-a-formacao-em-biotecnologia/campus-batalha/@@images/6c78d8a4-17ae-4d73-9c53-c2ed0aee3bc1.jpeg",
     "id": "2"
   },
+https://www.google.com/maps/place/IFAL+-+Campus+Batalha/
+@-9.669545,-37.128762,16z/data=!4m6!3m5!1s0x70607fd389c005b:0xbe778cc4832f787e!8m2!3d-9.6688998!4d-37.1267613!16s%2Fg%2F11bzypf6dm?entry=ttu
   {
     "nome": "Benedito Bentes",
     "linkInstagram": "https://www.instagram.com/ifal.beneditobentes/",
@@ -29,6 +33,8 @@
     "img": "https://www2.ifal.edu.br/imagens/campi/campus-benedito-bentes.jpg/@@images/968c4f31-7250-4935-b043-5b0d8c419681.jpeg",
     "id": "3"
   },
+https://www.google.com/maps/place/IFAL+-+Campus+Benedito+Bentes/
+@-9.5545915,-35.7328646,15.5z/data=!4m6!3m5!1s0x70147f77cc0ec33:0xeeb8c5604b070617!8m2!3d-9.5513607!4d-35.7294492!16s%2Fg%2F11g8br1bcy?entry=ttu
   {
     "nome": "Coruripe",
     "linkInstagram": "https://www.instagram.com/ifal.coruripe/",
@@ -37,6 +43,8 @@
     "img": "https://www.sintietfal.org.br/wp-content/uploads/2023/03/90c8be0d775f4dd5b63e11860501ccae.jpeg",
     "id": "4"
   },
+https://www.google.com/maps/place/IFAL+-+Campus+Coruripe/
+@-10.1262096,-36.1570004,17z/data=!3m1!4b1!4m6!3m5!1s0x7046b7d2c0dc66b:0xa8e7e8a8795bcdba!8m2!3d-10.1262096!4d-36.1570004!16s%2Fg%2F11c58l1yhv?entry=ttu
   {
     "nome": "Maceió",
     "linkInstagram": "https://www.instagram.com/ifal.maceio/",
@@ -45,6 +53,8 @@
     "img": "https://www2.ifal.edu.br/campus/maceio/o-campus/arquivos/15894567_235982716812759_2520703515294609944_n.jpg",
     "id": "5"
   },
+https://www.google.com/maps/place/Ifal/
+@-9.6618281,-35.7256532,15.5z/data=!4m6!3m5!1s0x701459c0b23cd5b:0xfb6fad9274a0c6e9!8m2!3d-9.6607076!4d-35.7229421!16s%2Fg%2F11sk4g56rq?entry=ttu
   {
     "nome": "Maragogi",
     "linkInstagram": "https://www.instagram.com/ifalmaragogi/",
@@ -53,6 +63,8 @@
     "img": "https://www2.ifal.edu.br/campus/maragogi/noticias/ifal-maragogi-abre-90-vagas-em-cursos-gratuitos-de-capacitacao/fachada-campus-maragogi.jpg/@@images/b484b19c-d613-4dd0-9ba7-e70b5182f82e.jpeg",
     "id": "6"
   },
+https://www.google.com/maps/place/Instituto+Federal+de+Alagoas,+Campus+Maragogi/
+@-8.9460775,-35.1781464,15.5z/data=!4m6!3m5!1s0x7006183b7a3567d:0x98ed84fabb6548cf!8m2!3d-8.9432482!4d-35.1744154!16s%2Fg%2F11bxjptx1m?entry=ttu
   {
     "nome": "Marechal Deodoro",
     "linkInstagram": "https://www.instagram.com/ifalmarechal/",
@@ -61,6 +73,8 @@
     "img": "https://www2.ifal.edu.br/noticias/um-legado-de-educacao-de-qualidade-e-impacto-social-confira-os-destaques-da-trajetoria-de-25-anos-do-ifal-marechal/campus-marechal-deodoro/@@images/7a1f1ae4-493e-4ac2-8cae-e77bec60decb.jpeg",
     "id": "7"
   },
+https://www.google.com/maps/place/Instituto+Federal+de+Alagoas+-+Campus+Marechal+Deodoro/
+@-9.7132058,-35.8930082,17z/data=!3m1!4b1!4m6!3m5!1s0x70153265261a03b:0x16372a95c9109adc!8m2!3d-9.7132058!4d-35.8930082!16s%2Fg%2F1tfrmjj4?entry=ttu
   {
     "nome": "Murici",
     "linkInstagram": "https://www.instagram.com/ifal_campusmurici/",
@@ -69,6 +83,8 @@
     "img": "https://www.correiodosmunicipios-al.com.br/wp-content/uploads/2017/11/9aebcba050df4c8599be4527b520a8bb.jpeg",
     "id": "8"
   },
+https://www.google.com/maps/place/Instituto+Federal+de+Alagoas+-+Campus+Murici/
+@-9.308439,-35.9362147,17z/data=!3m1!4b1!4m6!3m5!1s0x706d367b0c1748b:0x4b6be83b275b90b0!8m2!3d-9.308439!4d-35.9362147!16s%2Fg%2F11cnb_sfkx?entry=ttu
   {
     "nome": "Palmeira dos Índios",
     "linkInstagram": "https://www.instagram.com/ifalcampuspalmeira/",
@@ -77,6 +93,8 @@
     "img": "https://www.alagoas24horas.com.br/wp-content/uploads/2016/09/ifalpalmeiradosindiso.jpg",
     "id": "9"
   },
+https://www.google.com/maps/place/IFAL+-+Campus+Palmeira+dos+%C3%8Dndios/
+@-9.4071577,-36.6566993,16.25z/data=!4m6!3m5!1s0x7065f815434e271:0xfe44609c8215d790!8m2!3d-9.407136!4d-36.6552912!16s%2Fg%2F11tcyqp_mk?entry=ttu
   {
     "nome": "Penedo",
     "linkInstagram": "https://www.instagram.com/ifalpenedo/",
@@ -85,6 +103,8 @@
     "img": "https://www2.ifal.edu.br/campus/penedo/noticias/direcao-geral-do-ifal-penedo-comunica-suspensao-dos-pagamentos-de-despesas/capa-site-78.jpg/@@images/397bbcff-72f1-4b3e-bed4-1b0adc1ecafa.jpeg",
     "id": "10"
   },
+https://www.google.com/maps/place/IFAL+-+Instituto+Federal+de+Alagoas+-+Campus+Penedo/
+@-10.294177,-36.5511162,14.25z/data=!4m6!3m5!1s0x704546f3c84f6a1:0xe2280049de1eabdb!8m2!3d-10.2862676!4d-36.5440405!16s%2Fg%2F11bvcv8mcw?entry=ttu
   {
     "nome": "Piranhas",
     "linkInstagram": "https://www.instagram.com/ifal.piranhas/",
@@ -93,6 +113,8 @@
     "img": "https://img.tribunahoje.com/jX7qmvKHb9aW4CdD1M5-UXm7OnQ=/840x520/smart/s3.tribunahoje.com/uploads/imagens/campuspiranhas.jpg",
     "id": "11"
   },
+https://www.google.com/maps/place/Instituto+Federal+de+Alagoas,+C%C3%A2mpus+Piranhas/
+@-9.622714,-37.7664776,17z/data=!3m1!4b1!4m6!3m5!1s0x70f331d64e1277f:0x55a40c5a0c6bf592!8m2!3d-9.622714!4d-37.7664776!16s%2Fg%2F11bwkyxlg0?entry=ttu
   {
     "nome": "Rio Largo",
     "linkInstagram": "https://www.instagram.com/ifalriolargo/",
@@ -101,6 +123,8 @@
     "img": "https://s2-g1.glbimg.com/JIRvX8WeqWLuLUYFY4F4AejZW6A=/0x0:730x548/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/m/T/UmmK6NRg22eNtmYByDtw/csm-ifal-campus-rio-largo-c4c8211caf.jpeg",
     "id": "12"
   },
+https://www.google.com/maps/place/Instituto+Federal+de+Alagoas+-+Campus+Rio+Largo/
+@-9.5131068,-35.8073277,15.5z/data=!4m6!3m5!1s0x701379310b71523:0x9139c72273c11ec6!8m2!3d-9.5112471!4d-35.8039773!16s%2Fg%2F11s5ttylnk?entry=ttu
   {
     "nome": "Santana do Ipanema",
     "linkInstagram": "https://www.instagram.com/ifalsantana/",
@@ -109,6 +133,8 @@
     "img": "https://www.alagoasnanet.com.br/v3/wp-content/uploads/2018/08/3b2cda3a-4412-4220-80b9-2b884d459117.jpeg",
     "id": "13"
   },
+https://www.google.com/maps/place/IFAL+-+Campus+Santana+do+Ipanema/
+@-9.3845539,-37.2429693,17z/data=!3m1!4b1!4m6!3m5!1s0x7061f6d43141749:0xca7539375c8457b8!8m2!3d-9.3845539!4d-37.2429693!16s%2Fg%2F11c3trwnhw?entry=ttu
   {
     "nome": "São Miguel dos Campos",
     "linkInstagram": "https://www.instagram.com/ifalcampussaomiguel/",
@@ -117,6 +143,8 @@
     "img": "https://www2.ifal.edu.br/imagens/campi/novo-campus-sao-miguel-dos-campos.jpg/@@images/dcaea5f9-6e0b-4a5f-ac2c-ccec80da5969.jpeg",
     "id": "14"
   },
+https://www.google.com/maps/place/IFAL+Campus+S%C3%A3o+Miguel+dos+Campos/
+@-9.8003477,-36.1048506,17z/data=!3m1!4b1!4m6!3m5!1s0x706a73c1326c44d:0xc69e33bb81792655!8m2!3d-9.8003477!4d-36.1048506!16s%2Fg%2F11mnr5587q?entry=ttu
   {
     "nome": "Satuba",
     "linkInstagram": "https://www.instagram.com/ifalsatuba/",
@@ -125,6 +153,8 @@
     "img": "https://www.correiodosmunicipios-al.com.br/wp-content/uploads/2019/01/e0ba0bcb73204f23a29edd3a6db948f7.jpg",
     "id": "15"
   },
+https://www.google.com/maps/place/Instituto+Federal+de+Alagoas+-+Campus+Satuba/
+@-9.574429,-35.8212838,17z/data=!3m1!4b1!4m6!3m5!1s0x7014983c126aac7:0x41fddfa0c67d47b8!8m2!3d-9.574429!4d-35.8212838!16s%2Fg%2F11b88mrh38?entry=ttu
   {
     "nome": "Viçosa",
     "linkInstagram": "https://www.instagram.com/ifalvicosa/",
@@ -133,4 +163,6 @@
     "img": "https://www2.ifal.edu.br/campus/vicosa/o-campus/arquivos/2.jpg/@@images/cf64de92-805a-4373-89ea-24ea71a12ea2.jpeg",
     "id": "16"
   }
+https://www.google.com/maps/place/Instituto+Federal+de+Educa%C3%A7%C3%A3o+Ci%C3%AAncia+e+Tecnologia+de+Alagoas,+Campus+Vi%C3%A7osa/
+@-9.3709151,-36.2413028,17z/data=!3m1!4b1!4m6!3m5!1s0x706c2f34d00f70f:0xa75e9cbe85ae95fc!8m2!3d-9.3709151!4d-36.2413028!16s%2Fg%2F11b7c9wp57?entry=ttu
 ]

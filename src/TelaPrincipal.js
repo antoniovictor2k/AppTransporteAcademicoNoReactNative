@@ -2,37 +2,53 @@
 import React, { useEffect, useState, useRef } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
-import { View, Alert, Linking } from 'react-native';
+import { View, Alert, Linking, Platform } from 'react-native';
 import { IconButton, Text, ActivityIndicator, Button } from 'react-native-paper';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
+import Settings from 'react-native-settings';
+import Constants from 'expo-constants';
 import MapViewDirections from 'react-native-maps-directions';
 import styles from '../Styles/StyleTelaPrincipalComMenu';
 
-const GOOGLE_MAPS_APIKEY = 'AIzaSyBRMU4LkxXu-mcV8mtB-p0R5jBR0V1iWI8';
+const GOOGLE_MAPS_APIKEY = 'AIzaSyCmObYS2GipCgK-Ev4UvwKw_P9zbxq_yrI';
+// AIzaSyCmObYS2GipCgK-Ev4UvwKw_P9zbxq_yrI
+ const  localhost = '192.168.0.105';
+
 
 function TelaPrincipal() {
 
   const route = useRoute();
   const { itemId, otherParam } = route.params ?? {};
+  const mapRef = useRef(null);
 
   const [localizacao, setLocalizacao] = useState(null);
   const [carregando, setCarregando] = useState(false);
+  const [coordsAccuracy, setCoordsAccuracy] = useState(null)
+  const [coordsLatitude, setCoordsLatitude] = useState(null)
+  const [coordsLongitude,setCoordsLongitude] = useState(null)
+  const [ coordsTimestamp, setCoordsTimestamp] = useState(null)
+
   const [errorMsg, setErrorMsg] = useState(null);
   const [mostrarRota, setMostrarRota] = useState(false);
   const [compartilharBus, setCompartilharBus] = useState(false);
   const [destinoIFALMaceio, setDestinoIFALMaceio] = useState({
     latitude: -9.6650989, longitude: -35.7300404, latitudeDelta: 0.0622, longitudeDelta: 0.01921,
   });
-  const [dericionarMarker, setDericionarMarker] = useState(null);
+  
+ 
+
+// Chame a função criarCompartilhamento para enviar a solicitação POST
+// criarCompartilhamento();
 
 
+// console.log(coordsLatitude)
 
   const ativarMostrarRota = () => {
     localizacao && setMostrarRota(!mostrarRota);
   };
 
   const ativarCompartilharBus = () => {
-    if (localizacao === null) {
+    if (!localizacao) {
       Alert.alert(
         'Verifique se o GPS está ligado',
         'Impossível compartilhar sua localização, ligue GPS para Continuar',
@@ -56,12 +72,11 @@ function TelaPrincipal() {
       (async () => {
 
         let { granted } = await Location.requestForegroundPermissionsAsync();
-            if (!granted) {
-              setErrorMsg('A permissão para acessar o local foi negada');
-              // alert('A permissão para acessar o local foi negada');
-              return;
-            }
-  
+        if (!granted) {
+          setErrorMsg('A permissão para acessar o local foi negada');
+          return;
+        }
+
         let providerStatus = await Location.getProviderStatusAsync();
         if (!providerStatus.gpsAvailable) {
           setErrorMsg('O GPS não está ativado');
@@ -69,6 +84,27 @@ function TelaPrincipal() {
           return;
         }
         setCarregando(false);
+        // obter dados a casa 2 segundos da localização
+        if (compartilharBus === true) {
+          console.log('Compartilhamento Ativado...')
+          let localicaoCompartinhada = await Location.getCurrentPositionAsync({});
+          console.log(localicaoCompartinhada.coords.latitude);
+        };
+
+      })();
+
+
+    }, 2000); // Chama a cada 2 segundo (2000 milissegundos)
+
+    return () => {
+      clearInterval(interval);
+    };
+  });
+  // Correçao de tela piscando ....
+  useEffect(() => {
+    async function obterLocalizacao() {
+      setCarregando(false);
+      try {
         let localizacao = await Location.getCurrentPositionAsync({});
         setLocalizacao({
           latitude: localizacao.coords.latitude,
@@ -76,77 +112,88 @@ function TelaPrincipal() {
           latitudeDelta: 0.0222,
           longitudeDelta: 0.1699,
         });
-      })();
-    
-        
-        
-      // }
-    }, 2000); // Chama a cada 2 segundo (2000 milissegundos)
-    
-    return () => {
-      clearInterval(interval);
-    };
-  });
-  
+      } catch (error) {
+        console.log('Erro ao obter a localização:', error);
+      }
+    }
+    if (!localizacao) {
+      console.log(" localizacaoAtual(); OK")
+    }
+    localizacaoAtual();
+    obterLocalizacao();
+  }, []);
+
   // console.log(destinoIFALMaceio);
-  
-  const mapRef = useRef(null);
+
 
   const localizacaoAtual = () => {
     mapRef.current.animateToRegion(localizacao);
   };
-  
+
   const centralizarLocalizacaoDeMarker = () => {
     mapRef.current.animateToRegion(destinoIFALMaceio);
   };
- 
-
-useEffect(() => {
-
-  if (itemId) {
-    setDestinoIFALMaceio({
-      latitude: parseFloat(itemId.localizacao.latitude),
-      longitude: parseFloat(itemId.localizacao.longitude),
-      latitudeDelta: parseFloat(itemId.localizacao.latitudeDelta),
-      longitudeDelta: parseFloat(itemId.localizacao.longitudeDelta),
-    });
-    // chamando useeffect localização
-    mapRef.current.animateToRegion({
-      latitude: parseFloat(itemId.localizacao.latitude),
-      longitude: parseFloat(itemId.localizacao.longitude),
-      latitudeDelta: parseFloat(itemId.localizacao.latitudeDelta),
-      longitudeDelta: parseFloat(itemId.localizacao.longitudeDelta),
-    });
-  }
-}, [itemId, otherParam]);
 
 
+  useEffect(() => {
+
+    if (itemId) {
+      setDestinoIFALMaceio({
+        latitude: parseFloat(itemId.localizacao.latitude),
+        longitude: parseFloat(itemId.localizacao.longitude),
+        latitudeDelta: parseFloat(itemId.localizacao.latitudeDelta),
+        longitudeDelta: parseFloat(itemId.localizacao.longitudeDelta),
+      });
+      // chamando useeffect localização
+      mapRef.current.animateToRegion({
+        latitude: parseFloat(itemId.localizacao.latitude),
+        longitude: parseFloat(itemId.localizacao.longitude),
+        latitudeDelta: parseFloat(itemId.localizacao.latitudeDelta),
+        longitudeDelta: parseFloat(itemId.localizacao.longitudeDelta),
+      });
+    }
+  }, [itemId, otherParam]);
+
+  // abrir configuração do depositivo;
   const handleOpenSettings = () => {
-     alert('em teste.');
+    if (Constants.appOwnership === 'expo') {
+      // Código específico para o Expo
+      Linking.openSettings();
+    }
+    else {
+      // Código específico para ambiente nativo
+      if (Platform.OS === 'android') {
+        // Lógica para Android nativo
+        const result = Settings.openSetting('ACTION_LOCATION_SOURCE_SETTINGS');
+      } else {
+        // Lógica para iOS nativo
+        alert("Sistema IOS indisponivel no momento...")
+      }
+    }
   };
 
   // No Expo, 
   // não há uma maneira direta de abrir as configurações de localização do dispositivo para ativar manualmente. 
   // O Expo não fornece essa funcionalidade específica
-  
+
   if (carregando) {
     return (
       <View style={styles.containerFlex}>
-       <ActivityIndicator
-      animating={true}
-      color={'#fff'}
-      size={'large'}
-      />
-      <Text style={styles.carregando}> {errorMsg} </Text>
+        <ActivityIndicator
+          animating={true}
+          color={'#fff'}
+          size={'large'}
+        />
+        <Text style={styles.carregando}> {errorMsg} </Text>
         <Text style={styles.carregando}>Por favor ligue o GPS para continuar</Text>
-        <Button 
-        icon={'cog-sync-outline'} 
-        textColor='#000' 
-        buttonColor='#B3DCE5' 
-        onPress={handleOpenSettings}
-        style={styles.buttonAtivarGPS}>
+        <Button
+          icon={'cog-sync-outline'}
+          textColor='#000'
+          buttonColor='#B3DCE5'
+          onPress={handleOpenSettings}
+          style={styles.buttonAtivarGPS}>
           Ativar GPS
-          </Button>
+        </Button>
       </View>
     );
   }
@@ -189,12 +236,10 @@ useEffect(() => {
             <IconButton
               icon="bus-school"
               size={38}
-              iconColor="#EBCE08"
-              mode="outlined"
+              iconColor="#000"
             />
           </Marker>
         )}
-
         {mostrarRota && (
           <MapViewDirections
             origin={localizacao}

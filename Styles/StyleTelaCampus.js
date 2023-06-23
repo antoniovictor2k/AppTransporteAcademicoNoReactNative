@@ -57,6 +57,7 @@ const stylesTelaCampus = StyleSheet.create({
         height: 220,
         borderColor: '#fff',
         borderWidth: 1,
+        paddingTop:15,
     },
     icones: {
         flexDirection: 'row'
