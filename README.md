@@ -12,12 +12,12 @@ O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcion
 
 ## Capturas de Tela
 
-*Tela Login*
-<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Awesome" width="400" height="700">
+## Tela Login
+<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
 *Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
 
-*Tela Cadastro*
-<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Awesome" width="400" height="700">
+## Tela Cadastro
+<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
 *Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
 
 ![Tela 2](/caminho/para/tela2.png)
