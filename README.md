@@ -12,7 +12,8 @@ O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcion
 
 ## Capturas de Tela
 
-![Tela 1](/assets/splash.png)
+![Tela 1](<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Awesome" width="400" height="300">
+)
 *Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
 
 ![Tela 2](/caminho/para/tela2.png)
