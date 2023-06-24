@@ -95,11 +95,8 @@ Para alterar a imagem terá que fornecer um link da imagem.
 *Automaticamente o usuário será direcionado para tela login.*
 
 
-## icon do App
-<img src="/assets/ImgTelasApp/adaptive-icon.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="50" height="50">
-
-## Tela Antes do App
-<img src="/assets/ImgTelasApp/Splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+## icon do App e Tela Antes do App
+<img src="/assets/ImgTelasApp/adaptive-icon.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="50" height="50"> <img src="/assets/ImgTelasApp/Splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
 
 
 
