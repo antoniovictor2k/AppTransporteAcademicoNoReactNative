@@ -1,7 +1,9 @@
-# Aplicativo Awesome
+# Aplicativo Transporte Acadêmico
 
 ## Descrição
-O Aplicativo Awesome é uma solução inovadora que oferece uma experiência única aos usuários.
+O Aplicativo Transporte Acadêmico é uma solução inovadora que oferece uma experiência única aos usuários.
+
+O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcionários em relação ao transporte escolar, a ideia foi criar um app no qual os mesmos possam compartilhar sua localização com os demais e assim facilitar o acesso ao transporte escolar no local exato através do compartilhamento em tempo real.
 
 ## Recursos Principais
 - Recurso 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -11,29 +13,29 @@ O Aplicativo Awesome é uma solução inovadora que oferece uma experiência ún
 ## Capturas de Tela
 
 ![Tela 1](/caminho/para/tela1.png)
-*Legenda: Tela inicial do Aplicativo Awesome.*
+*Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
 
 ![Tela 2](/caminho/para/tela2.png)
-*Legenda: Exemplo de uma funcionalidade do Aplicativo Awesome.*
+*Legenda: Exemplo de uma funcionalidade do Aplicativo Transporte Acadêmico.*
 
 ## Instalação
-Siga as etapas abaixo para instalar o Aplicativo Awesome:
+Siga as etapas abaixo para instalar o Aplicativo Transporte Acadêmico:
 
-1. Faça o download do arquivo de instalação no [link](https://www.exemplo.com/aplicativo-awesome).
+1. Faça o download do Apk de instalação no [link](https://www.exemplo.com/aplicativo-awesome).
 2. Abra o arquivo de instalação em seu dispositivo.
 3. Siga as instruções na tela para concluir a instalação.
 
 ## Requisitos do Sistema
 Certifique-se de que seu dispositivo atenda aos seguintes requisitos mínimos:
 
-- Sistema operacional: Android 7.0 ou posterior.
+- Sistema operacional: Android 8.0 ou posterior.
 - Espaço de armazenamento: Pelo menos 100 MB de espaço livre.
 
 ## Suporte
 Para obter suporte técnico ou relatar problemas, entre em contato conosco pelos seguintes canais:
 
-- Email: support@aplicativoawesome.com
-- Site: [www.aplicativoawesome.com](https://www.aplicativoawesome.com/support)
+- Email: avps2@aluno.ifal.edu.br
+- Instagram: [@antoniovictor2k](https://www.instagram.com/antoniovictor2k/)
 
 ## Licença
-O Aplicativo Awesome está licenciado sob a [Licença XYZ](https://www.exemplo.com/licenca-xyz).
+O Aplicativo Transporte Acadêmico está licenciado sob a [Google cloud](https://cloud.google.com/?hl=pt-br).
