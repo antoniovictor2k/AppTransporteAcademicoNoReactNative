@@ -27,12 +27,12 @@ O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcion
 
 
 ### Tela Termos de uso
-<img src="/assets/ImgTelasApp/Tela%20-%20Termos%20de%20Uso.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+<img src="/assets/ImgTelasApp/Tela%20-%20Termos%20de%20Uso.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="1300">
 *Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
 
 
 ### Tela política de privacidade
-<img src="/assets/ImgTelasApp/Tela%20-%20Pol%C3%ADtica%20de%20Privacidade.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+<img src="/assets/ImgTelasApp/Tela%20-%20Pol%C3%ADtica%20de%20Privacidade.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="1200">
 *Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
 
 ### Tela Principal
@@ -44,23 +44,23 @@ O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcion
 *Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
 
 ### Tela Sobre
-<img src="/assets/ImgTelasApp/Tela%20-%20Sobre.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+<img src="/assets/ImgTelasApp/Tela%20-%20Sobre.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="800">
 *Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
 
 ### Tela Contatos
-<img src="/assets/ImgTelasApp/Tela%20-%20Contatos.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+<img src="/assets/ImgTelasApp/Tela%20-%20Contatos.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="800">
 *Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
 
 ### Tela Campus
-<img src="/assets/ImgTelasApp/Tela%20%20-%20Campus.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+<img src="/assets/ImgTelasApp/Tela%20%20-%20Campus.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="1000">
 *Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
 
 ### Tela Configuração
-<img src="/assets/ImgTelasApp/Tela%20%20-%20Configura%C3%A7%C3%A3o.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+<img src="/assets/ImgTelasApp/Tela%20%20-%20Configura%C3%A7%C3%A3o.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="900">
 *Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
 
 ### icon do App
-<img src="/assets/ImgTelasApp/adaptive-icon.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="100" height="175">
+<img src="/assets/ImgTelasApp/adaptive-icon.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="50" height="70">
 
 ### Tela Antes do App
 <img src="/assets/ImgTelasApp/Splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
