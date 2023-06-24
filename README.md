@@ -10,7 +10,7 @@ O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcion
 - Recurso 2: Receber a localização em tempo real.
 - Recurso 3: Obter a localização e o link das páginas das redes sociais das 16 instituições federais de Alagoas.
 
-## Capturas de Tela
+# Capturas de Tela
 
 ## Tela Login
 <img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
