@@ -28,7 +28,7 @@ O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcion
 <img src="/assets/ImgTelasApp/Tela%20-%20Contatos.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="800">
 
 ## Tela Campus e Tela Configuração
-<img src="/assets/ImgTelasApp/Tela%20%20-%20Campus.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="1300"> <img src="/assets/ImgTelasApp/Tela%20%20-%20Configura%C3%A7%C3%A3o.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="1000">
+<img src="/assets/ImgTelasApp/Tela%20%20-%20Campus.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="1400"> <img src="/assets/ImgTelasApp/Tela%20%20-%20Configura%C3%A7%C3%A3o.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="1400">
 
 ## icon do App e Tela Antes do App
 <img src="/assets/ImgTelasApp/adaptive-icon.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="50" height="50"> <img src="/assets/ImgTelasApp/Splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
