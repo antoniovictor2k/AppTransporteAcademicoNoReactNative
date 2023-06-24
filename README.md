@@ -14,6 +14,7 @@ O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcion
 
 ## Tela Login
 <img src="/assets/ImgTelasApp/Tela%20de%20Login.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+
 - Caso o usuário não tenha cadastro, ele pode ser direcionado para a página de cadastro ao clicar em “inscreva-se."
 - O usuário precisa colocar seu email e senha já cadastrado e em seguida apertar no botão (Entrar)  para acessar a página principal do app.
 - Caso o email e/ou senha estiver incorreto, aparecerá uma mensagem informando ‘Usuário e/ou senha inválidos'.
