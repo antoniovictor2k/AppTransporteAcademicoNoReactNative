@@ -12,24 +12,8 @@ O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcion
 
 # Capturas de Tela (Figma)
 
-## Tela Login
-<img src="/assets/ImgTelasApp/Tela%20de%20Login.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
-
-- Caso o usuário não tenha cadastro, ele pode ser direcionado para a página de cadastro ao clicar em “inscreva-se."
-- O usuário precisa colocar seu email e senha já cadastrado e em seguida apertar no botão (Entrar)  para acessar a página principal do app.
-- Caso o email e/ou senha estiver incorreto, aparecerá uma mensagem informando ‘Usuário e/ou senha inválidos'.
-- A caixa de entrada ‘Senha’ estava em  on-lock (Invisível, modo de segurança), ao toque no cadeado (o ícone é alterado para off-lock) e a senha ficará visível.
-- Caso o usuário tenha esquecido a senha, ele pode apertar no link “Esqueceu sua senha?” que vai direcionar ele para outra página.
-
-## Tela Cadastro
-<img src="/assets/ImgTelasApp/Tela%20de%20Cadastro.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
-
-- Para realizar o cadastro o usuário tem que preencher os campos, nome, sobrenome, email e senha.
-- Caso a confirmação de senha esteja incorreta, o usuário não conseguirá continuar com o cadastro.
-- Caso o email já esteja cadastrado aparecerá uma mensagem informando ‘Usuário já cadastrado, faça o login.  
-- A caixa de entrada ‘Senha e confirmar senha’ estava em  on-lock (Invisível, modo de segurança), ao toque no cadeado (o ícone é alterado para off-lock) e a senha ficará visível.
-- Logo embaixo dos campos tem uma caixa de marcação, que ao clicar ela é marcada, e existe um texto que tem link de direcionamento para “Termo de uso e de Privacidade".
-- Caso essa caixa de marcação não seja marcada, aparecerá um alerta informando “Marcar o checkbox”. 
+## Tela Login e Tela Cadastro
+<img src="/assets/ImgTelasApp/Tela%20de%20Login.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700"> <img src="/assets/ImgTelasApp/Tela%20de%20Cadastro.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
 
 ## Tela Recuperar senha
 <img src="/assets/ImgTelasApp/Tela%20de%20Recuperar%20Senha.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
