@@ -119,7 +119,7 @@ Certifique-se de que seu dispositivo atenda aos seguintes requisitos mínimos:
 ## Suporte
 Para obter suporte técnico ou relatar problemas, entre em contato conosco pelos seguintes canais:
 
-- Email: avps2@aluno.ifal.edu.br
+- Email: avps2@aluno.ifal.edu.br ou jfs63@aluno.ifal.edu.br
 - Instagram: [@antoniovictor2k](https://www.instagram.com/antoniovictor2k/)
 
 ## Licença
