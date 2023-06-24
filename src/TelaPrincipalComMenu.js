@@ -72,7 +72,7 @@ function CustomDrawerContent(props) {
                 <Divider style={styles.linhaHorizotal2} />
                 <View style={styles.links}>
                     <Text style={styles.link} onPress={() => {
-                        Linking.openURL('https://youtube.com');
+                        Linking.openURL('https://www.youtube.com/watch?v=tmHsL50_zkU');
                     }}>Tutorial de Uso do App, Click Aqui.</Text>
                     <Text style={styles.link}>
                         <Text
