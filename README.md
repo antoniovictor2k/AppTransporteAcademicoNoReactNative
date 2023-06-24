@@ -10,11 +10,15 @@ O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcion
 - Recurso 2: Receber a localização em tempo real.
 - Recurso 3: Obter a localização e o link das páginas das redes sociais das 16 instituições federais de Alagoas.
 
-# Capturas de Tela
+# Capturas de Tela (Figma)
 
 ## Tela Login
 <img src="/assets/ImgTelasApp/Tela%20de%20Login.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
-*Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
+- Caso o usuário não tenha cadastro, ele pode ser direcionado para a página de cadastro ao clicar em “inscreva-se."
+- O usuário precisa colocar seu email e senha já cadastrado e em seguida apertar no botão (Entrar)  para acessar a página principal do app.
+- Caso o email e/ou senha estiver incorreto, aparecerá uma mensagem informando ‘Usuário e/ou senha inválidos'.
+- A caixa de entrada ‘Senha’ estava em  on-lock (Invisível, modo de segurança), ao toque no cadeado (o ícone é alterado para off-lock) e a senha ficará visível.
+- Caso o usuário tenha esquecido a senha, ele pode apertar no link “Esqueceu sua senha?” que vai direcionar ele para outra página.
 
 ## Tela Cadastro
 <img src="/assets/ImgTelasApp/Tela%20de%20Cadastro.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
