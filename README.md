@@ -19,7 +19,7 @@ O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcion
 <img src="/assets/ImgTelasApp/Tela%20de%20Recuperar%20Senha.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700"> <img src="/assets/ImgTelasApp/Tela%20Principal%20do%20app.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
 
 ## Tela Termos de uso e Tela política de privacidade
-<img src="/assets/ImgTelasApp/Tela%20-%20Termos%20de%20Uso.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="1400"> <img src="/assets/ImgTelasApp/Tela%20-%20Pol%C3%ADtica%20de%20Privacidade.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="1350">
+<img src="/assets/ImgTelasApp/Tela%20-%20Termos%20de%20Uso.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="1400"> <img src="/assets/ImgTelasApp/Tela%20-%20Pol%C3%ADtica%20de%20Privacidade.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="1400">
 
 ## Tela Menu e Tela Sobre
 <img src="/assets/ImgTelasApp/Tela%20-%20Menu%20op%C3%A7%C3%B5es.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="300" height="800"> <img src="/assets/ImgTelasApp/Tela%20-%20Sobre.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="800">
