@@ -46,10 +46,9 @@ function CustomDrawerContent(props) {
             if (json.imgUrl) {
                 setImagemUrl(json.imgUrl);
               } else {
-                setImagemUrl("https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcQKp5ZsMFTZZrNFb_p2mduiKPipCDh7meawj_zla0mhOHNi_07O3TcMv-q-H-HBvH2G"); // ou defina uma URL padrão ou uma imagem de fallback
+                setImagemUrl("https://www.vhv.rs/dpng/d/512-5129752_perfil-anonimo-hd-png-download-no-profile-photo.png"); // ou defina uma URL padrão ou uma imagem de fallback
               }
               
-
             // setImagemUrl(json.imageUrl);
         } catch (error) {
             console.log(error);
