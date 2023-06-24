@@ -6,13 +6,13 @@ O Aplicativo Transporte Acadêmico é uma solução inovadora que oferece uma ex
 O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcionários em relação ao transporte escolar, a ideia foi criar um app no qual os mesmos possam compartilhar sua localização com os demais e assim facilitar o acesso ao transporte escolar no local exato através do compartilhamento em tempo real.
 
 ## Recursos Principais
-- Recurso 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- Recurso 2: Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-- Recurso 3: Nemo enim ipsam voluptatem quia voluptas sit aspernatur.
+- Recurso 1: Compartilhar a localização atual em tempo real.
+- Recurso 2: Receber a localização em tempo real.
+- Recurso 3: Obter a localização e o link das páginas das redes sociais das 16 instituições federais de Alagoas.
 
 ## Capturas de Tela
 
-![Tela 1](/caminho/para/tela1.png)
+![Tela 1](/assets/splash.png)
 *Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
 
 ![Tela 2](/caminho/para/tela2.png)
