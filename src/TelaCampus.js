@@ -70,7 +70,7 @@ function RenderizarCampus() {
                   size={26}
                   iconColor={'#fff'}
                   onPress={() => {
-                    navigation.navigate('Mapa', { itemId: item});
+                    navigation.navigate('Mapa', { itemId: item });
                   }}
                 />
               </View>

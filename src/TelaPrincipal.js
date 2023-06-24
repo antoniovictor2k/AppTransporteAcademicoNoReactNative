@@ -12,7 +12,7 @@ import styles from '../Styles/StyleTelaPrincipalComMenu';
 
 const GOOGLE_MAPS_APIKEY = 'AIzaSyCmObYS2GipCgK-Ev4UvwKw_P9zbxq_yrI';
 // AIzaSyCmObYS2GipCgK-Ev4UvwKw_P9zbxq_yrI
- const  localhost = '192.168.0.105';
+const localhost = '192.168.0.105';
 
 
 function TelaPrincipal() {
@@ -73,9 +73,7 @@ function TelaPrincipal() {
         setCarregando(false);
         // obter dados a casa 2 segundos da localização
         if (compartilharBus === true) {
-          console.log('Compartilhamento Ativado...')
           let localicaoCompartinhada = await Location.getCurrentPositionAsync({});
-          console.log(localicaoCompartinhada.coords.latitude);
         };
 
       })();

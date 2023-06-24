@@ -24,10 +24,10 @@ function CustomDrawerContent(props) {
     const [nomeUsuario, setNomeUsuario] = useState(null);
     const [emailUsuario, setEmailUsuario] = useState(null);
     const [imageUrl, setImagemUrl] = useState(null);
-    
+
     // pega o id do usuario na tela do login e através do navegation enviar aqui essa tela;
     const { itemId } = route.params ?? {};
-   
+
     async function sendFormulario(id) {
         try {
             // passa o id para receber somente dados desse usuário;
@@ -45,10 +45,10 @@ function CustomDrawerContent(props) {
 
             if (json.imgUrl) {
                 setImagemUrl(json.imgUrl);
-              } else {
+            } else {
                 setImagemUrl("https://www.vhv.rs/dpng/d/512-5129752_perfil-anonimo-hd-png-download-no-profile-photo.png"); // ou defina uma URL padrão ou uma imagem de fallback
-              }
-              
+            }
+
             // setImagemUrl(json.imageUrl);
         } catch (error) {
             console.log(error);
@@ -61,7 +61,6 @@ function CustomDrawerContent(props) {
         <DrawerContentScrollView {...props} style={styles.paginaMenu}>
             <View>
                 <View style={styles.cabecalho} >
-                    {/* <Avatar.Icon theme={'outline'} size={100} icon="account-circle" style={{ backgroundColor: 'transparent' }} /> */}
                     <Avatar.Image size={68} source={{ uri: imageUrl }} />
                     <View style={styles.cabecalhoText}>
                         <Text style={styles.nomeDoAluno}> {nomeUsuario} </Text>

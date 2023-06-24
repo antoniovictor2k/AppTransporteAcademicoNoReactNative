@@ -10,7 +10,7 @@ function TelaSobre() {
                 <Text style={styles.sobTitulo}>Introdução</Text>
                 <Text style={styles.textoPadrao}>
                     O aplicativo está sendo desenvolvindo com intuito de ajudar os estudante,
-                    em relação ao transporte escolar, a ideia foi criar um app no qual os mesmo possam compartilhar
+                    em relação ao transporte escolar, a ideia foi criar um app no qual o mesmo possam compartilhar
                     sua localização com os demais e assim facilitar o acesso ao transporte escolar no local exato e, em
                     um horário aproximado que o transporte vai
                     esta passando no ponto, através do compartilhamento de outros alunos.
@@ -20,10 +20,10 @@ function TelaSobre() {
                 </Text>
                 <Text style={styles.textoPadrao}>
                     JavaScript, Css, Sql, Sequelize, Node.js,
-                    Express, Figma, GitHub, Visual Studio, React native, MongoDB, Postman.
+                    Express, Figma, GitHub, Visual Studio, React native, MongoDB, Vercel.
                 </Text>
                 <Text style={styles.sobTitulo}>
-                    Deseveloper by JEVA system
+                    Developer by JEVA system
                 </Text>
                 <Text style={styles.textoPadrao}>
                     JEVA system, vem dos nomes dos desenvolvedores, JE de Jeallyson e VA de Antonio Victor, System de sistemas.

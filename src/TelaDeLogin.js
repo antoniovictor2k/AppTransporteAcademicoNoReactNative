@@ -40,8 +40,6 @@ function TelaLogin({ navigation }) {
         }),
       });
       const json = await response.json();
-      console.log("Testando: ")
-
       if (json === "error") {
         setDisplay(true);
         setTimeout(() => {

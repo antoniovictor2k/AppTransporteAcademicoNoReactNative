@@ -101,14 +101,17 @@ function TelaConfiguracao(props) {
 
             if (novoImgURL) {
                 dadosAtualizados.imgUrl = novoImgURL;
+                setNovoImgURL("");
             }
 
             if (novoNome) {
                 dadosAtualizados.nome = novoNome;
+                setNovoNome("");
             }
 
             if (novoSobrenome) {
                 dadosAtualizados.sobrenome = novoSobrenome;
+                setNovoSobrenome("");
             }
 
 
@@ -126,12 +129,13 @@ function TelaConfiguracao(props) {
                     return;
                 }
 
-
                 dadosAtualizados.email = novoEmail;
+                setNovoEmail('');
             }
 
             if (novaSenha) {
                 dadosAtualizados.senha = novaSenha;
+                setNovaSenha("");
             }
 
 
@@ -193,7 +197,7 @@ function TelaConfiguracao(props) {
                     activeOutlineColor='#fff'
                     style={styles.inputTexto}
                     theme={tema}
-
+                    value={novoImgURL}
                 />
                 <Text style={styles.sobTitulo2} >Alterar nome e sobrenome</Text>
 
@@ -207,6 +211,7 @@ function TelaConfiguracao(props) {
                         activeOutlineColor='#fff'
                         style={styles.inputTextoNome}
                         theme={tema}
+                        value={novoNome}
                     />
                     <TextInput
                         label={'Sobrenome'}
@@ -217,6 +222,7 @@ function TelaConfiguracao(props) {
                         activeOutlineColor='#fff'
                         style={styles.inputTextoSobrenome}
                         theme={tema}
+                        value={novoSobrenome}
                     />
                 </View>
 
@@ -233,6 +239,7 @@ function TelaConfiguracao(props) {
                     style={styles.inputTexto}
                     theme={tema}
                     onBlur={() => validateEmail(novoEmail)}
+                    value={novoEmail}
                 />
 
                 <Text style={styles.sobTitulo}>Alterar senha</Text>
@@ -246,6 +253,7 @@ function TelaConfiguracao(props) {
                     activeOutlineColor='#fff'
                     style={styles.inputTexto}
                     theme={tema}
+                    value={novaSenha}
                 />
                 <Button style={styles.button}
                     onPress={atualizarDados}
@@ -266,6 +274,7 @@ function TelaConfiguracao(props) {
                     onChangeText={setRelatarErro}
                     style={styles.inputTextoDescricao}
                     theme={tema}
+                    value={relatarErro}
                 />
                 <Button style={styles.button}
                     onPress={() => alert('link indisponível, acessar através do link (Fazer Login), na parte inferior da tela.')}
@@ -285,6 +294,7 @@ function TelaConfiguracao(props) {
                     onChangeText={setmotivoDelete}
                     style={styles.inputTextoDescricao}
                     theme={tema}
+                    value={motivoDelete}
                 />
                 <View style={styles.checkboxContainer}>
                     <Checkbox
