@@ -23,6 +23,14 @@ O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcion
     <img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
     <p style="text-align: center;">Legenda: Tela inicial do Aplicativo Transporte Acadêmico.</p>
   </div>
+  <div style="flex: 50%; padding: 5px;">
+    <img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+    <p style="text-align: center;">Legenda: Tela inicial do Aplicativo Transporte Acadêmico.</p>
+  </div>
+  <div style="flex: 50%; padding: 5px;">
+    <img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+    <p style="text-align: center;">Legenda: Tela inicial do Aplicativo Transporte Acadêmico.</p>
+  </div>
 </div>
 
 
