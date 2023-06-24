@@ -89,10 +89,10 @@ Para alterar a imagem terá que fornecer um link da imagem.
 - Caso o email que o usuário deseja colocando já exista, aparecerá um alerta informando o erro.
 - Reportar erro: caso alguém tenha encontrado alguma anormalidade durante o uso do app, será possível descrever sobre essa situação e enviar a opinião sobre tal assunto. 
 - Deletar conta: é feita em três etapas: 
-* Confirmação de estar ciente que ao apagar sua conta seus dados serão deletados. *
-* Por qual motivo deseja excluir a conta (não obrigatório). *
-* O usuário clica no botão para excluir a conta. *
-* Automaticamente o usuário será direcionado para tela login. *
+* Confirmação de estar ciente que ao apagar sua conta seus dados serão deletados.*
+* Por qual motivo deseja excluir a conta (não obrigatório).*
+* O usuário clica no botão para excluir a conta.*
+* Automaticamente o usuário será direcionado para tela login.*
 
 
 ## icon do App
