@@ -12,22 +12,53 @@ O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcion
 
 # Capturas de Tela
 
-# Capturas de Tela
+### Tela Login
+<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+*Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
 
-<div style="display: flex; flex-wrap: wrap;">
-  <div style="flex: 40%; padding: 2px;">
-    <img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="200" height="700">
-    <p style="text-align: center;">Legenda: Tela inicial do Aplicativo Transporte Acadêmico.</p>
-  </div>
-  <div style="flex: 40%; padding: 2px;">
-    <img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="200" height="700">
-    <p style="text-align: center;">Legenda: Tela inicial do Aplicativo Transporte Acadêmico.</p>
-  </div>
-</div>
+### Tela Cadastro
+<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+*Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
 
 
-![Tela 2](/caminho/para/tela2.png)
-*Legenda: Exemplo de uma funcionalidade do Aplicativo Transporte Acadêmico.*
+### Tela Recuperar senha
+<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+*Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
+
+
+### Tela Termos de uso
+<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+*Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
+
+
+### Tela Termos de privacidade
+<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+*Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
+
+### Tela Principal
+<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+*Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
+
+### Tela Menu
+<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+*Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
+
+### Tela Sobre
+<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+*Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
+
+### Tela Contatos
+<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+*Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
+
+### Tela Campus
+<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+*Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
+
+### Tela Configuração
+<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+*Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
+
 
 ## Instalação
 Siga as etapas abaixo para instalar o Aplicativo Transporte Acadêmico:
