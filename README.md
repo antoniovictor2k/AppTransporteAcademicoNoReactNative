@@ -12,13 +12,19 @@ O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcion
 
 # Capturas de Tela
 
-## Tela Login
-<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
-*Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
+# Capturas de Tela
 
-## Tela Cadastro
-<img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
-*Legenda: Tela inicial do Aplicativo Transporte Acadêmico.*
+<div style="display: flex; flex-wrap: wrap;">
+  <div style="flex: 50%; padding: 5px;">
+    <img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+    <p style="text-align: center;">Legenda: Tela inicial do Aplicativo Transporte Acadêmico.</p>
+  </div>
+  <div style="flex: 50%; padding: 5px;">
+    <img src="/assets/splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+    <p style="text-align: center;">Legenda: Tela inicial do Aplicativo Transporte Acadêmico.</p>
+  </div>
+</div>
+
 
 ![Tela 2](/caminho/para/tela2.png)
 *Legenda: Exemplo de uma funcionalidade do Aplicativo Transporte Acadêmico.*
