@@ -2,11 +2,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
-import { View, Alert, Linking, Platform } from 'react-native';
+import { View, Alert } from 'react-native';
 import { IconButton, Text, ActivityIndicator, Button } from 'react-native-paper';
 import { useRoute } from '@react-navigation/native';
-import Settings from 'react-native-settings';
-import Constants from 'expo-constants';
 import MapViewDirections from 'react-native-maps-directions';
 import styles from '../Styles/StyleTelaPrincipalComMenu';
 
@@ -64,7 +62,7 @@ function TelaPrincipal() {
           return;
         }
 
-        let providerStatus = await Location.getProviderStatusAsync();
+        let providerStatus = await Location.getProviderStatusAsync({});
         if (!providerStatus.gpsAvailable) {
           setErrorMsg('O GPS não está ativado');
           setCarregando(true);
@@ -73,7 +71,9 @@ function TelaPrincipal() {
         setCarregando(false);
         // obter dados a casa 2 segundos da localização
         if (compartilharBus === true) {
+          console.log('Compartilhamento Ativado...')
           let localicaoCompartinhada = await Location.getCurrentPositionAsync({});
+          console.log(localicaoCompartinhada.coords.latitude);
         };
 
       })();
@@ -85,18 +85,31 @@ function TelaPrincipal() {
       clearInterval(interval);
     };
   });
+
+
   // Correçao de tela piscando ....
   useEffect(() => {
     async function obterLocalizacao() {
       setCarregando(false);
       try {
         let localizacao = await Location.getCurrentPositionAsync({});
-        setLocalizacao({
-          latitude: localizacao.coords.latitude,
-          longitude: localizacao.coords.longitude,
-          latitudeDelta: 0.0222,
-          longitudeDelta: 0.1699,
-        });
+        if (localizacao) {
+
+          setLocalizacao({
+            latitude: localizacao.coords.latitude,
+            longitude: localizacao.coords.longitude,
+            latitudeDelta: 0.0222,
+            longitudeDelta: 0.1699,
+          });
+        } else {
+          setLocalizacao({
+            latitude: -9.5620066,
+            longitude: -35.7413049,
+            latitudeDelta: 0.0122,
+            longitudeDelta: 0.0699,
+            // -9.5620066,-35.7413049
+          });
+        }
       } catch (error) {
         console.log('Erro ao obter a localização:', error);
       }
@@ -104,8 +117,20 @@ function TelaPrincipal() {
     if (!localizacao) {
       console.log(" localizacaoAtual(); OK")
     }
-    localizacaoAtual();
+
+    // chama animateToRegion a cada 5 minutos!!!
+
+    const intervaloRegiao = setInterval(() => {
+
+      mapRef.current.animateToRegion(localizacao);
+
+    }, 5000);
+
     obterLocalizacao();
+
+    return () => {
+      clearInterval(intervaloRegiao);
+    };
   }, []);
 
   // console.log(destinoIFALMaceio);
@@ -140,22 +165,30 @@ function TelaPrincipal() {
   }, [itemId]);
 
   // abrir configuração do depositivo;
-  const handleOpenSettings = () => {
-    if (Constants.appOwnership === 'expo') {
-      // Código específico para o Expo
-      Linking.openSettings();
-    }
-    else {
-      // Código específico para ambiente nativo
-      if (Platform.OS === 'android') {
-        // Lógica para Android nativo
-        const result = Settings.openSetting('ACTION_LOCATION_SOURCE_SETTINGS');
-      } else {
-        // Lógica para iOS nativo
-        alert("Sistema IOS indisponivel no momento...")
+
+  const getLocation = async () => {
+    try {
+      // Solicita permissão de localização ao usuário
+      console.log(location);
+      let { status } = await Location.requestForegroundPermissionsAsync();
+
+      if (status !== 'granted') {
+        console.log('A permissão de localização foi negada.');
+        return;
       }
+
+      // Obtém a localização atual do usuário
+      let location = await Location.getCurrentPositionAsync({});
+      console.log(location);
+
+      // Faça algo com as coordenadas de latitude e longitude aqui
+      console.log(`location OK`);
+    } catch (error) {
+      console.log('Erro ao obter a localização:', error);
     }
   };
+
+
 
   // No Expo, 
   // não há uma maneira direta de abrir as configurações de localização do dispositivo para ativar manualmente. 
@@ -175,7 +208,7 @@ function TelaPrincipal() {
           icon={'cog-sync-outline'}
           textColor='#000'
           buttonColor='#B3DCE5'
-          onPress={handleOpenSettings}
+          onPress={getLocation}
           style={styles.buttonAtivarGPS}>
           Ativar GPS
         </Button>
