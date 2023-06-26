@@ -1,4 +1,4 @@
-// const GOOGLE_MAPS_APIKEY = 'AIzaSyBRMU4LkxXu-mcV8mtB-p0R5jBR0V1iWI8';
+
 import React, { useEffect, useState, useRef } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
@@ -8,8 +8,11 @@ import { useRoute } from '@react-navigation/native';
 import MapViewDirections from 'react-native-maps-directions';
 import styles from '../Styles/StyleTelaPrincipalComMenu';
 
+// A partir deste ponto, você pode acessar suas variáveis de ambiente normalmente usando process.env
+const apiKey = process.env.GOOGLE_MAPS_APIKEY;
+
 const GOOGLE_MAPS_APIKEY = 'AIzaSyCmObYS2GipCgK-Ev4UvwKw_P9zbxq_yrI';
-// AIzaSyCmObYS2GipCgK-Ev4UvwKw_P9zbxq_yrI
+
 const localhost = '192.168.0.105';
 
 
@@ -93,23 +96,13 @@ function TelaPrincipal() {
       setCarregando(false);
       try {
         let localizacao = await Location.getCurrentPositionAsync({});
-        if (localizacao) {
+        setLocalizacao({
+          latitude: localizacao.coords.latitude,
+          longitude: localizacao.coords.longitude,
+          latitudeDelta: 0.0222,
+          longitudeDelta: 0.1699,
+        });
 
-          setLocalizacao({
-            latitude: localizacao.coords.latitude,
-            longitude: localizacao.coords.longitude,
-            latitudeDelta: 0.0222,
-            longitudeDelta: 0.1699,
-          });
-        } else {
-          setLocalizacao({
-            latitude: -9.5620066,
-            longitude: -35.7413049,
-            latitudeDelta: 0.0122,
-            longitudeDelta: 0.0699,
-            // -9.5620066,-35.7413049
-          });
-        }
       } catch (error) {
         console.log('Erro ao obter a localização:', error);
       }
@@ -118,19 +111,22 @@ function TelaPrincipal() {
       console.log(" localizacaoAtual(); OK")
     }
 
+    obterLocalizacao();
+
     // chama animateToRegion a cada 5 minutos!!!
 
     const intervaloRegiao = setInterval(() => {
 
-      mapRef.current.animateToRegion(localizacao);
-
+      if (localizacao) {
+        mapRef.current.animateToRegion(localizacao);
+      }
     }, 5000);
 
-    obterLocalizacao();
 
     return () => {
       clearInterval(intervaloRegiao);
     };
+
   }, []);
 
   // console.log(destinoIFALMaceio);
@@ -169,7 +165,7 @@ function TelaPrincipal() {
   const getLocation = async () => {
     try {
       // Solicita permissão de localização ao usuário
-      console.log(location);
+
       let { status } = await Location.requestForegroundPermissionsAsync();
 
       if (status !== 'granted') {
@@ -179,10 +175,9 @@ function TelaPrincipal() {
 
       // Obtém a localização atual do usuário
       let location = await Location.getCurrentPositionAsync({});
-      console.log(location);
 
       // Faça algo com as coordenadas de latitude e longitude aqui
-      console.log(`location OK`);
+      // console.log(`location OK`);
     } catch (error) {
       console.log('Erro ao obter a localização:', error);
     }
