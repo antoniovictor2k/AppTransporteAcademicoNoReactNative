@@ -107,56 +107,7 @@ function TelaContato() {
                             </View>
                         </View>
                     </View>
-                    <View style={styles.card}>
-                        <View style={styles.dev}>
-                            <Text style={styles.contatoNome}>Jeallyson Ferreira da Silva</Text>
-                            <Text style={styles.contatoCidade}>Rio Largo / AL</Text>
-                            <Text style={styles.contatoEmail}><Icon name="email" style={styles.contatoIcon} /> jfs63@aluno.ifal.edu.br</Text>
-                            <Text style={styles.contatoFone}><Icon name="phone" style={styles.contatoIcon} />(82) 99999-9999</Text>
-                            <View style={styles.icons}>
-                                <IconButton
-                                    icon="whatsapp"
-                                    iconColor={'#fff'}
-                                    size={26}
-                                    onPress={() => {
-                                        Linking.openURL('https://github.com/jeallyson');
-                                    }}
-                                />
-                                <IconButton
-                                    icon="email"
-                                    iconColor={'#fff'}
-                                    size={26}
-                                    onPress={() => {
-                                        Linking.openURL('https://chat.google.com/room/AAAAC1GfjrU?cls=1');
-                                    }}
-                                />
-                                <IconButton
-                                    icon="linkedin"
-                                    iconColor={'#fff'}
-                                    size={26}
-                                    onPress={() => {
-                                        Linking.openURL('https://github.com/jeallyson');
-                                    }}
-                                />
-                                <IconButton
-                                    icon="instagram"
-                                    iconColor={'#fff'}
-                                    size={26}
-                                    onPress={() => {
-                                        Linking.openURL('https://www.instagram.com/jeallyson_ferreira');
-                                    }}
-                                />
-                                <IconButton
-                                    icon="github"
-                                    iconColor={'#fff'}
-                                    size={26}
-                                    onPress={() => {
-                                        Linking.openURL('https://github.com/jeallyson');
-                                    }}
-                                />
-                            </View>
-                        </View>
-                    </View>
+                   
                 </View>
                 <Text style={styles.developer}>Developer by JEVA System - 2023</Text>
             </View>

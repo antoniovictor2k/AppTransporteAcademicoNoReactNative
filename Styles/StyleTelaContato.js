@@ -88,7 +88,7 @@ const stylesTelaLogin = StyleSheet.create({
         color: '#CCCCCC',
     },
     developer: {
-        marginTop: 70,
+        marginTop: 30,
         marginBottom: 20,
         color: '#93B8C2',
     },

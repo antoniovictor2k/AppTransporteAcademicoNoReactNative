@@ -265,37 +265,8 @@ function TelaConfiguracao(props) {
                     </Text>
                 </Button>
 
-                <Text style={styles.sobTitulo}  >Reportar erro</Text>
-                <TextInput
-                    label={'Descreva o ocorrido...'}
-                    mode='outlined'
-                    textColor='#fff'
-                    activeOutlineColor='#fff'
-                    onChangeText={setRelatarErro}
-                    style={styles.inputTextoDescricao}
-                    theme={tema}
-                    value={relatarErro}
-                />
-                <Button style={styles.button}
-                    onPress={() => alert('link indisponível, acessar através do link (Fazer Login), na parte inferior da tela.')}
-                    icon={'alert-circle'}
-                    textColor='#000'
-                >
-                    <Text style={styles.textoButton}>
-                        Enviar
-                    </Text>
-                </Button>
                 <Text style={styles.sobTitulo}  >Deletar conta</Text>
-                <TextInput
-                    label={'Por qual motivo deseja excluir sua conta?'}
-                    mode='outlined'
-                    textColor='#fff'
-                    activeOutlineColor='#fff'
-                    onChangeText={setmotivoDelete}
-                    style={styles.inputTextoDescricao}
-                    theme={tema}
-                    value={motivoDelete}
-                />
+
                 <View style={styles.checkboxContainer}>
                     <Checkbox
                         status={checked ? 'checked' : 'unchecked'}
