@@ -55,7 +55,7 @@ function TelaContato() {
                             </View>
                         </View>
                     </View>
-                    <Text style={styles.subTitulo}>Desenvolvedores</Text>
+                    <Text style={styles.subTitulo}>Desenvolvedor</Text>
                     <View style={styles.card}>
                         <View style={styles.dev}>
                             <Text style={styles.contatoNome}>Antonio Victor Pereira Severiano</Text>
@@ -109,7 +109,7 @@ function TelaContato() {
                     </View>
                    
                 </View>
-                <Text style={styles.developer}>Developer by JEVA System - 2023</Text>
+                <Text style={styles.developer}>Developer by Antonio Victor - 2023</Text>
             </View>
         </ScrollView>
     );

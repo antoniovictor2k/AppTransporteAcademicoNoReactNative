@@ -24,6 +24,14 @@ const stylesTelaLogin = StyleSheet.create({
     width: 165,
     height: 105,
   },
+
+// teste
+
+tinyLogo: {
+  width: 50,
+  height: 50,
+},
+
   inputTexto: {
     height: 45,
     width: 350,

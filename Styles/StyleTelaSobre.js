@@ -25,7 +25,7 @@ const stylesTelaLogin = StyleSheet.create({
     },
     sobTitulo: {
         marginTop: 30,
-        fontSize: 27,
+        fontSize: 25,
         fontWeight: 700,
         color: '#fff',
         alignItems: 'center',

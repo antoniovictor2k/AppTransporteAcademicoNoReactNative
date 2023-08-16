@@ -23,6 +23,7 @@ const stylesTelaLogin = StyleSheet.create({
         color: '#fff',
     },
     card: {
+        width:355,
         padding: 20,
         borderRadius: 8,
         backgroundColor: '#051C21',
@@ -88,8 +89,8 @@ const stylesTelaLogin = StyleSheet.create({
         color: '#CCCCCC',
     },
     developer: {
-        marginTop: 30,
-        marginBottom: 20,
+        marginTop: 35,
+        marginBottom: 15,
         color: '#93B8C2',
     },
 })

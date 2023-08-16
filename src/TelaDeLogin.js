@@ -1,7 +1,7 @@
-import { View, Image, Pressable, } from 'react-native';
-import { useState } from 'react'
-import { Text, TextInput, ActivityIndicator, Button, } from 'react-native-paper';
-import styles from '../Styles/StyleTelaLogin';
+import { View, Image, Pressable } from "react-native";
+import { useState } from "react";
+import { Text, TextInput, ActivityIndicator, Button } from "react-native-paper";
+import styles from "../Styles/StyleTelaLogin";
 
 // alterar aqui o endereço
 // const localhost = "192.168.1.121";
@@ -13,10 +13,9 @@ function TelaLogin({ navigation }) {
   const [email, setEmail] = useState(null);
   const [senha, setSenha] = useState(null);
   const [mostrarSenha, SetmostrarSenha] = useState(true);
-  const [iconeSenha, SetIconeSenha] = useState('lock');
+  const [iconeSenha, SetIconeSenha] = useState("lock");
 
   async function sendFormulario() {
-
     if (!validateEmail(email)) {
       setDisplay3(true);
       setTimeout(() => {
@@ -25,21 +24,24 @@ function TelaLogin({ navigation }) {
       return;
     }
 
-
     try {
-      const response = await fetch(`https://back-end-transporte-academico-ifjfoi6st-antoniovictor2k.vercel.app/login`, {
-        // `https://back-end-transporte-academico-ifjfoi6st-antoniovictor2k.vercel.app/login`
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: email,
-          senha: senha,
-        }),
-      });
+      const response = await fetch(
+        `https://back-end-transporte-academico-ifjfoi6st-antoniovictor2k.vercel.app/login`,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            senha: senha,
+          }),
+        }
+      );
       const json = await response.json();
+      console.log("Testando: ");
+
       if (json === "error") {
         setDisplay(true);
         setTimeout(() => {
@@ -49,7 +51,7 @@ function TelaLogin({ navigation }) {
       }
 
       // Navegação para outra tela após receber os dados
-      navigation.navigate('TelaPrincipalComMenu', { itemId: json._id });
+      navigation.navigate("TelaPrincipalComMenu", { itemId: json._id, nomeDoUsuario: json.nome });
     } catch (error) {
       console.log(error);
       console.log("BackEnd não está retornando!");
@@ -59,54 +61,57 @@ function TelaLogin({ navigation }) {
         setDisplay2(false);
       }, 4000);
     }
-  };
+  }
 
   const validateEmail = (email) => {
     const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     return regex.test(email);
   };
 
-
   const senhaVisivel = () => {
     mostrarSenha == true ? SetmostrarSenha(false) : SetmostrarSenha(true);
-    iconeSenha == 'lock' ? SetIconeSenha('lock-open-variant') : SetIconeSenha('lock');
+    iconeSenha == "lock"
+      ? SetIconeSenha("lock-open-variant")
+      : SetIconeSenha("lock");
   };
 
   const tema = {
     colors: {
-
-      onSurfaceVariant: 'white'
-    }
+      onSurfaceVariant: "white",
+    },
   };
 
   return (
     <View style={styles.container}>
-
       <Image
         style={styles.imgLogo}
-        source={require('../assets/logoMarcaLogin.png')}
+        source={require("../assets/logoMarcaLogin.png")}
       />
       <View style={styles.telaMain}>
-        {display &&
-          <Text style={{ color: "#fff", fontSize: 16, }}>Usuário e/ou senha inválidos</Text>
-        }
-        {display3 &&
-          <Text style={{ color: "#fff", fontSize: 16, }}>Por favor, digite um email válido</Text>
-        }
-        {display2 &&
-          <Text style={{ color: "#fff", fontSize: 16, textAlign: 'center', }}>Desculpe, o servidor não está respondendo no momento.</Text>
-        }
+        {display && (
+          <Text style={{ color: "#fff", fontSize: 16 }}>
+            Usuário e/ou senha inválidos
+          </Text>
+        )}
+        {display3 && (
+          <Text style={{ color: "#fff", fontSize: 16 }}>
+            Por favor, digite um email válido
+          </Text>
+        )}
+        {display2 && (
+          <Text style={{ color: "#fff", fontSize: 16, textAlign: "center" }}>
+            Desculpe, o servidor não está respondendo no momento.
+          </Text>
+        )}
         <TextInput
-          keyboardType='email-address'
-          label='Email'
-          mode='outlined'
-          right={<TextInput.Icon icon="email" iconColor='#fff' />}
+          label="Email"
+          mode="outlined"
+          right={<TextInput.Icon icon="email" iconColor="#fff" />}
           onChangeText={setEmail}
-          textColor='#fff'
+          textColor="#fff"
           placeholderTextColor={"#fff"}
           labelTextColor={"#fff"}
-          activeOutlineColor='#fff'
-          activeUnderlineColor='#fff'
+          activeOutlineColor="#ccc"
           style={styles.inputTexto}
           theme={tema}
           onBlur={() => validateEmail(email)}
@@ -114,39 +119,45 @@ function TelaLogin({ navigation }) {
         <TextInput
           label="Senha"
           secureTextEntry={mostrarSenha}
-          textColor='#fff'
-          right={<TextInput.Icon icon={iconeSenha} iconColor='#fff' onPress={senhaVisivel} />}
+          textColor="#fff"
+          right={
+            <TextInput.Icon
+              icon={iconeSenha}
+              iconColor="#fff"
+              onPress={senhaVisivel}
+            />
+          }
           onChangeText={setSenha}
           theme={tema}
-          mode='outlined'
+          mode="outlined"
           style={styles.inputTexto}
-          activeOutlineColor='#fff'
+          activeOutlineColor="#ccc"
         />
-        <Button style={styles.button}
+        <Button
+          style={styles.button}
           onPress={() => sendFormulario()}
-          icon={'login'}
-          buttonColor='#000'
-          textColor='#000'
+          icon={"login"}
+          buttonColor="#000"
+          textColor="#000"
         >
-          <Text style={styles.textoButton}>
-            Entrar
-          </Text>
+          <Text style={styles.textoButton}>Entrar</Text>
         </Button>
-        <Pressable style={styles.linkSenha}
-        >
-          <Text style={styles.linkTextoSenha} onPress={() => navigation.navigate('RecuperarSenha')}>
+        <Pressable style={styles.linkSenha}>
+          <Text
+            style={styles.linkTextoSenha}
+            onPress={() => navigation.navigate("RecuperarSenha")}
+          >
             Esqueceu sua Senha?
           </Text>
         </Pressable>
       </View>
-      <Pressable style={styles.linkInscricao}
-        onPress={() => navigation.navigate('Cadastro')}
+      <Pressable
+        style={styles.linkInscricao}
+        onPress={() => navigation.navigate("Cadastro")}
       >
         <Text style={styles.linkTexto}>
-          Não tem uma conta?{' '}
-          <Text style={styles.linkTextoInscrevar}>
-            Inscrevar-se
-          </Text>
+          Não tem uma conta?{" "}
+          <Text style={styles.linkTextoInscrevar}>Inscrevar-se</Text>
         </Text>
       </Pressable>
     </View>

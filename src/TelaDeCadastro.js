@@ -1,7 +1,7 @@
-import react, { useState, } from 'react';
-import { View, Image, Pressable, Text, Alert } from 'react-native';
-import { Checkbox, Button, TextInput, } from 'react-native-paper';
-import styles from '../Styles/StyleTelaCadastro';
+import react, { useState } from "react";
+import { View, Image, Pressable, Text, Alert } from "react-native";
+import { Checkbox, Button, TextInput } from "react-native-paper";
+import styles from "../Styles/StyleTelaCadastro";
 
 // alterar aqui o endereço
 // const localhost = "192.168.1.121";
@@ -16,26 +16,24 @@ function TelaCadastro({ navigation }) {
   const [sobrenome, setSobrenome] = useState(null);
   const [email, setEmail] = useState(null);
   const [senha, setSenha] = useState(null);
-  const [confirmarSenha, setConfirmarSenha] = useState('');
+  const [confirmarSenha, setConfirmarSenha] = useState("");
   const [mostrarSenha, SetmostrarSenha] = useState(true);
-  const [iconeSenha, SetIconeSenha] = useState('lock');
-
+  const [iconeSenha, SetIconeSenha] = useState("lock");
 
   async function sendFormulario() {
-
     if (!nome || !sobrenome) {
       Alert.alert(
-        'Nome e sobrenome obrigatório',
-        'Por favor, complete todas as seções do formulário antes de continuar.',
+        "Nome e sobrenome obrigatório",
+        "Por favor, complete todas as seções do formulário antes de continuar.",
         [
           {
-            text: 'Ok',
-            style: 'cancel',
+            text: "Ok",
+            style: "cancel",
           },
-        ],
+        ]
       );
       return;
-    };
+    }
 
     if (!validateEmail(email)) {
       setDisplay3(true);
@@ -47,77 +45,79 @@ function TelaCadastro({ navigation }) {
 
     if (email === null) {
       Alert.alert(
-        'Email obrigatório',
-        'Por favor, complete todas as seções do formulário antes de continuar.',
+        "Email obrigatório",
+        "Por favor, complete todas as seções do formulário antes de continuar.",
         [
           {
-            text: 'Ok',
-            style: 'cancel',
+            text: "Ok",
+            style: "cancel",
           },
-        ],
+        ]
       );
       return;
-    };
+    }
     if (!senha || !confirmarSenha) {
       Alert.alert(
-        'Senha obrigatório',
-        'Por favor, complete todas as seções do formulário antes de continuar.',
+        "Senha obrigatório",
+        "Por favor, complete todas as seções do formulário antes de continuar.",
         [
           {
-            text: 'Ok',
-            style: 'cancel',
+            text: "Ok",
+            style: "cancel",
           },
-        ],
+        ]
       );
       // console.log("Retornando...")
       return;
-    };
+    }
     if (senha !== confirmarSenha) {
       Alert.alert(
-        'Senhas diferentes',
+        "Senhas diferentes",
         'Os campus "Senha" e "Confirmar senha" devem ser exatamente iguais.',
         [
           {
-            text: 'Ok',
-            style: 'cancel',
+            text: "Ok",
+            style: "cancel",
           },
-        ],
+        ]
       );
       return;
-    };
+    }
     if (checked === false) {
       Alert.alert(
-        'Marcar o checkbox',
+        "Marcar o checkbox",
         'É obrigatório marcar a caixinha "Li e concordo com os termos."',
         [
           {
-            text: 'Ok',
-            style: 'cancel',
+            text: "Ok",
+            style: "cancel",
           },
-        ],
+        ]
       );
       return;
-    };
-
+    }
 
     try {
-      const response = await fetch(`https://back-end-transporte-academico-ifjfoi6st-antoniovictor2k.vercel.app/cadastro`, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          nome: nome,
-          sobrenome: sobrenome,
-          email: email,
-          senha: senha,
-        }),
-      });
+      const response = await fetch(
+        `https://back-end-transporte-academico-ifjfoi6st-antoniovictor2k.vercel.app/cadastro`,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nome: nome,
+            sobrenome: sobrenome,
+            email: email,
+            senha: senha,
+          }),
+        }
+      );
 
       const json = await response.json();
 
-      if (json === 'Email já está sendo utilizado') {
+      if (json === "Email já está sendo utilizado") {
         setDisplay2(true);
         setTimeout(() => {
           setDisplay2(false);
@@ -126,17 +126,17 @@ function TelaCadastro({ navigation }) {
       }
 
       Alert.alert(
-        'Usuário cadastrado',
-        'O usuário foi cadastrado com sucesso. Por favor, faça o login.',
+        "Usuário cadastrado",
+        "O usuário foi cadastrado com sucesso. Por favor, faça o login.",
         [
           {
-            text: 'Ok',
-            style: 'cancel',
+            text: "Ok",
+            style: "cancel",
           },
-        ],
+        ]
       );
 
-      navigation.navigate('Login');
+      navigation.navigate("Login");
     } catch (error) {
       console.error(error);
       console.log("BackEnd não está retornando!");
@@ -147,17 +147,19 @@ function TelaCadastro({ navigation }) {
       }, 4000);
       return;
     }
-  };
+  }
 
   const senhaVisivel = () => {
     mostrarSenha == true ? SetmostrarSenha(false) : SetmostrarSenha(true);
-    iconeSenha == 'lock' ? SetIconeSenha('lock-open-variant') : SetIconeSenha('lock');
-  }
+    iconeSenha == "lock"
+      ? SetIconeSenha("lock-open-variant")
+      : SetIconeSenha("lock");
+  };
   const tema = {
     colors: {
-      onSurfaceVariant: 'white'
-    }
-  }
+      onSurfaceVariant: "white",
+    },
+  };
 
   const validateEmail = (email) => {
     const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -169,134 +171,144 @@ function TelaCadastro({ navigation }) {
     senha === confirmarSenha ? setDisplay(false) : setDisplay(true);
     setTimeout(() => {
       setDisplay(false);
-    }, 4000);
+    }, 3000);
   }
-
 
   return (
     <View style={styles.container}>
-
       <View style={styles.telaMain}>
         <Image
           style={styles.imgLogo}
-          source={require('../assets/logoMarcaLogin.png')}
+          source={require("../assets/logoMarcaLogin.png")}
         />
-        {display4 &&
-          <Text style={{ color: "#fff", fontSize: 16, textAlign: 'center', }}>Desculpe, o servidor não está respondendo no momento.</Text>
-        }
+        {display4 && (
+          <Text style={{ color: "#fff", fontSize: 16, textAlign: "center" }}>
+            Desculpe, o servidor não está respondendo no momento.
+          </Text>
+        )}
         <View style={styles.campoinputNomes}>
           <TextInput
-            mode='outlined'
-            label='Nome'
-            placeholderTextColor='#fff'
-            activeOutlineColor='#fff'
-            textColor='#fff'
+            mode="outlined"
+            label={"Nome *"}
+            activeOutlineColor="#ccc"
+            textColor="#fff"
             theme={tema}
-            right={<TextInput.Icon icon="text" iconColor='#fff' />}
+            right={<TextInput.Icon icon="text" iconColor="#fff" />}
             onChangeText={setNome}
             style={styles.inputTextoNome}
           />
           <TextInput
-            mode='outlined'
-            label='Sobrenome'
-            placeholderTextColor='#fff'
-            activeOutlineColor='#fff'
-            textColor='#fff'
+            mode="outlined"
+            label="Sobrenome *"
+            activeOutlineColor="#ccc"
+            textColor="#fff"
             theme={tema}
-            right={<TextInput.Icon icon="text" iconColor='#fff' />}
+            right={<TextInput.Icon icon="text" iconColor="#fff" />}
             onChangeText={setSobrenome}
             style={styles.inputTextoSobrenome}
           />
         </View>
-        {display2 &&
-          <Text style={{ color: "#fff", textAlign: 'center', }}>Usuário já cadastrado, faça o login.</Text>
-        }
-        {display3 &&
-          <Text style={{ color: "#fff", textAlign: 'center', }}>Por favor, digite um email válido</Text>
-        }
+        {display2 && (
+          <Text style={{ color: "#fff", textAlign: "center" }}>
+            Usuário já cadastrado, faça o login.
+          </Text>
+        )}
+        {display3 && (
+          <Text style={{ color: "#fff", textAlign: "center" }}>
+            Por favor, digite um email válido
+          </Text>
+        )}
         <TextInput
-          mode='outlined'
-          keyboardType='email-address'
-          label='Email'
-          placeholderTextColor='#fff'
-          activeOutlineColor='#fff'
-          textColor='#fff'
+          mode="outlined"
+          label="Email *"
+          activeOutlineColor="#ccc"
+          textColor="#fff"
           theme={tema}
-          right={<TextInput.Icon icon="email" iconColor='#fff' />}
+          right={<TextInput.Icon icon="email" iconColor="#fff" />}
           onChangeText={setEmail}
           style={styles.inputTexto}
           onBlur={() => validateEmail(email)}
         />
-        {display &&
-          <Text style={{ color: "#fff", textAlign: 'center', }}>As senhas não possuem a mesma combinação.</Text>
-        }
+        {display && (
+          <Text style={{ color: "#fff", textAlign: "center" }}>
+            As senhas não possuem a mesma combinação.
+          </Text>
+        )}
         <TextInput
-          mode='outlined'
-          label='Senha'
-          placeholderTextColor='#fff'
-          activeOutlineColor='#fff'
-          textColor='#fff'
+          mode="outlined"
+          label="Senha *"
+          activeOutlineColor="#ccc"
+          textColor="#fff"
           theme={tema}
           secureTextEntry={mostrarSenha}
           onChangeText={setSenha}
-          right={<TextInput.Icon icon={iconeSenha} onPress={senhaVisivel} iconColor='#fff' />}
+          right={
+            <TextInput.Icon
+              icon={iconeSenha}
+              onPress={senhaVisivel}
+              iconColor="#fff"
+            />
+          }
           style={styles.inputTexto}
         />
         <TextInput
-          mode='outlined'
-          label='Confirmar senha'
+          mode="outlined"
+          label="Confirmar senha *"
           maxLength={20}
-          placeholderTextColor='#fff'
-          activeOutlineColor='#fff'
-          textColor='#fff'
+          activeOutlineColor="#ccc"
+          textColor="#fff"
           theme={tema}
           secureTextEntry={mostrarSenha}
-          onChangeText={handleConfirmarSenhaChange}
-          right={<TextInput.Icon icon={iconeSenha} onPress={senhaVisivel} iconColor='#fff' />}
+          onKeyPress={handleConfirmarSenhaChange}
+          right={
+            <TextInput.Icon
+              icon={iconeSenha}
+              onPress={senhaVisivel}
+              iconColor="#fff"
+            />
+          }
           style={styles.inputTexto}
         />
         <View style={styles.checkboxContainer}>
           <Checkbox
-            status={checked ? 'checked' : 'unchecked'}
+            status={checked ? "checked" : "unchecked"}
             onPress={() => {
               setChecked(!checked);
             }}
           />
           <Text style={styles.label}>
-            Li e concordo com os{' '}
-            <Text style={styles.linkExterno}
-              onPress={() => navigation.navigate('TermosDeUso')}
+            Li e concordo com os{" "}
+            <Text
+              style={styles.linkExterno}
+              onPress={() => navigation.navigate("TermosDeUso")}
             >
-              Termos de uso{' '}
+              Termos de uso{" "}
             </Text>
-            <Text>
-              e de{' '}
-            </Text>
-            <Text style={styles.linkExterno}
-              onPress={() => navigation.navigate('TermosDePrivacidade')}
+            <Text>e de </Text>
+            <Text
+              style={styles.linkExterno}
+              onPress={() => navigation.navigate("TermosDePrivacidade")}
             >
               Privacidade.
             </Text>
           </Text>
         </View>
-        <Button style={styles.button}
+        <Button
+          style={styles.button}
           onPress={() => sendFormulario()}
-          icon={'account-plus'}
-          buttonColor='#000'
-          textColor='#000'
+          icon={"account-plus"}
+          buttonColor="#000"
+          textColor="#000"
         >
-          <Text style={styles.textoButton}>
-            Cadastrar-se
-          </Text>
+          <Text style={styles.textoButton}>Cadastrar-se</Text>
         </Button>
-        <Pressable style={styles.linkLogin}
-          onPress={() => navigation.navigate('Login')}
+        <Pressable
+          style={styles.linkLogin}
+          onPress={() => navigation.navigate("Login")}
         >
           <Text style={styles.linkTexto}>
-            Tem uma conta?{' '}
-            <Text style={styles.linkTextoLogin}>
-              Fazer login
-            </Text>
+            Tem uma conta?{" "}
+            <Text style={styles.linkTextoLogin}>Fazer login</Text>
           </Text>
         </Pressable>
       </View>

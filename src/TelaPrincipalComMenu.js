@@ -24,10 +24,15 @@ function CustomDrawerContent(props) {
     const [nomeUsuario, setNomeUsuario] = useState(null);
     const [emailUsuario, setEmailUsuario] = useState(null);
     const [imageUrl, setImagemUrl] = useState(null);
+    
+
+    
+
+
 
     // pega o id do usuario na tela do login e através do navegation enviar aqui essa tela;
     const { itemId } = route.params ?? {};
-
+   
     async function sendFormulario(id) {
         try {
             // passa o id para receber somente dados desse usuário;
@@ -45,9 +50,10 @@ function CustomDrawerContent(props) {
 
             if (json.imgUrl) {
                 setImagemUrl(json.imgUrl);
-            } else {
-                setImagemUrl("https://www.vhv.rs/dpng/d/512-5129752_perfil-anonimo-hd-png-download-no-profile-photo.png"); // ou defina uma URL padrão ou uma imagem de fallback
-            }
+              } else {
+                setImagemUrl("https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcQKp5ZsMFTZZrNFb_p2mduiKPipCDh7meawj_zla0mhOHNi_07O3TcMv-q-H-HBvH2G"); // ou defina uma URL padrão ou uma imagem de fallback
+              }
+              
 
             // setImagemUrl(json.imageUrl);
         } catch (error) {
@@ -61,6 +67,7 @@ function CustomDrawerContent(props) {
         <DrawerContentScrollView {...props} style={styles.paginaMenu}>
             <View>
                 <View style={styles.cabecalho} >
+                    {/* <Avatar.Icon theme={'outline'} size={100} icon="account-circle" style={{ backgroundColor: 'transparent' }} /> */}
                     <Avatar.Image size={68} source={{ uri: imageUrl }} />
                     <View style={styles.cabecalhoText}>
                         <Text style={styles.nomeDoAluno}> {nomeUsuario} </Text>
@@ -72,7 +79,7 @@ function CustomDrawerContent(props) {
                 <Divider style={styles.linhaHorizotal2} />
                 <View style={styles.links}>
                     <Text style={styles.link} onPress={() => {
-                        Linking.openURL('https://www.youtube.com/watch?v=tmHsL50_zkU');
+                        Linking.openURL('https://youtu.be/tmHsL50_zkU');
                     }}>Tutorial de Uso do App, Click Aqui.</Text>
                     <Text style={styles.link}>
                         <Text
@@ -90,7 +97,7 @@ function CustomDrawerContent(props) {
                     Sair
                 </Button>
             </View>
-            <Text style={styles.developer}>Developer by JEVA System - 2023</Text>
+            <Text style={styles.developer}>Developer by Antonio Victor - 2023</Text>
         </DrawerContentScrollView>
     );
 }
@@ -115,8 +122,10 @@ const CustomHeader = () => {
 
 function TelaMenu() {
     const route = useRoute();
-    const { itemId } = route.params ?? {};
+    const { itemId, nomeDoUsuario  } = route.params ?? {};
 
+    // console.log("Aqui na telacomMenu: ",nomeDoUsuario)
+    
     return (
         <Drawer.Navigator initialRouteName="Mapa" drawerContent={CustomDrawerContent}>
 
@@ -129,7 +138,7 @@ function TelaMenu() {
                     drawerLabel: (({ focused }) => <Text style={styles.optionsTextos}>Mapa</Text>),
                     drawerIcon: (({ focused }) => <Icon style={styles.optionsIcones} name="map" />)
                 }
-            } name="Mapa" component={TelaPrincipal} />
+            } name="Mapa" component={TelaPrincipal} initialParams={{ nomeDoUsuario: nomeDoUsuario }} />
             <Drawer.Screen options={
                 {
                     headerShown: true,
@@ -166,7 +175,7 @@ function TelaMenu() {
                     headerTransparent: true,
                     headerTintColor: '#fff',
                     headerTitle: '',
-                    drawerLabel: (({ focused }) => <Text style={styles.optionsTextos}>Configuração</Text>),
+                    drawerLabel: (({ focused }) => <Text style={styles.optionsTextos}>Conta</Text>),
                     drawerIcon: (({ focused }) => <Icon style={styles.optionsIcones} name="settings" />)
                 }
             } name="TelaConfiguracao" component={TelaConfiguracao} initialParams={{ itemId: itemId }} />

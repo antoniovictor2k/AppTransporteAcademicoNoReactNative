@@ -16,19 +16,19 @@ function TelaSobre() {
                     está passando no ponto, através do compartilhamento de outros alunos.
                 </Text>
                 <Text style={styles.sobTitulo}>
-                    Linguagens e programas utilizados
+                    Linguagens e Programas Utilizados
                 </Text>
                 <Text style={styles.textoPadrao}>
                     JavaScript, Sql, Sequelize, Node.js,
-                    Express, Figma, GitHub, Visual Studio, React native, MongoDB, Vercel.
+                    Express, CSS3, Figma, GitHub, Visual Studio, React native, MongoDB.
                 </Text>
                 <Text style={styles.sobTitulo}>
-                    Developer by JEVA system
+                    Desenvolvedor Antonio Victor
                 </Text>
                 <Text style={styles.textoPadrao}>
-                    JEVA system, vem dos nomes dos desenvolvedores, JE de Jeallyson e VA de Antonio Victor, System de sistemas.
+                    Desenvolvedor Front End Web e Mobile, conhecimento em JavaScript, HTML5, CSS3, React Native, MongoDB, Angular, Python, Mysql, Git.
                 </Text>
-                <Text style={styles.developer}>Developer by JEVA System - 2023</Text>
+                <Text style={styles.developer}>Developer by Antonio Victor - 2023</Text>
             </View>
         </ScrollView>
 

@@ -70,7 +70,7 @@ function RenderizarCampus() {
                   size={26}
                   iconColor={'#fff'}
                   onPress={() => {
-                    navigation.navigate('Mapa', { itemId: item });
+                    navigation.navigate('Mapa', { itemId: item});
                   }}
                 />
               </View>
@@ -88,7 +88,7 @@ function TelaCampus() {
     <View style={styles.main}>
       <Text style={styles.titulo}>Campus IFAL</Text>
       <RenderizarCampus />
-      <Text style={styles.developer}>Developer by JEVA System - 2023</Text>
+      <Text style={styles.developer}>Developer by Antonio Victor - 2023</Text>
     </View>
   );
 }
