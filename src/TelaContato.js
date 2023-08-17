@@ -5,7 +5,7 @@ import { IconButton } from 'react-native-paper';
 
 function TelaContato() {
     return (
-        <ScrollView>
+        <ScrollView style={styles.mais}>
             <View style={styles.telamain}>
                 <Text style={styles.titulo}>Contatos</Text>
                 <View style={styles.container}>

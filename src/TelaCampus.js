@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { IconButton, Avatar, ActivityIndicator } from 'react-native-paper';
+import { IconButton, Avatar, ActivityIndicator, Button } from 'react-native-paper';
 import { View, Text, FlatList, Linking } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -11,10 +11,15 @@ import styles from '../Styles/StyleTelaCampus';
 function RenderizarCampus() {
   const [campi, setCampi] = useState([]);
   const navigation = useNavigation();
+  // const [renderizarNovamente, setRenderizarNovamente] = useState(false);
 
   useEffect(() => {
     fetchData();
+    console.log("Full useEffect: ");
   }, []);
+
+// https://mockapi.io/projects
+// Login com gitHub
 
   async function fetchData() {
     try {
@@ -25,6 +30,12 @@ function RenderizarCampus() {
       console.error(error);
     }
   }
+
+  // const chamaRender = () =>{
+  //   renderizarNovamente === false ? setRenderizarNovamente(true):setRenderizarNovamente(false);
+  //   console.log("OnPress chamaRender: ", renderizarNovamente);
+  // }
+
   if (campi.length === 0) {
     return (
       <View style={styles.container}>

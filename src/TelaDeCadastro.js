@@ -259,6 +259,7 @@ function TelaCadastro({ navigation }) {
           textColor="#fff"
           theme={tema}
           secureTextEntry={mostrarSenha}
+          onChangeText={setConfirmarSenha}
           onKeyPress={handleConfirmarSenhaChange}
           right={
             <TextInput.Icon

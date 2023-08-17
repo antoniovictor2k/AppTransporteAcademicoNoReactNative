@@ -2,6 +2,11 @@ import { StyleSheet } from 'react-native';
 
 const stylesTelaLogin = StyleSheet.create({
 
+    mais:{
+        backgroundColor: '#113036',
+        flex: 1,
+        textAlign: 'center',
+    },
     telamain: {
         backgroundColor: '#113036',
         flex: 1,
