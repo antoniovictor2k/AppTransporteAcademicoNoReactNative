@@ -26,10 +26,6 @@ function TelaPrincipal() {
   // console.log(nomeDoUsuario)
   const mapRef = useRef(null);
   const [localizacao, setLocalizacao] = useState(null);
-  const [verificarproviderStatus, setVerificarproviderStatus] = useState(null)
-  // chama o use effcet do localização 
-  const [activeUseEffect, SetActiveUseEffect] = useState(false)
-  // !!! 
   const [localizacao_inicial, setLocalizacao_inicial] = useState({
     latitude: -9.5676652,
     latitudeDelta: 0.0222,
@@ -40,6 +36,7 @@ function TelaPrincipal() {
     useState(null);
   const [carregando, setCarregando] = useState(false);
   const [errorMsg, setErrorMsg] = useState(null);
+  const [mostrarRota, setMostrarRota] = useState(false);
   const [compartilharBusAtual, setCompartilharBusAtual] = useState(false);
   const [destinoIFALMaceio, setDestinoIFALMaceio] = useState({
     latitude: -9.6650989,
@@ -81,9 +78,23 @@ function TelaPrincipal() {
     return `${horaFormatada}:${minutoFormatado}`;
   }
 
-
-  // obsevação aqui!!!
-
+  useEffect(() => {
+    async function obterLocalizacao() {
+      setCarregando(false);
+      try {
+        let location = await Location.getCurrentPositionAsync({});
+        setLocalizacao({
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude,
+          latitudeDelta: 0.0187,
+          longitudeDelta: 0.04299,
+        });
+      } catch (error) {
+        console.log("Erro ao obter a localização:", error);
+      }
+    }
+    obterLocalizacao();
+  }, [localizacao]);
 
   //INICIO Verificar se localizaçao já esta sendo enviado
 
@@ -99,13 +110,10 @@ function TelaPrincipal() {
             "Content-Type": "application/json",
           },
         }
-        );
-        
-        const time = new Date();
-        const timeHora = time.getHours();
+      );
+
       const json = await response.json();
       const busActive = json.compartilhando;
-      const hora = parseInt(json.ultima_att_onibus);
       // console.log(json)
       // console.log(json.localizacao_atual_bus.latitude);
       // envia os nomes para o use useState e depois exibir na tela menu;
@@ -125,16 +133,12 @@ function TelaPrincipal() {
       // mostrar marcação somente se estivem verdadeiro o compartilhamento.
 
       // add null se o comartilhamento vim false, para aparecer a messagem na tela
-      
+
       if (busActive) {
         console.log("Chegando aqui... bus_atual");
       } else if (busActive === false) {
+        setLocalizacaoAtualDoOnibus(null);
         console.log("É falso ");
-        
-        if(timeHora < hora){
-          setLocalizacaoAtualDoOnibus(null);
-          console.log("timeHors é MENOR que hora")
-        }
       }
 
       // console.log(json);
@@ -146,12 +150,10 @@ function TelaPrincipal() {
 
   // FIM  Verificar se localizaçao já esta sendo enviado
 
+  // console.log("*2*: ",compartilharBus)
 
-  const ativarDirecionarBusCompartilhado = () => {
-    console.log("onPRESS ativarDirecionarBusCompartilhado!")
-    SetActiveUseEffect(true);
-    mapRef.current?.animateToRegion(localizacaoAtualDoOnibus);
-    
+  const ativarMostrarRota = () => {
+    localizacao && setMostrarRota(!mostrarRota);
   };
   const desativarCompartilharBus = () => {
     setCompartilharBusAtual(false);
@@ -228,52 +230,22 @@ function TelaPrincipal() {
   //FIM enviar localizaçao
 
   useEffect(() => {
-    const fetchLocationData = async () => {
-      try {
+    const interval = setInterval(() => {
+      (async () => {
         let { granted } = await Location.requestForegroundPermissionsAsync();
         if (!granted) {
           setErrorMsg("A permissão para acessar o local foi negada");
           return;
         }
-  
+
         let providerStatus = await Location.getProviderStatusAsync({});
         if (!providerStatus.gpsAvailable) {
           setErrorMsg("O GPS não está ativado");
-          setVerificarproviderStatus(providerStatus);
           setCarregando(true);
-          setCompartilharBusAtual(false);
-          setCompartilharBus(false);
           return;
         }
-       
         setCarregando(false);
-       
-        let location = await Location.getCurrentPositionAsync({});
-        setLocalizacao({
-          latitude: location.coords.latitude,
-          longitude: location.coords.longitude,
-          latitudeDelta: 0.0187,
-          longitudeDelta: 0.04299,
-        });
-
-      } catch (error) {
-        console.error("Erro ao obter permissões ou status do GPS:", error);
-      }
-    };
-  
-    // Inicializa o temporizador quando o componente é montado
-    fetchLocationData();
-  
-    // Limpeza opcional, porém não é necessária para o setTimeout
-    // pois ele não se repete automaticamente como o setInterval
-  }, [verificarproviderStatus, compartilharBus, activeUseEffect]);
-  
-
-
-  useEffect(() => {
-    const intervalAPI = setInterval(() => {
-      (async () => {
-      
+        // obter dados a casa 3 segundos da localização
 
         if (compartilharBus === true) {
           console.log("Compartilhamento Ativado...");
@@ -294,16 +266,11 @@ function TelaPrincipal() {
     }, 3000); // Chama a cada 3 segundo (2000 milissegundos)
 
     return () => {
-      clearInterval(intervalAPI);
+      clearInterval(interval);
     };
   });
 
-
-
-
   const localizacaoAtual = () => {
-    console.log("onPRESS localizacaoAtual!")
-    SetActiveUseEffect(true);
     mapRef.current?.animateToRegion(localizacao);
   };
 
@@ -337,41 +304,23 @@ function TelaPrincipal() {
   // abrir configuração do depositivo;
 
   const getLocation = async () => {
-    
-  
     try {
       // Solicita permissão de localização ao usuário
-      
-      let providerStatus = await Location.getProviderStatusAsync({});
+
       let { status } = await Location.requestForegroundPermissionsAsync();
 
-      if (providerStatus.gpsAvailable) {
-        setErrorMsg("O GPS está ativado");
-        SetActiveUseEffect(true);
-        // setCarregando(false);
-      }
-      
-      console.log("TEste proviStu: ", providerStatus)
-      
       if (status !== "granted") {
         console.log("A permissão de localização foi negada.");
-        setVerificarproviderStatus(providerStatus)
         return;
       }
-      
-     
-      console.log("teste ", status);
-      
+
       // Obtém a localização atual do usuário
       let location = await Location.getCurrentPositionAsync({});
-
-      console.log("teste LOcal: ",location)
 
       // Faça algo com as coordenadas de latitude e longitude aqui
       // console.log(`location OK`);
     } catch (error) {
       console.log("Erro ao obter a localização:", error);
-
     }
   };
 
@@ -415,6 +364,7 @@ function TelaPrincipal() {
   if (carregando) {
     return (
       <View style={styles.containerFlex}>
+        <ActivityIndicator animating={true} color={"#fff"} size={"large"} />
         <Text style={styles.carregando}> {errorMsg} </Text>
         <Text style={styles.carregando}>
           Por favor ligue o GPS para continuar
@@ -489,7 +439,16 @@ function TelaPrincipal() {
             </View>
           </Marker>
         ) : null}
-        
+
+        {mostrarRota && (
+          <MapViewDirections
+            origin={localizacao}
+            destination={destinoIFALMaceio}
+            apikey={GOOGLE_MAPS_APIKEY}
+            strokeWidth={6}
+            strokeColor="green"
+          />
+        )}
       </MapView>
 
       <IconButton
@@ -511,11 +470,11 @@ function TelaPrincipal() {
 
       <IconButton
         style={styles.mostrarRotaIFAL}
-        icon="bus-marker"
+        icon="map-marker-path"
         iconColor="#fff"
         containerColor="#000"
         size={34}
-        onTouchEnd={ativarDirecionarBusCompartilhado}
+        onTouchEnd={ativarMostrarRota}
       />
       {compartilharBusAtual && localizacaoAtualDoOnibus === null ? (
         <View style={styles.viemBusAtual}>
@@ -528,7 +487,7 @@ function TelaPrincipal() {
       {opcoes_de_destino && <OpcoesMenuBus />}
       <IconButton
         style={styles.buttonCompartilharLocalizacao}
-        icon="bus-multiple"
+        icon="bus-marker"
         iconColor="#fff"
         size={55}
         containerColor="#000"
