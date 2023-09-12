@@ -10,10 +10,10 @@ O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcion
 - Recurso 2: Receber a localização em tempo real.
 - Recurso 3: Obter a localização e o link das páginas das redes sociais das 16 instituições federais de Alagoas.
 
-# Capturas de Tela (Figma)
+# Tela
 
 ## Tela Login e Tela Cadastro
-<img src="/assets/ImgTelasApp/Tela%20de%20Login.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700"> <img src="/assets/ImgTelasApp/Tela%20de%20Cadastro.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+<img src="/assets/arquivoParaReadme/TelaLogin.gif" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700"> <img src="/assets/arquivoParaReadme/TelaCadastro.gif" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
 
 ## Tela Recuperar Senha e Tela Principal
 <img src="/assets/ImgTelasApp/Tela%20de%20Recuperar%20Senha.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700"> <img src="/assets/ImgTelasApp/Tela%20Principal%20do%20app.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
@@ -51,7 +51,7 @@ Certifique-se de que seu dispositivo atenda aos seguintes requisitos mínimos:
 ## Suporte
 Para obter suporte técnico ou relatar problemas, entre em contato conosco pelos seguintes canais:
 
-- Email: avps2@aluno.ifal.edu.br ou jfs63@aluno.ifal.edu.br
+- Email: avps2@aluno.ifal.edu.br
 - Instagram: [@antoniovictor2k](https://www.instagram.com/antoniovictor2k/)
 
 ## Licença

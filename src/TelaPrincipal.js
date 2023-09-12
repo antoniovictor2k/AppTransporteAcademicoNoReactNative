@@ -50,6 +50,10 @@ function TelaPrincipal() {
   const [opcoes_de_destino, setOpcoes_de_destino] = useState(false);
   const [destino_escolhido, setDestino_escolhido] = useState("");
 
+  const [markerEnviarLocalizacao, setMarkerEnviarLocalizacao] = useState(null);
+  const [markerReceberLocalizacao, setMarkerReceberLocalizacao] = useState(null);
+
+
   // Guadar dados de quem esta enviando o destino.
 
   const [destino, setDestino] = useState("");
@@ -122,6 +126,7 @@ function TelaPrincipal() {
         longitudeDelta: 0.1699,
       });
 
+// console.log(timeHora, ' e ', hora);
       // mostrar marcação somente se estivem verdadeiro o compartilhamento.
 
       // add null se o comartilhamento vim false, para aparecer a messagem na tela
@@ -130,11 +135,11 @@ function TelaPrincipal() {
         console.log("Chegando aqui... bus_atual");
       } else if (busActive === false) {
         console.log("É falso ");
+        setLocalizacaoAtualDoOnibus(null);
         
-        if(timeHora < hora){
-          setLocalizacaoAtualDoOnibus(null);
-          console.log("timeHors é MENOR que hora")
-        }
+        // if(timeHora < hora){
+        //   console.log("timeHors é MENOR que hora")
+        // }
       }
 
       // console.log(json);
@@ -375,9 +380,27 @@ function TelaPrincipal() {
     }
   };
 
+
+  useEffect(() => {
+    if (localizacao !== null) {
+      setMarkerEnviarLocalizacao(localizacao);
+      console.log('Teste Marker Enviar');
+    }
+  }, [localizacao]);
+
+  useEffect(() => {
+    if (localizacaoAtualDoOnibus !== null) {
+      setMarkerReceberLocalizacao(localizacaoAtualDoOnibus);
+      console.log('Teste Marker Receber');
+    }
+  }, [localizacaoAtualDoOnibus]);
+  
+
+
   // No Expo,
   // não há uma maneira direta de abrir as configurações de localização do dispositivo para ativar manualmente.
   // O Expo não fornece essa funcionalidade específica
+
 
   const OpcoesMenuBus = () => (
     <List.Section
@@ -462,7 +485,7 @@ function TelaPrincipal() {
         </Marker>
 
         {compartilharBus && localizacao !== null ? (
-          <Marker coordinate={localizacao} anchor={{ x: 0.5, y: 0.5 }}>
+          <Marker coordinate={markerEnviarLocalizacao} anchor={{ x: 0.5, y: 0.5 }}>
             <Image
               style={styles.tinyLogo}
               source={require("../assets/bus_des.png")}
@@ -472,7 +495,7 @@ function TelaPrincipal() {
 
         {compartilharBusAtual && localizacaoAtualDoOnibus !== null ? (
           <Marker
-            coordinate={localizacaoAtualDoOnibus}
+            coordinate={markerReceberLocalizacao}
             anchor={{ x: 0.5, y: 0.5 }}
           >
             <View style={styles.localizacao_atual_bus}>
