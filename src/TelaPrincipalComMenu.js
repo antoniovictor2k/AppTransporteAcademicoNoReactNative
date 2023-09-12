@@ -165,7 +165,7 @@ function TelaMenu() {
                     headerTransparent: true,
                     headerTintColor: '#fff',
                     headerTitle: '',
-                    drawerLabel: (({ focused }) => <Text style={styles.optionsTextos}>Campus</Text>),
+                    drawerLabel: (({ focused }) => <Text style={styles.optionsTextos}>Câmpus</Text>),
                     drawerIcon: (({ focused }) => <Icon style={styles.optionsIcones} name="school" />)
                 }
             } name="TelaCampus" component={TelaCampus} />

@@ -157,7 +157,7 @@ function TelaLogin({ navigation }) {
       >
         <Text style={styles.linkTexto}>
           Não tem uma conta?{" "}
-          <Text style={styles.linkTextoInscrevar}>Inscrevar-se</Text>
+          <Text style={styles.linkTextoInscrevar}>Inscreva-se</Text>
         </Text>
       </Pressable>
     </View>

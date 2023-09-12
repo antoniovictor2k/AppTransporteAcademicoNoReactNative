@@ -97,7 +97,7 @@ function RenderizarCampus() {
 function TelaCampus() {
   return (
     <View style={styles.main}>
-      <Text style={styles.titulo}>Campus IFAL</Text>
+      <Text style={styles.titulo}>Câmpus IFAL</Text>
       <RenderizarCampus />
       <Text style={styles.developer}>Developer by Antonio Victor - 2023</Text>
     </View>
