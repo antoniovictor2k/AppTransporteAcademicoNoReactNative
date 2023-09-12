@@ -10,32 +10,30 @@ O aplicativo está sendo desenvolvido com intuito de ajudar estudantes e funcion
 - Recurso 2: Receber a localização em tempo real.
 - Recurso 3: Obter a localização e o link das páginas das redes sociais das 16 instituições federais de Alagoas.
 
-# Tela
+# Demonstração de telas
 
-## Tela Login e Tela Cadastro
+## Login e de Cadastro
 <img src="/assets/arquivoParaReadme/TelaLogin.gif" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700"> <img src="/assets/arquivoParaReadme/TelaCadastro.gif" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
 
-## Tela Recuperar Senha e Tela Principal
-<img src="/assets/ImgTelasApp/Tela%20de%20Recuperar%20Senha.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700"> <img src="/assets/ImgTelasApp/Tela%20Principal%20do%20app.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+## Recuperar Senha e Principal
+<img src="/assets/arquivoParaReadme/TelaRecuperar.gif" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700"> <img src="/assets/arquivoParaReadme/TelaPrincipal.gif" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
 
-## Tela Termos de uso e Tela política de privacidade
-<img src="/assets/ImgTelasApp/Tela%20-%20Termos%20de%20Uso.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="1400"> <img src="/assets/ImgTelasApp/Tela%20-%20Pol%C3%ADtica%20de%20Privacidade.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="1400">
 
-## Tela Menu e Tela Sobre
-<img src="/assets/ImgTelasApp/Tela%20-%20Menu%20op%C3%A7%C3%B5es.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="300" height="800"> <img src="/assets/ImgTelasApp/Tela%20-%20Sobre.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="800">
+## Menu e Sobre
+<img src="/assets/arquivoParaReadme/TelaMenu.gif" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700"> <img src="/assets/arquivoParaReadme/TelaSobre.gif" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
 
-## Tela Contatos 
-<img src="/assets/ImgTelasApp/Tela%20-%20Contatos.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="800">
+## Contatos 
+<img src="/assets/arquivoParaReadme/TelaContato.gif" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
 
-## Tela Campus e Tela Configuração
-<img src="/assets/ImgTelasApp/Tela%20%20-%20Campus.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="1400"> <img src="/assets/ImgTelasApp/Tela%20%20-%20Configura%C3%A7%C3%A3o.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="1400">
+## Campus e Configuração
+<img src="/assets/arquivoParaReadme/TelaCampus.gif" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700"> <img src="/assets/arquivoParaReadme/TelaConfiguracao.gif" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
 
 ## icon do App e Tela Antes do App
-<img src="/assets/ImgTelasApp/adaptive-icon.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="50" height="50"> <img src="/assets/ImgTelasApp/Splash.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
+<img src="/assets/ImgTelasApp/adaptive-icon.png" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="50" height="50"> <img src="/assets/arquivoParaReadme/TelaCarregando.jpg" alt="Tela inicial do Aplicativo Transporte Acadêmico" width="400" height="700">
 
 
 
-## Instalação
+# Instalação
 Siga as etapas abaixo para instalar o Aplicativo Transporte Acadêmico:
 
 1. Faça o download do Apk de instalação no [link](https://expo.dev/accounts/tonhao/projects/Apptransporteacademico/builds/d3ee903f-3460-4e2f-9b22-8542e6c8c88f).
