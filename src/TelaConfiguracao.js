@@ -14,18 +14,19 @@ function TelaConfiguracao(props) {
   const [novoEmail, setNovoEmail] = useState(null);
   const [novoImgURL, setNovoImgURL] = useState(null);
   const [novaSenha, setNovaSenha] = useState(null);
+  const [confirmarNovaSenha, setConfirmarNovaSenha] = useState(null)
   const [novoNome, setNovoNome] = useState(null);
   const [novoSobrenome, setNovoSobrenome] = useState(null);
   const [mostrarSenha, SetmostrarSenha] = useState(true);
-  const [iconeSenha, SetIconeSenha] = useState("lock");
+  const [iconeSenha, SetIconeSenha] = useState("eye-off");
   const route = useRoute();
   const { itemId } = route.params ?? {};
 
   const senhaVisivel = () => {
     mostrarSenha == true ? SetmostrarSenha(false) : SetmostrarSenha(true);
-    iconeSenha == "lock"
-      ? SetIconeSenha("lock-open-variant")
-      : SetIconeSenha("lock");
+    iconeSenha == "eye-off"
+      ? SetIconeSenha("eye")
+      : SetIconeSenha("eye-off");
   };
   const tema = {
     colors: {
@@ -85,6 +86,7 @@ function TelaConfiguracao(props) {
 
   // Atualizar dados da conta
   async function sendFormularioUpdate(id) {
+
     if (
       !novoEmail &&
       !novaSenha &&
@@ -95,6 +97,14 @@ function TelaConfiguracao(props) {
       Alert.alert(
         "Nenhum dado foi alterado",
         "Faça alguma alteração antes de confirmar.",
+        [{ text: "Tenta novamente", style: "cancel" }]
+      );
+      return;
+    }
+    if (novaSenha !== confirmarNovaSenha) {
+      Alert.alert(
+        "Combinação está diferente",
+        "Senha e Confirmar Senha Precisar  ser iguais.",
         [{ text: "Tenta novamente", style: "cancel" }]
       );
       return;
@@ -250,6 +260,23 @@ function TelaConfiguracao(props) {
             }
             textColor="#fff"
             onChangeText={setNovaSenha}
+            activeOutlineColor="#ccc"
+            style={styles.inputTexto}
+            theme={tema}
+          />
+          <TextInput
+            label={"Confirmar Senha"}
+            secureTextEntry={mostrarSenha}
+            mode="outlined"
+            right={
+              <TextInput.Icon
+                icon={iconeSenha}
+                iconColor="#fff"
+                onPress={senhaVisivel}
+              />
+            }
+            textColor="#fff"
+            onChangeText={setConfirmarNovaSenha}
             activeOutlineColor="#ccc"
             style={styles.inputTexto}
             theme={tema}

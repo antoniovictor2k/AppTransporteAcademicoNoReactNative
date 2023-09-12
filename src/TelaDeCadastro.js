@@ -18,7 +18,7 @@ function TelaCadastro({ navigation }) {
   const [senha, setSenha] = useState(null);
   const [confirmarSenha, setConfirmarSenha] = useState("");
   const [mostrarSenha, SetmostrarSenha] = useState(true);
-  const [iconeSenha, SetIconeSenha] = useState("lock");
+  const [iconeSenha, SetIconeSenha] = useState("eye-off");
 
   async function sendFormulario() {
     if (!nome || !sobrenome) {
@@ -151,9 +151,9 @@ function TelaCadastro({ navigation }) {
 
   const senhaVisivel = () => {
     mostrarSenha == true ? SetmostrarSenha(false) : SetmostrarSenha(true);
-    iconeSenha == "lock"
-      ? SetIconeSenha("lock-open-variant")
-      : SetIconeSenha("lock");
+    iconeSenha == "eye-off"
+      ? SetIconeSenha("eye")
+      : SetIconeSenha("eye-off");
   };
   const tema = {
     colors: {

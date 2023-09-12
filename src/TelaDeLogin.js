@@ -13,7 +13,7 @@ function TelaLogin({ navigation }) {
   const [email, setEmail] = useState(null);
   const [senha, setSenha] = useState(null);
   const [mostrarSenha, SetmostrarSenha] = useState(true);
-  const [iconeSenha, SetIconeSenha] = useState("lock");
+  const [iconeSenha, SetIconeSenha] = useState("eye-off");
 
   async function sendFormulario() {
     if (!validateEmail(email)) {
@@ -70,9 +70,9 @@ function TelaLogin({ navigation }) {
 
   const senhaVisivel = () => {
     mostrarSenha == true ? SetmostrarSenha(false) : SetmostrarSenha(true);
-    iconeSenha == "lock"
-      ? SetIconeSenha("lock-open-variant")
-      : SetIconeSenha("lock");
+    iconeSenha == "eye-off"
+      ? SetIconeSenha("eye")
+      : SetIconeSenha("eye-off");
   };
 
   const tema = {
