@@ -382,9 +382,9 @@ function TelaPrincipal() {
 
 
   useEffect(() => {
-    // console.log('Antes do if Teste Marker Enviar');
+    console.log('Antes do if Teste Marker Enviar');
+    setMarkerEnviarLocalizacao(localizacao);
     if (localizacao !== null) {
-      setMarkerEnviarLocalizacao(localizacao);
       console.log('Teste Marker Enviar');
     }
   }, [localizacao, localizacaoAtualDoOnibus]);
