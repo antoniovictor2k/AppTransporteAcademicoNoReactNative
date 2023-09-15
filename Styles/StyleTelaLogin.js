@@ -36,7 +36,7 @@ tinyLogo: {
     height: 45,
     width: 350,
     padding: 0,
-    margin: 1,
+    margin: -1,
     color: '#fff',
     backgroundColor: '#416169',
     borderRadius: 6,
@@ -48,7 +48,7 @@ tinyLogo: {
     backgroundColor: '#B3DCE5',
     borderRadius: 6,
     marginBottom: 0,
-    marginTop: 5,
+    marginTop: 12,
     paddingTop: 5,
   },
   textoButton: {

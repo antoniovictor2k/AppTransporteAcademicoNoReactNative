@@ -10,7 +10,6 @@ import {
   List,
 } from "react-native-paper";
 import { useRoute } from "@react-navigation/native";
-import MapViewDirections from "react-native-maps-directions";
 import styles from "../Styles/StyleTelaPrincipalComMenu";
 
 // A partir deste ponto, você pode acessar suas variáveis de ambiente normalmente usando process.env
@@ -50,10 +49,9 @@ function TelaPrincipal() {
   const [opcoes_de_destino, setOpcoes_de_destino] = useState(false);
   const [destino_escolhido, setDestino_escolhido] = useState("");
 
-  const [markerEnviarLocalizacao, setMarkerEnviarLocalizacao] = useState(null);
-  const [markerReceberLocalizacao, setMarkerReceberLocalizacao] = useState(null);
-
-
+  const [obterLocalizacao, setObterLocalizacao] = useState(false);
+  const [display, setDisplay] = useState(false);
+ 
   // Guadar dados de quem esta enviando o destino.
 
   const [destino, setDestino] = useState("");
@@ -133,13 +131,10 @@ function TelaPrincipal() {
       
       if (busActive) {
         console.log("Chegando aqui... bus_atual");
-      } else if (busActive === false) {
+      } else if (busActive !== true) {
         console.log("É falso ");
         setLocalizacaoAtualDoOnibus(null);
         
-        // if(timeHora < hora){
-        //   console.log("timeHors é MENOR que hora")
-        // }
       }
 
       // console.log(json);
@@ -253,13 +248,7 @@ function TelaPrincipal() {
        
         setCarregando(false);
        
-        let location = await Location.getCurrentPositionAsync({});
-        setLocalizacao({
-          latitude: location.coords.latitude,
-          longitude: location.coords.longitude,
-          latitudeDelta: 0.0187,
-          longitudeDelta: 0.04299,
-        });
+      
 
       } catch (error) {
         console.error("Erro ao obter permissões ou status do GPS:", error);
@@ -269,9 +258,48 @@ function TelaPrincipal() {
     // Inicializa o temporizador quando o componente é montado
     fetchLocationData();
   
-    // Limpeza opcional, porém não é necessária para o setTimeout
-    // pois ele não se repete automaticamente como o setInterval
+    
   }, [verificarproviderStatus, compartilharBus, activeUseEffect]);
+
+
+  const ChameLocation = async () => {
+    try {
+      let location = await Location.getCurrentPositionAsync({});
+      setLocalizacao({
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+        latitudeDelta: 0.0187,
+        longitudeDelta: 0.04299,
+      });
+    } catch (error) {
+      // Lidar com erros aqui, por exemplo, exibir uma mensagem de erro
+      console.error("Erro ao obter a localização:", error);
+    }
+  };
+
+  useEffect(() => {
+    let intervalId;
+console.log("teste antes da validação ChameLocation ")
+if (obterLocalizacao) {
+  // Iniciar a obtenção contínua da localização a cada 10 segundos (ou outro intervalo de sua escolha)
+  
+  
+  intervalId = setInterval(() => {
+    ChameLocation();
+    
+    console.log("teste DEPOIS da validação ChameLocation 10SS")
+      }, 4000); // Intervalo de 10 segundos (em milissegundos)
+    }
+
+    return () => {
+      // Limpar o intervalo quando o componente for desmontado ou quando parar de obter a localização
+      clearInterval(intervalId);
+    };
+  }, [obterLocalizacao]);
+
+  
+console.log(localizacao)
+  // teste
   
 
 
@@ -296,7 +324,7 @@ function TelaPrincipal() {
           receber_localizacao_do_onibus(id_banco_rota);
         }
       })();
-    }, 3000); // Chama a cada 3 segundo (2000 milissegundos)
+    }, 2000); // Chama a cada 3 segundo (2000 milissegundos)
 
     return () => {
       clearInterval(intervalAPI);
@@ -381,27 +409,19 @@ function TelaPrincipal() {
   };
 
 
-  useEffect(() => {
-    console.log('Antes do if Teste Marker Enviar');
-    setMarkerEnviarLocalizacao(localizacao);
-    if (localizacao !== null) {
-      console.log('Teste Marker Enviar');
-    }
-  }, [localizacao, localizacaoAtualDoOnibus]);
-
-  useEffect(() => {
-    if (localizacaoAtualDoOnibus !== null) {
-      setMarkerReceberLocalizacao(localizacaoAtualDoOnibus);
-      console.log('Teste Marker Receber');
-    }
-  }, [localizacaoAtualDoOnibus]);
   
-
 
   // No Expo,
   // não há uma maneira direta de abrir as configurações de localização do dispositivo para ativar manualmente.
   // O Expo não fornece essa funcionalidade específica
 
+  // setDisplay(true);
+if(display){
+  setTimeout(() => {
+    console.log('teste display')
+    setDisplay(false);
+  }, 4000);
+};
 
   const OpcoesMenuBus = () => (
     <List.Section
@@ -411,8 +431,10 @@ function TelaPrincipal() {
       <List.Item
         title="Enviar Localização"
         onPress={() => {
-          setDestino_escolhido("rio-largo");
+           setDestino_escolhido("rio-largo");
+         setDisplay(true);
           ativarCompartilharBus();
+          setObterLocalizacao(true)
           setOpcoes_de_destino(false);
         }}
         left={() => <List.Icon icon="upload" />}
@@ -420,8 +442,10 @@ function TelaPrincipal() {
       <List.Item
         title="Receber Localização"
         onPress={() => {
+          setDisplay(false);
           ativarCompartilharBusAtual();
           setOpcoes_de_destino(false);
+          setObterLocalizacao(false);
         }}
         left={() => <List.Icon icon="download" />}
       />
@@ -429,7 +453,10 @@ function TelaPrincipal() {
       <List.Item
         title="Parar"
         onPress={() => {
-          desativarCompartilharBus(), setOpcoes_de_destino(false);
+          setDisplay(false);
+          desativarCompartilharBus();
+           setOpcoes_de_destino(false); 
+           setObterLocalizacao(false);
         }}
         left={() => <List.Icon icon="stop" />}
       />
@@ -486,7 +513,7 @@ function TelaPrincipal() {
         </Marker>
 
         {compartilharBus && localizacao !== null ? (
-          <Marker coordinate={markerEnviarLocalizacao} anchor={{ x: 0.5, y: 0.5 }}>
+          <Marker coordinate={localizacao} anchor={{ x: 0.5, y: 0.5 }}>
             <Image
               style={styles.tinyLogo}
               source={require("../assets/bus_des.png")}
@@ -496,7 +523,7 @@ function TelaPrincipal() {
 
         {compartilharBusAtual && localizacaoAtualDoOnibus !== null ? (
           <Marker
-            coordinate={markerReceberLocalizacao}
+            coordinate={localizacaoAtualDoOnibus}
             anchor={{ x: 0.5, y: 0.5 }}
           >
             <View style={styles.localizacao_atual_bus}>
@@ -549,6 +576,14 @@ function TelaPrincipal() {
         </View>
       ) : null}
 
+{ display &&
+
+        <View style={styles.viemBusAtual2}>
+          <Text style={styles.textBusAtual}>
+          Iniciando compartilhamento...
+          </Text>
+        </View>
+}
       {opcoes_de_destino && <OpcoesMenuBus />}
       <IconButton
         style={styles.buttonCompartilharLocalizacao}

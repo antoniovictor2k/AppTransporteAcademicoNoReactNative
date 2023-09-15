@@ -117,6 +117,15 @@ const stylesTelaMenu = StyleSheet.create({
     borderRadius: 8,
     textAlien: "center",
   },
+  viemBusAtual2: {
+    marginBottom: 260,
+    backgroundColor: "#fff",
+    alignSelf: "center",
+    width: 200,
+    borderRadius: 8,
+    textAlien: "center",
+    opacity:0.7
+  },
   textBusAtual:{
     textAlign:'center'
 },
