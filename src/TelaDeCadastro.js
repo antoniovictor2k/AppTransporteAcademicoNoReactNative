@@ -10,10 +10,10 @@ function TelaCadastro({ navigation }) {
   const [display3, setDisplay3] = useState(false);
   const [display4, setDisplay4] = useState(false);
   const [checked, setChecked] = useState(false);
-  const [nome, setNome] = useState(null);
-  const [sobrenome, setSobrenome] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [senha, setSenha] = useState(null);
+  const [nome, setNome] = useState("");
+  const [sobrenome, setSobrenome] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
   const [confirmarSenha, setConfirmarSenha] = useState("");
   const [mostrarSenha, SetmostrarSenha] = useState(true);
   const [iconeSenha, SetIconeSenha] = useState("eye-off");
@@ -164,7 +164,7 @@ function TelaCadastro({ navigation }) {
   };
 
   function handleConfirmarSenhaChange(text) {
-    setConfirmarSenha(text);
+    // setConfirmarSenha(text);
     senha === confirmarSenha ? setDisplay(false) : setDisplay(true);
     setTimeout(() => {
       setDisplay(false);
@@ -256,6 +256,7 @@ function TelaCadastro({ navigation }) {
           textColor="#fff"
           theme={tema}
           secureTextEntry={mostrarSenha}
+          onChangeText={setConfirmarSenha}
           onBlur={handleConfirmarSenhaChange}
           right={
             <TextInput.Icon

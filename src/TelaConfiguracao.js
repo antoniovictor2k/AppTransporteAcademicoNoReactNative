@@ -8,12 +8,12 @@ function TelaConfiguracao(props) {
   const navigation = useNavigation();
 
   const [checked, setChecked] = useState(false);
-  const [novoEmail, setNovoEmail] = useState(null);
-  const [novoImgURL, setNovoImgURL] = useState(null);
-  const [novaSenha, setNovaSenha] = useState(null);
-  const [confirmarNovaSenha, setConfirmarNovaSenha] = useState(null);
-  const [novoNome, setNovoNome] = useState(null);
-  const [novoSobrenome, setNovoSobrenome] = useState(null);
+  const [novoEmail, setNovoEmail] = useState("");
+  const [novoImgURL, setNovoImgURL] = useState("");
+  const [novaSenha, setNovaSenha] = useState("");
+  const [confirmarNovaSenha, setConfirmarNovaSenha] = useState("");
+  const [novoNome, setNovoNome] = useState("");
+  const [novoSobrenome, setNovoSobrenome] = useState("");
   const [mostrarSenha, SetmostrarSenha] = useState(true);
   const [iconeSenha, SetIconeSenha] = useState("eye-off");
   const route = useRoute();
@@ -166,8 +166,14 @@ function TelaConfiguracao(props) {
           "Dado(s) atualizado(s)",
           "Dado(s) atualizado(s) com sucesso",
           [{ text: "Ok", style: "cancel" }]
-        );
-      } else {
+          );
+          setNovoNome("");
+          setNovoSobrenome("");
+          setNovoEmail("");
+          setNovoImgURL("");
+          setNovaSenha("");
+          setConfirmarNovaSenha("");
+        } else {
         console.log("Erro ao atualizar os dados do usuário");
       }
     } catch (error) {
@@ -197,6 +203,7 @@ function TelaConfiguracao(props) {
             keyboardType="url"
             label={"Img URL"}
             mode="outlined"
+            value={novoImgURL}
             right={<TextInput.Icon icon="link" iconColor="#fff" />}
             textColor="#fff"
             onChangeText={setNovoImgURL}
@@ -209,6 +216,7 @@ function TelaConfiguracao(props) {
             <TextInput
               label={"Nome"}
               mode="outlined"
+              value={novoNome}
               right={<TextInput.Icon icon="text" iconColor="#fff" />}
               textColor="#fff"
               onChangeText={setNovoNome}
@@ -219,6 +227,7 @@ function TelaConfiguracao(props) {
             <TextInput
               label={"Sobrenome"}
               mode="outlined"
+              value={novoSobrenome}
               right={<TextInput.Icon icon="text" iconColor="#fff" />}
               textColor="#fff"
               onChangeText={setNovoSobrenome}
@@ -231,6 +240,7 @@ function TelaConfiguracao(props) {
           <TextInput
             label={"Email"}
             mode="outlined"
+            value={novoEmail}
             right={<TextInput.Icon icon="email" iconColor="#fff" />}
             textColor="#fff"
             onChangeText={setNovoEmail}
@@ -242,6 +252,7 @@ function TelaConfiguracao(props) {
 
           <TextInput
             label={"Senha"}
+            value={novaSenha}
             secureTextEntry={mostrarSenha}
             mode="outlined"
             right={
@@ -261,6 +272,7 @@ function TelaConfiguracao(props) {
             label={"Confirmar Senha"}
             secureTextEntry={mostrarSenha}
             mode="outlined"
+            value={confirmarNovaSenha}
             right={
               <TextInput.Icon
                 icon={iconeSenha}
