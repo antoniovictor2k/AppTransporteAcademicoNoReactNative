@@ -4,9 +4,6 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import styles from "../Styles/StyleTelaConfiguracao";
 import { Checkbox, Button, TextInput } from "react-native-paper";
 
-// alterar aqui o endereço
-// 192.168.1.122
-
 function TelaConfiguracao(props) {
   const navigation = useNavigation();
 
@@ -14,7 +11,7 @@ function TelaConfiguracao(props) {
   const [novoEmail, setNovoEmail] = useState(null);
   const [novoImgURL, setNovoImgURL] = useState(null);
   const [novaSenha, setNovaSenha] = useState(null);
-  const [confirmarNovaSenha, setConfirmarNovaSenha] = useState(null)
+  const [confirmarNovaSenha, setConfirmarNovaSenha] = useState(null);
   const [novoNome, setNovoNome] = useState(null);
   const [novoSobrenome, setNovoSobrenome] = useState(null);
   const [mostrarSenha, SetmostrarSenha] = useState(true);
@@ -24,9 +21,7 @@ function TelaConfiguracao(props) {
 
   const senhaVisivel = () => {
     mostrarSenha == true ? SetmostrarSenha(false) : SetmostrarSenha(true);
-    iconeSenha == "eye-off"
-      ? SetIconeSenha("eye")
-      : SetIconeSenha("eye-off");
+    iconeSenha == "eye-off" ? SetIconeSenha("eye") : SetIconeSenha("eye-off");
   };
   const tema = {
     colors: {
@@ -79,14 +74,12 @@ function TelaConfiguracao(props) {
         console.log("Erro ao deletar usuário");
       }
     } catch (error) {
-      console.log(error);
       console.log("BackEnd não está respondendo ou Usuário já excluído.");
     }
   }
 
   // Atualizar dados da conta
   async function sendFormularioUpdate(id) {
-
     if (
       !novoEmail &&
       !novaSenha &&
@@ -160,7 +153,7 @@ function TelaConfiguracao(props) {
       );
 
       const json = await response.json();
-     
+
       if (json === "O email já está em uso.") {
         Alert.alert("Email já Existe", "Tente outro Email, por favor!", [
           { text: "Tenta novamente", style: "cancel" },
@@ -178,7 +171,6 @@ function TelaConfiguracao(props) {
         console.log("Erro ao atualizar os dados do usuário");
       }
     } catch (error) {
-      console.log(error);
       console.log("BackEnd não está respondendo!");
     }
   }
@@ -193,8 +185,9 @@ function TelaConfiguracao(props) {
     return regex.test(novoEmail);
   };
 
+  // keyboardShouldPersistTaps='handled' isso tava dando um erro por falta desse bicho.
+
   return (
-    // keyboardShouldPersistTaps='handled' isso dando um erro por falta desse bicho.
     <ScrollView style={styles.main} keyboardShouldPersistTaps="handled">
       <Text style={styles.titulo}>Conta</Text>
       <View style={styles.container}>

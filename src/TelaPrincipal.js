@@ -1,34 +1,22 @@
 import React, { useEffect, useState, useRef } from "react";
 import MapView, { Marker } from "react-native-maps";
 import * as Location from "expo-location";
-import { View, Alert, Image } from "react-native";
-import {
-  IconButton,
-  Text,
-  ActivityIndicator,
-  Button,
-  List,
-} from "react-native-paper";
+import { View, Image } from "react-native";
+import { IconButton, Text, Button, List } from "react-native-paper";
 import { useRoute } from "@react-navigation/native";
 import styles from "../Styles/StyleTelaPrincipalComMenu";
-
-// A partir deste ponto, você pode acessar suas variáveis de ambiente normalmente usando process.env
-const apiKey = process.env.GOOGLE_MAPS_APIKEY;
-
-const GOOGLE_MAPS_APIKEY = "AIzaSyCmObYS2GipCgK-Ev4UvwKw_P9zbxq_yrI";
-
-const localhost = "192.168.0.105";
 
 function TelaPrincipal() {
   const route = useRoute();
   const { itemId, nomeDoUsuario } = route.params ?? {};
-  // console.log(nomeDoUsuario)
   const mapRef = useRef(null);
+
   const [localizacao, setLocalizacao] = useState(null);
-  const [verificarproviderStatus, setVerificarproviderStatus] = useState(null)
-  // chama o use effcet do localização 
-  const [activeUseEffect, SetActiveUseEffect] = useState(false)
-  // !!! 
+  const [verificarproviderStatus, setVerificarproviderStatus] = useState(null);
+
+  // chama o use effcet do localização
+  const [activeUseEffect, SetActiveUseEffect] = useState(false);
+  // !!!
   const [localizacao_inicial, setLocalizacao_inicial] = useState({
     latitude: -9.5676652,
     latitudeDelta: 0.0222,
@@ -51,7 +39,7 @@ function TelaPrincipal() {
 
   const [obterLocalizacao, setObterLocalizacao] = useState(false);
   const [display, setDisplay] = useState(false);
- 
+
   // Guadar dados de quem esta enviando o destino.
 
   const [destino, setDestino] = useState("");
@@ -65,10 +53,6 @@ function TelaPrincipal() {
   const [receber_destino, setReceber_destino] = useState("");
   const [receber_ultima_atualizacao, setReceber_ultima_atualizacao] =
     useState("");
-  const [
-    verificar_se_pode_enviar_localizacao,
-    setVerificar_se_pode_enviar_localizacao,
-  ] = useState(false);
 
   const id_banco_rota = "64d6e99b9685703099a16352";
 
@@ -82,10 +66,6 @@ function TelaPrincipal() {
 
     return `${horaFormatada}:${minutoFormatado}`;
   }
-
-
-  // obsevação aqui!!!
-
 
   //INICIO Verificar se localizaçao já esta sendo enviado
 
@@ -101,18 +81,11 @@ function TelaPrincipal() {
             "Content-Type": "application/json",
           },
         }
-        );
-        
-        const time = new Date();
-        const timeHora = time.getHours();
+      );
+
       const json = await response.json();
       const busActive = json.compartilhando;
-      const hora = parseInt(json.ultima_att_onibus);
-      // console.log(json)
-      // console.log(json.localizacao_atual_bus.latitude);
-      // envia os nomes para o use useState e depois exibir na tela menu;
 
-      setVerificar_se_pode_enviar_localizacao(json.compartilhando);
       setReceber_ultima_atualizacao(json.ultima_att_onibus);
       setReceber_usuario(json.usuario_id);
       setReceber_destino(json.destino_do_bus);
@@ -124,34 +97,20 @@ function TelaPrincipal() {
         longitudeDelta: 0.1699,
       });
 
-// console.log(timeHora, ' e ', hora);
-      // mostrar marcação somente se estivem verdadeiro o compartilhamento.
-
-      // add null se o comartilhamento vim false, para aparecer a messagem na tela
-      
       if (busActive) {
-        console.log("Chegando aqui... bus_atual");
       } else if (busActive !== true) {
-        console.log("É falso ");
         setLocalizacaoAtualDoOnibus(null);
-        
       }
-
-      // console.log(json);
     } catch (error) {
-      console.log(error);
       console.log("BackEnd não está retornando! Receber");
     }
   }
 
   // FIM  Verificar se localizaçao já esta sendo enviado
 
-
   const ativarDirecionarBusCompartilhado = () => {
-    console.log("onPRESS ativarDirecionarBusCompartilhado!")
     SetActiveUseEffect(true);
     mapRef.current?.animateToRegion(localizacaoAtualDoOnibus);
-    
   };
   const desativarCompartilharBus = () => {
     setCompartilharBusAtual(false);
@@ -206,21 +165,10 @@ function TelaPrincipal() {
         }
       );
 
-      const json = await response.json();
-
-      // tenatr verificar se esta em true
-      if (json === "O true em uso.") {
-        console.log("Error, alguem esta compartilhando");
-        return;
-      }
-
-      if (response.ok) {
-        console.log("localização esta sendo enviada para o back end");
-      } else {
-        console.log("Erro ao atualizar os dados do usuário");
-      }
+      response.ok
+        ? console.log("Atualizando")
+        : console.log("Error ao Atualização");
     } catch (error) {
-      console.log(error);
       console.log("BackEnd não está respondendo! ATT");
     }
   }
@@ -235,7 +183,7 @@ function TelaPrincipal() {
           setErrorMsg("A permissão para acessar o local foi negada");
           return;
         }
-  
+
         let providerStatus = await Location.getProviderStatusAsync({});
         if (!providerStatus.gpsAvailable) {
           setErrorMsg("O GPS não está ativado");
@@ -245,26 +193,26 @@ function TelaPrincipal() {
           setCompartilharBus(false);
           return;
         }
-       
-        setCarregando(false);
-       
-      
 
+        setCarregando(false);
       } catch (error) {
         console.error("Erro ao obter permissões ou status do GPS:", error);
       }
     };
-  
+
     // Inicializa o temporizador quando o componente é montado
     fetchLocationData();
-  
-    
-  }, [verificarproviderStatus, compartilharBus, activeUseEffect]);
-
+  }, [
+    verificarproviderStatus,
+    compartilharBus,
+    opcoes_de_destino,
+    activeUseEffect,
+  ]);
 
   const ChameLocation = async () => {
     try {
       let location = await Location.getCurrentPositionAsync({});
+
       setLocalizacao({
         latitude: location.coords.latitude,
         longitude: location.coords.longitude,
@@ -273,21 +221,19 @@ function TelaPrincipal() {
       });
     } catch (error) {
       // Lidar com erros aqui, por exemplo, exibir uma mensagem de erro
-      console.error("Erro ao obter a localização:", error);
+      desativarCompartilharBus();
+      console.error("Erro ao obter a localização :", error);
     }
   };
 
   useEffect(() => {
     let intervalId;
-console.log("teste antes da validação ChameLocation ")
-if (obterLocalizacao) {
-  // Iniciar a obtenção contínua da localização a cada 10 segundos (ou outro intervalo de sua escolha)
-  
-  
-  intervalId = setInterval(() => {
-    ChameLocation();
-    
-    console.log("teste DEPOIS da validação ChameLocation 10SS")
+
+    if (obterLocalizacao) {
+      // Iniciar a obtenção contínua da localização a cada 10 segundos (ou outro intervalo de sua escolha)
+
+      intervalId = setInterval(() => {
+        ChameLocation();
       }, 4000); // Intervalo de 10 segundos (em milissegundos)
     }
 
@@ -297,25 +243,14 @@ if (obterLocalizacao) {
     };
   }, [obterLocalizacao]);
 
-  
-console.log(localizacao)
-  // teste
-  
-
-
   useEffect(() => {
     const intervalAPI = setInterval(() => {
       (async () => {
-      
-
         if (compartilharBus === true) {
-          console.log("Compartilhamento Ativado...");
           setOpcoes_de_destino(false);
           setIdUser(nomeDoUsuario);
           if (destino_escolhido === "rio-largo") {
             setDestino("Rio Largo");
-            console.log("rio largo escolhido");
-
             atualizarLocalizacao(id_banco_rota);
           } else {
             console.log("Nenhum destino");
@@ -331,11 +266,7 @@ console.log(localizacao)
     };
   });
 
-
-
-
   const localizacaoAtual = () => {
-    console.log("onPRESS localizacaoAtual!")
     SetActiveUseEffect(true);
     mapRef.current?.animateToRegion(localizacao);
   };
@@ -346,13 +277,13 @@ console.log(localizacao)
 
   useEffect(() => {
     if (itemId) {
-      console.log("itemid");
       setDestinoIFALMaceio({
         latitude: parseFloat(itemId.localizacao.latitude),
         longitude: parseFloat(itemId.localizacao.longitude),
         latitudeDelta: parseFloat(itemId.localizacao.latitudeDelta),
         longitudeDelta: parseFloat(itemId.localizacao.longitudeDelta),
       });
+
       // chamando useeffect localização
       mapRef.current?.animateToRegion({
         latitude: parseFloat(itemId.localizacao.latitude),
@@ -362,66 +293,36 @@ console.log(localizacao)
       });
     }
     if (nomeDoUsuario) {
-      console.log("nomeDoUsuario");
       setIdUser(nomeDoUsuario);
     }
   }, [itemId, nomeDoUsuario]);
-  // console.log(idUser)
-  // abrir configuração do depositivo;
 
   const getLocation = async () => {
-    
-  
     try {
-      // Solicita permissão de localização ao usuário
-      
+      // Pedir para Usuario Ativa localização
+      let location = await Location.getCurrentPositionAsync({});
+
       let providerStatus = await Location.getProviderStatusAsync({});
-      let { status } = await Location.requestForegroundPermissionsAsync();
 
       if (providerStatus.gpsAvailable) {
         setErrorMsg("O GPS está ativado");
         SetActiveUseEffect(true);
-        // setCarregando(false);
       }
-      
-      console.log("TEste proviStu: ", providerStatus)
-      
-      if (status !== "granted") {
-        console.log("A permissão de localização foi negada.");
-        setVerificarproviderStatus(providerStatus)
-        return;
-      }
-      
-     
-      console.log("teste ", status);
-      
-      // Obtém a localização atual do usuário
-      let location = await Location.getCurrentPositionAsync({});
-
-      console.log("teste LOcal: ",location)
-
-      // Faça algo com as coordenadas de latitude e longitude aqui
-      // console.log(`location OK`);
     } catch (error) {
       console.log("Erro ao obter a localização:", error);
-
     }
   };
-
-
-  
 
   // No Expo,
   // não há uma maneira direta de abrir as configurações de localização do dispositivo para ativar manualmente.
   // O Expo não fornece essa funcionalidade específica
 
   // setDisplay(true);
-if(display){
-  setTimeout(() => {
-    console.log('teste display')
-    setDisplay(false);
-  }, 4000);
-};
+  if (display) {
+    setTimeout(() => {
+      setDisplay(false);
+    }, 4000);
+  }
 
   const OpcoesMenuBus = () => (
     <List.Section
@@ -431,10 +332,10 @@ if(display){
       <List.Item
         title="Enviar Localização"
         onPress={() => {
-           setDestino_escolhido("rio-largo");
-         setDisplay(true);
+          setDestino_escolhido("rio-largo");
+          setDisplay(true);
           ativarCompartilharBus();
-          setObterLocalizacao(true)
+          setObterLocalizacao(true);
           setOpcoes_de_destino(false);
         }}
         left={() => <List.Icon icon="upload" />}
@@ -455,8 +356,8 @@ if(display){
         onPress={() => {
           setDisplay(false);
           desativarCompartilharBus();
-           setOpcoes_de_destino(false); 
-           setObterLocalizacao(false);
+          setOpcoes_de_destino(false);
+          setObterLocalizacao(false);
         }}
         left={() => <List.Icon icon="stop" />}
       />
@@ -482,8 +383,6 @@ if(display){
       </View>
     );
   }
-
-  // console.log(localizacao);
 
   return (
     <View style={styles.paginaMenu}>
@@ -540,7 +439,6 @@ if(display){
             </View>
           </Marker>
         ) : null}
-        
       </MapView>
 
       <IconButton
@@ -576,14 +474,11 @@ if(display){
         </View>
       ) : null}
 
-{ display &&
-
+      {display && (
         <View style={styles.viemBusAtual2}>
-          <Text style={styles.textBusAtual}>
-          Iniciando compartilhamento...
-          </Text>
+          <Text style={styles.textBusAtual}>Iniciando compartilhamento...</Text>
         </View>
-}
+      )}
       {opcoes_de_destino && <OpcoesMenuBus />}
       <IconButton
         style={styles.buttonCompartilharLocalizacao}

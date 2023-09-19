@@ -1,5 +1,4 @@
 import { Text, View, ScrollView } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import styles from '../Styles/StyleTelaSobre';
 
 function TelaSobre() {
@@ -19,7 +18,7 @@ function TelaSobre() {
                     Linguagens e Programas Utilizados
                 </Text>
                 <Text style={styles.textoPadrao}>
-                    JavaScript, Sql, Sequelize, Node.js,
+                    JavaScript, Sql, Node.js,
                     Express, CSS3, Figma, GitHub, Visual Studio, React native, MongoDB.
                 </Text>
                 <Text style={styles.sobTitulo}>

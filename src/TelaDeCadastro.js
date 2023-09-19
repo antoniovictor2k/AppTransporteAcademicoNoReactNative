@@ -3,8 +3,6 @@ import { View, Image, Pressable, Text, Alert } from "react-native";
 import { Checkbox, Button, TextInput } from "react-native-paper";
 import styles from "../Styles/StyleTelaCadastro";
 
-// alterar aqui o endereço
-// const localhost = "192.168.1.121";
 
 function TelaCadastro({ navigation }) {
   const [display, setDisplay] = useState(false);
@@ -67,7 +65,6 @@ function TelaCadastro({ navigation }) {
           },
         ]
       );
-      // console.log("Retornando...")
       return;
     }
     if (senha !== confirmarSenha) {
@@ -171,7 +168,7 @@ function TelaCadastro({ navigation }) {
     senha === confirmarSenha ? setDisplay(false) : setDisplay(true);
     setTimeout(() => {
       setDisplay(false);
-    }, 3000);
+    }, 1000);
   }
 
   return (
@@ -259,8 +256,7 @@ function TelaCadastro({ navigation }) {
           textColor="#fff"
           theme={tema}
           secureTextEntry={mostrarSenha}
-          onChangeText={setConfirmarSenha}
-          onKeyPress={handleConfirmarSenhaChange}
+          onBlur={handleConfirmarSenhaChange}
           right={
             <TextInput.Icon
               icon={iconeSenha}

@@ -51,7 +51,6 @@ const stylesTelaMenu = StyleSheet.create({
   localizacao_atual_bus: {
     alignItems: "center",
     justifyContent: "center",
-    // backgroundColor:'#cccccc89',
     borderRadius: 12,
   },
 
@@ -124,11 +123,11 @@ const stylesTelaMenu = StyleSheet.create({
     width: 200,
     borderRadius: 8,
     textAlien: "center",
-    opacity:0.7
+    opacity: 0.7,
   },
-  textBusAtual:{
-    textAlign:'center'
-},
+  textBusAtual: {
+    textAlign: "center",
+  },
   buttonCompartilharLocalizacao: {
     marginBottom: 50,
     alignSelf: "center",

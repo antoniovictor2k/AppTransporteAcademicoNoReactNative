@@ -1,10 +1,7 @@
 import { View, Image, Pressable } from "react-native";
 import { useState } from "react";
-import { Text, TextInput, ActivityIndicator, Button } from "react-native-paper";
+import { Text, TextInput, Button } from "react-native-paper";
 import styles from "../Styles/StyleTelaLogin";
-
-// alterar aqui o endereço
-// const localhost = "192.168.1.121";
 
 function TelaLogin({ navigation }) {
   const [display, setDisplay] = useState(false);
@@ -40,7 +37,6 @@ function TelaLogin({ navigation }) {
         }
       );
       const json = await response.json();
-      console.log("Testando: ");
 
       if (json === "error") {
         setDisplay(true);
@@ -51,11 +47,14 @@ function TelaLogin({ navigation }) {
       }
 
       // Navegação para outra tela após receber os dados
-      navigation.navigate("TelaPrincipalComMenu", { itemId: json._id, nomeDoUsuario: json.nome });
+      navigation.navigate("TelaPrincipalComMenu", {
+        itemId: json._id,
+        nomeDoUsuario: json.nome,
+      });
     } catch (error) {
-      console.log(error);
       console.log("BackEnd não está retornando!");
       // Exibir uma mensagem de erro na tela
+
       setDisplay2(true);
       setTimeout(() => {
         setDisplay2(false);
@@ -70,9 +69,7 @@ function TelaLogin({ navigation }) {
 
   const senhaVisivel = () => {
     mostrarSenha == true ? SetmostrarSenha(false) : SetmostrarSenha(true);
-    iconeSenha == "eye-off"
-      ? SetIconeSenha("eye")
-      : SetIconeSenha("eye-off");
+    iconeSenha == "eye-off" ? SetIconeSenha("eye") : SetIconeSenha("eye-off");
   };
 
   const tema = {

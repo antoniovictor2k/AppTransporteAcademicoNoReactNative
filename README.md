@@ -53,4 +53,4 @@ Para obter suporte técnico ou relatar problemas, entre em contato conosco pelos
 - Instagram: [@antoniovictor2k](https://www.instagram.com/antoniovictor2k/)
 
 ## Licença
-O Aplicativo Transporte Acadêmico está licenciado sob a [Google cloud](https://cloud.google.com/?hl=pt-br).
+Este aplicativo pode ser usado gratuitamente apenas para fins não lucrativos. Qualquer uso comercial requer permissão prévia por escrito.

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { View, Image, Pressable, Alert } from 'react-native';
+import { View, Image, Pressable } from 'react-native';
 import { Text, TextInput, Button } from 'react-native-paper';
 import styles from '../Styles/StyleTelaRecuperarSenha';
 
-// const localhost = '192.168.1.121';
 
 function TelaRecuperarSenha({ navigation }) {
   const [emailRecuperar, setEmailRecuperar] = useState('');
@@ -75,7 +74,6 @@ function TelaRecuperarSenha({ navigation }) {
       onSurfaceVariant: 'white',
     },
   };
-  // console.log(senhaRecuperada)
   return (
     <View style={styles.container}>
       <Image style={styles.imgLogo} source={require('../assets/logoMarcaLogin.png')} />
@@ -100,7 +98,6 @@ function TelaRecuperarSenha({ navigation }) {
           label="Email"
           activeOutlineColor="#fff"
           textColor="#fff"
-          keyboardType="email-address"
           onChangeText={setEmailRecuperar}
           theme={tema}
           right={<TextInput.Icon icon="email" iconColor="#fff" />}
@@ -108,7 +105,7 @@ function TelaRecuperarSenha({ navigation }) {
           onBlur={() => validateEmail(emailRecuperar)}
         />
         <Button style={styles.button} onPress={sendFormulario} icon="lock-reset" textColor="#000">
-          <Text style={styles.textoButton}>Recuperar senha</Text>
+          <Text style={styles.textoButton}>Recuperar</Text>
         </Button>
       </View>
       <Pressable style={styles.linkLogin} onPress={() => navigation.navigate('Login')}>

@@ -1,29 +1,29 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
-import { IconButton, Avatar, ActivityIndicator, Button } from 'react-native-paper';
-import { View, Text, FlatList, Linking } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { IconButton, Avatar, ActivityIndicator } from "react-native-paper";
+import { View, Text, FlatList, Linking } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 // Dentro de um componente funcional
 
-import styles from '../Styles/StyleTelaCampus';
+import styles from "../Styles/StyleTelaCampus";
 
 function RenderizarCampus() {
   const [campi, setCampi] = useState([]);
   const navigation = useNavigation();
-  // const [renderizarNovamente, setRenderizarNovamente] = useState(false);
 
   useEffect(() => {
     fetchData();
-    console.log("Full useEffect: ");
   }, []);
 
-// https://mockapi.io/projects
-// Login com gitHub
+  // https://mockapi.io/projects
+  // Login com gitHub
 
   async function fetchData() {
     try {
-      const response = await axios.get('https://6480815ff061e6ec4d496548.mockapi.io/campi');
+      const response = await axios.get(
+        "https://6480815ff061e6ec4d496548.mockapi.io/campi"
+      );
       const data = response.data;
       setCampi(data);
     } catch (error) {
@@ -31,24 +31,16 @@ function RenderizarCampus() {
     }
   }
 
-  // const chamaRender = () =>{
-  //   renderizarNovamente === false ? setRenderizarNovamente(true):setRenderizarNovamente(false);
-  //   console.log("OnPress chamaRender: ", renderizarNovamente);
-  // }
-
   if (campi.length === 0) {
     return (
       <View style={styles.container}>
-
-        <ActivityIndicator
-          animating={true}
-          color={'#fff'}
-          size={'large'}
-        />
-        <Text style={{ fontWeight: 600, color: "#fff", marginTop: 30, }}>Carregando...</Text>
+        <ActivityIndicator animating={true} color={"#fff"} size={"large"} />
+        <Text style={{ fontWeight: 600, color: "#fff", marginTop: 30 }}>
+          Carregando...
+        </Text>
       </View>
     );
-  };
+  }
   return (
     <View style={styles.container}>
       <FlatList
@@ -63,7 +55,7 @@ function RenderizarCampus() {
                 <IconButton
                   icon="instagram"
                   size={26}
-                  iconColor={'#fff'}
+                  iconColor={"#fff"}
                   onPress={() => {
                     Linking.openURL(item.linkInstagram);
                   }}
@@ -71,7 +63,7 @@ function RenderizarCampus() {
                 <IconButton
                   icon="web"
                   size={26}
-                  iconColor={'#fff'}
+                  iconColor={"#fff"}
                   onPress={() => {
                     Linking.openURL(item.linkSiteOficial);
                   }}
@@ -79,9 +71,9 @@ function RenderizarCampus() {
                 <IconButton
                   icon="map"
                   size={26}
-                  iconColor={'#fff'}
+                  iconColor={"#fff"}
                   onPress={() => {
-                    navigation.navigate('Mapa', { itemId: item});
+                    navigation.navigate("Mapa", { itemId: item });
                   }}
                 />
               </View>
